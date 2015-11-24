@@ -5,7 +5,7 @@ This directory contains documentation related to CASICS -- the project, the soft
 
 Subdirectories found here:
 
-| File or directory   | Topic                                        |
-|---------------------|----------------------------------------------|
-| [project](project)  | Project materials (e.g., coding conventions) |
-
+| File or directory   | Topic                   |
+|---------------------|-------------------------|
+| [surveys](surveys)  | Surveys                 |
+| [project](project)  | Misc. project materials |
