@@ -6,5 +6,3 @@ ourselves in the margins:
 
 The note will be put in the output next to the paragraph in which the \note{}
 is embedded.
-
-Test.
