@@ -1,8 +1,9 @@
 \documentclass{casicswhitepaper}
 
 \begin{document}
-\title{White paper}
-\date{2016-01-11}
+\title{White paper on software search and software catalogs survey\note{We need a pithier title than this}}
+\date{2016-01-12}
+\author{Matthew J. Graham and Michael Hucka}
 \maketitle
 
 \section{Introduction}
@@ -13,27 +14,83 @@ We discuss the results of a survey we conducted in September, 2015. \note{We nee
 
 \section{Survey structure}
 
-The survey was designed to capture current practices and experiences in searching for software from two distinct groups: those looking for ready-to-run software and those looking for source code to incorporate into their own code base respectively. It consisted of 37 questions subdivided into these areas of concern. Questions in the first section aimed to establish the relative importance of different search criteria. Those in the second section characterized the experiences of the developer. Two optional open-ended response questions were also asked, requesting specific case histories and feedback on the survey.
+The survey was designed to capture current practices and experiences in searching for software from two distinct groups: those looking for ready-to-run software and those looking for source code to incorporate into their own code base respectively. It consisted of 37 questions subdivided into these areas of concern. Questions in the first section aimed to establish the relative importance of different search criteria. Those in the second section characterized the experiences of the developer. Two optional open-ended response questions were also asked, requesting specific case histories and feedback on the survey. \note{Do we want a copy of the survey in an appendix?}
 
 \section{Survey demographics}
 
-The survey was advertised on mailing lists and social media forums oriented to the astronomical and biological sciences and particularly to computational subcommunities within those domains. Of the 68 respondents, 54\% identified as working in the physical sciences, 44\% in computing and maths, 28\% in biological sciences and 12\% in others (multiple areas of work were allowed). Assuming a typical 8 hour working day, 94\% regularly spent more than four hours of their time engaged with software and 68\% more than six hours. 88\% of respondents also said that they had were free to make software choice decisions. 
+The survey was advertised on mailing lists and social media forums oriented to the astronomical and biological sciences and particularly to computational subcommunities within those domains. Of the 68 respondents, 54\% identified as working in the physical sciences, 44\% in computing and maths, 28\% in biological sciences and 12\% in others (multiple areas of work were allowed). Assuming a typical 8 hour working day, 94\% regularly spent more than four hours of their time engaged with software and 68\% more than six hours. 88\% of respondents also said that they were free to make software choice decisions. 
 
-These point to a balanced response to the survey from the targeted scientific communities by computer literate individuals. Amongst the 81\% who subsequently indicated that they were involved in software development to some degree (and not just end users), the median number of years of software development experience was 20. This also suggests that the typical respondent is mid-career or part of the (earlier) home computer generation where programming rather than gaming was more common. This may also indicate a possible bias in responses against more junior members of the respective communities, such as students and postdocs, who may have different search criteria and development experiences than their more experienced colleagues. This should be borne in mind when interpreting the results. It may also be the result of a degree of self selection, in that 
-more knowledgeable individuals are more likely to participate in community surveys and something that we should aim to redress in future similar efforts.
+These point to a balanced response to the survey from the targeted scientific communities by computer literate individuals. Amongst the 81\% who subsequently indicated that they were involved in software development to some degree (and not just end users), the median number of years of software development experience was 20. This also suggests that the typical respondent is mid-career or part of the pre-mobile device computing generation. In addition to software development per se, 65\% indicated that they were also primarily responsible for project management or software architecture, which are traditionally more senior roles. Typical development team sizes were small, however, with 78\% being in groups of 1 to 5. This is typical for scientific software and multiple roles are therefore common.  
 
-\section{Survey results}
+Nevertheless, this would seem to indicate a possible bias in responses against more junior members of the respective communities, such as students and postdocs, who may have different search criteria and development experiences than their more experienced colleagues. This should be borne in mind when interpreting the results. It may also be the result of a degree of self selection, in that more knowledgeable individuals are more likely to participate in community surveys and something that we should aim to redress in future similar efforts.
 
-Numbers in parentheses in this section indicate the survey response.
+\section{Search results}
 
-\subsection{Software search criteria}
+Numbers in parentheses in this section indicate the relative rankings or levels of importance (essential and above-average) given in the survey.
+
+\subsection{Ready-to-use software}
+ 
+We first consider the search for software to use for a particular task rather for development purposes. This does not necessarily imply searching for source code.  
+ 
+\subsubsection{Mechanisms}
 
 Personal recommendations (84\%) and general search engines (90\%) are the two main mechanisms employed to find software. If a similar task is also described in the literature then this will be used as a guide (63\%) to identify relevant software to use. Online forums, whether general social media sites or more focused in scope, are underutilized resources (mean of 21\%), although people are slightly more likely to search in a public software project repository (32\%) but not in a domain specific one (10\%). This latter usage pattern mostly likely reflects ignorance of the existence of the topical software index in question but may also reflect a belief that it contains more specific software only. Unfortunately, the question did not address the size of the task being searched for so we cannot answer this for sure.
 
+\subsubsection{Criteria}
+
+Unsurprisingly, the primary search criterion is the availability of specific features (95\%) in the software. Support for specific data standards and file formats (82\%) and software pricing (81\%) are also major considerations, which reflects the culture of scientific computing were software is normally expected to be free and specific sciences use a limited set of data formats, e.g, FITS in astronomy. Platform requirements, in terms of both operating system (69\%) and hardware (47\%), score more highly than either ease of usage (50\%), installation (40\%) or any performance metrics (39\%). How the software was actually implemented in terms of programming language (23\%) or a particular software architecture (14\%) are unimportant, though. This is most likely related to the dominance of particular computing configurations within specific sciences, e.g., astronomical computing happens predominantly on Apple or Linux systems where biological computing tends more towards the use of Windows-based systems. A more pressing constraint on any piece of software will then be what it can run on rather than how it was written.
+
+Quality aspects of the software are definitely secondary considerations as far as any software search is concerned with documentation (48\%) rating more highly than either the reputation of the developer (27\%) or the level of software support (18\%). This would tend to suggest that once the software is installed, in-house workarounds will be found for any bugs and that software updates are unlikely to be required. This illustrates how scientific computing is different from both commercial computing where software licenses are purchased with implied support or mobile computing where software updates are automatically pushed out to devices. 
+
+A more surprising result is that other people's opinions of the software (23\%) and its similarity to other software (12\%) are not important search criteria when they are so important as search mechanisms (see above). It therefore seems likely that a search for software is only necessary when there are no word-of-mouth recommendations or literature recipes for particular tasks. In those cases, the approval rating of the software or its apparent familiarity is largely ignored in favor of other criteria.
+
+Lastly we should note that even though the search is for ready-to-use software, the availability of the source code (46\%) and its licensing (41\%) are relatively important. This is probably a survey bias given the large fraction of respondees who identified as developers (to some degree). They are more likely to be willing to and capable of altering the software to meet their specific requirements and these criteria address this need.
+
+\subsection{Source code}
+
+We now the consider the search for source code for development purposes.
+
+\subsubsection{Motivation}
+
+Developers typically search online for source code at least once a month (78\%) with some (21\%) searching at least once a day. Coding by example (76\%) or reusing existing code as-is (72\%) are the strongest motivations for searching. This indicates a clear preference for not reinventing the wheel or, at least, a reluctance to start from an absolutely blank slate when developing. Software refactoring is another common reason for searching, either to find a more efficient approach to an existing task (42\%) or to discover new algorithms and data structures (36\%). The web is also used as an online reference source to recall syntactic details (44\%) or learn unfamiliar concepts (46\%). \note{This is an interesting use case and one we may want to consider further when building interfaces}
+
+\subsubsection{Mechanisms}
+
+General-purpose search engines (91\%) remain the primary mechanism used to search for source code but personal recommendations (54\%) and similar work reported in the scientific literature (45\%) are employed significantly less than when looking for ready-to-use software. This suggests that software development is a more subjective activity and so source code searches have a more personalized signature to them, determined in part by personal coding styles. This may have implications for any search anonymity issues. This is also supported by the two main factors identified for the failure of past source code searches: an inability to find any code suitable for purpose (69\%) and a belief that the search requirements were too unique (65\%).
+
+Online forums remain underutilized (with a mean of 23\%) but there is slightly greater use of public code repositories (46\%), although though not significantly so. Specialized code search engines (19\%) and software indexes (22\%) are also less used than expected but this may again reflect a lack of knowledge of their existence or coverage. It may also be another instance of sample bias with a more mature audience less likely to use or trust newer domain-specific software, preferring more proven general-purpose mechanisms.
+24\% cited lack of trust in the options found as the reason for a previous failed search result.
+
+\subsubsection{Failure}
+
+There is a reasonable indication (47\%) that not enough time is available to conduct proper searches for source code or to evaluate the results. General-purpose search engines are likely to find millions of matches to search terms which may make it difficult to find any true search result easily, particularly if the ranking system of the search engine is optimizing a commercial metric, such as potential advertising revenue. It also seems that software licensing (16\%) was a minor hindrance to previous successful source code searches, even though it was a relatively important criterion for ready-to-use software, but was a large factor (49\%) in not actually reusing the source code found. This would suggest that intellectual property information is not sufficiently visible during software searches.
+
+\subsubsection{Result reliability: code reuse}
+
+The quality of the documentation (61\%) and implementation details -- language (61\%) and operating system (51\%) -- are the prime factors in determining whether found software will be reused. An inability to compile (45\%) or install (29\%) the source code also seems to be a relatively common problem, although it is unclear whether this is due to issues with third-party dependencies, compiler versioning, or the actual source code itself. There is also some discrepancy between what code purports to do (and so matches a search) and whether it actually can: this seems to be more common with functionality (39\%) aspects than support for particular standards (16\%). 
+
+The actual quality (33\%) of the code itself, its structure (31\%), and the design of any algorithm (29\%) are less significant factors. Performance (22\%) and verifiability (8\%) are also somewhat surprisingly minor considerations to reuse but this may be related to the didactic nature of many searches: it may not actually be that important if the code is efficient (or even fully functional) if you just want to learn something.
+
+The level of support (24\%) for any code remains a minor factor and pricing (31\%) is also a less significant consideration than for ready-to-run software. Once code has been identified that actually meets the search parameters, it seems that developers are more willing to pay for it (presumably there may be some way to pass the costs on to end-users).
+
+\subsection{Software metadata}
+
+The survey also polled what information to include in a software index.
 
 
 
+\subsection{Search case histories}
 
-\subsection{Developer experiences}
+\subsection{Survey feedback}
+
+\section{Conclusions}
+
+\begin{enumerate}
+\item Searching for reference material vs. production code - pedagogic code may not be efficient.
+\item Personalized search profiles
+\item Result trust issues
+\item Evaluatory statistics 
+\item Licensing metadata
+\end{enumerate}
 
 \end{document}
