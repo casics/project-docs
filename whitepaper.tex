@@ -6,11 +6,20 @@
 \author{Matthew J. Graham and Michael Hucka}
 \maketitle
 
+\begin{abstract}
+When they seek software for a task, how do scientists go about it?  Past research and anecdotal evidence suggest that searching the web, asking colleagues and reading papers have been the primary approaches used---but is that still true today, given the increasingly greater use of social media and socially-centric online systems such as StackOverflow and GitHub?  In addition, when they \emph{do} look for software, what are some of the main characteristics that influence scientific users' choice of software?  And finally, if a systematic catalog of software were to be developed, what kind of information would users like to see in it?  These are the questions that motivated a survey we conducted in late 2015.  The survey was designed to capture current practices and experiences in searching for software from two distinct groups: those looking for ready-to-run software and those looking for source code to incorporate into their own code base respectively.  We present the results of our survey and discuss our findings in this report.
+\end{abstract}
+
+
 \section{Introduction}
 
-We discuss the results of a survey we conducted in September, 2015. \note{We need a lot more here.}
+Despite that software is integral to most research~\citep{hettrick_2014, hannay_2009, baxter_2006, wilson_2006}, finding software suitable for a given purpose remains surprisingly difficult~\cite{cannata_2005, Bourne::2015, SoftwareDiscoveryIndex:2014}.  There are few effective resources to help users discover alternatives or understand the differences between them.  When asked, many people reply that they search the web using a general-purpose search engine such as Google.  At first this approach seems obvious, but it suffers from a significant problem: web searches can yield dozens or hundreds of viable candidates---and \emph{millions} or irrelevant results.  Moreover, some questions cannot be answered through search without substantial effort, such as \emph{how many} software tools with certain capabilities exist, what are their \emph{specific} characteristics, or how different tools \emph{differ} from each other.  The difficulty of using search to find software was made clear in a recent paper~\cite{bauer2014exploratory} in which the authors studied software developers at Google, Inc.  They found that the factor ``most disruptive to the [software] reuse process'' was ``difficulties in finding artifacts''.  In other words, \emph{even the developers at Google have difficulty finding software}.
 
-\note{Links to similar work.}
+Numerous other methods are possible besides direct search for finding software.  For example, informally, we know that many scientists turn to the scientific literature to learn what others have used for similar tasks or research domains.  Searching the literature can increase the number of relevant results as well as provide other useful information, but it suffers from limitations too: publications can take months or years to produce and may not reflect a tool's \emph{current} capabilities~\cite{wren_2004}, and more importantly, \emph{not all useful software tools have a publication associated with them}.  Still other potential methods for finding software include asking other people, asking on social media, following institutional guidelines, and more.
+
+\note{At this point, I feel like a discussion of related work is best left to a later section.  I added one before the conclusions.  What is your opinion?  Would it be better to put the section earlier?}%
+The difficulty of finding software and the lack of better resources brings the potential for duplication of work, reduced scientific reproducibility, and poor return on investment by funding agencies~\citep{cannata_2005}.  We are interested in developing better resources to help users, particularly scientific users, discover software.  In order to gain a better understanding of the factors that influence how software users locate software, we developed and distributed an electronic survey in September, 2015.  The survey was advertised to numerous mailing lists which serve communities in astronomy and systems biology.  The survey form contained a total of 22 questions (of which 18 were content questions), with switching logic so that the final number of questions actually seen by a user depended on some of their responses.  In total, we received 69 individual responses.  We report on our methods, the survey responses, and our analyses below.
+
 
 \section{Survey structure}
 
@@ -91,6 +100,10 @@ Implementation: source code (62\%), language (57\%), developer name (43\%)
 \subsection{Search case histories}
 
 \subsection{Survey feedback}
+
+
+\section{Related work}
+
 
 \section{Conclusions}
 
