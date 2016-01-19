@@ -228,10 +228,30 @@ Although the survey response was not large\note{how many would we consider large
 \item Full-text index matching from READMEs against search strings to identify "one-liners" rather than just keywords
 \end{enumerate}
 
+
+% ......................................................................
+\appendix
+\section{The Survey}
+
+We implemented the survey using Google Forms~\cite{googleforms}, a free online system for creating interactive, Web-based forms.  The following pages show screen captures of the survey as it appeared to users.  Not shown is the switching logic that allowed some parts of the survey to be showed only if users responded in certain ways to some of the questions.  The following are the rules implemented in the switching logic:
+\begin{description}
+
+\item \emph{Rule for Question 6}: If the user answers ``I never get to choose the software I use'', the next page shown is the final page of the survey (containing questions~21 and~22).
+
+\item  \emph{Rule for Question 11}: If the user answers ``No'', the next page shown is the final page of the survey.
+
+\item \emph{Rule for Question 16}:  If the user answers ``Never'', the next page shown is the final page of the survey.
+
+\end{description}
+
+
 \clearpage
-\section*{Bibliography \& References Cited}
-\renewcommand{\refname}{}               % Remove the word "References".
-\vspace*{-2ex}
+\includepdf[trim=0.25in 0.25in 0.25in 0.3in,pages={-}]{files/survey-copy/survey-2015-09-02.pdf}
+
+
+
+% ......................................................................
+\clearpage
 \bibliographystyle{plain}
 \bibliography{mike-casics-library}
 
