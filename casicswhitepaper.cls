@@ -31,9 +31,12 @@
 \RequirePackage{varwidth}
 \RequirePackage[american]{varioref}
 \RequirePackage[T1]{fontenc}
+\RequirePackage{titlesec}
 
 \RequirePackage[pdftex]{graphicx}
 \RequirePackage[pdftex,breaklinks=true,colorlinks=true, bookmarks=false,pdfhighlight=/O,urlcolor=darkblue,citecolor=darkred,linkcolor=darkblue]{hyperref}
+
+\RequirePackage{pdfpages} % This must be placed after the inclusion of pdftex.
 
 
 % Color definitions.
@@ -54,6 +57,20 @@
 
 % Style adjustments.
 % .............................................................................
+
+% Put a dot after section numbers.
+
+\titlelabel{\thetitle.\quad}
+
+% Make appendices start as "Appendix A." instead of "A."
+
+\let\oldappendix\appendix
+\renewcommand{\appendix}{%
+  \oldappendix%
+  \renewcommand{\thesection}{Appendix \Alph{section}}%
+}
+
+% Adjust paragraphs to be unindented, with a blank line between them.
 
 \setlength{\parindent}{0 pt}            % Unindented paragraphs, separated ...
 \setlength{\parskip}{1.3 ex}            % ... by roughly one blank line.
