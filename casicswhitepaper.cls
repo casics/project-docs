@@ -32,6 +32,7 @@
 \RequirePackage[american]{varioref}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{titlesec}
+\RequirePackage[font={small,it}]{caption}
 
 \RequirePackage[pdftex]{graphicx}
 \RequirePackage[pdftex,breaklinks=true,colorlinks=true, bookmarks=false,pdfhighlight=/O,urlcolor=darkblue,citecolor=darkred,linkcolor=darkblue]{hyperref}
@@ -96,7 +97,7 @@
 
 % Spacing of floats.
 
-\setlength{\intextsep}{20pt plus 4pt minus 0pt}
+\setlength{\intextsep}{10pt plus 4pt minus 0pt}
 
 % Make floats that appear alone on a page appear at the top, rather than
 % (as is the LaTeX default) appearing centered vertically on the page.
