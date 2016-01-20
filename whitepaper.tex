@@ -1,4 +1,6 @@
 \documentclass{casicswhitepaper}
+\usepackage{bchart}
+\renewcommand{\bcfontstyle}{}
 
 \begin{document}
 \title{White paper on software search and software catalogs survey\note{We need a pithier title than this}}
@@ -17,7 +19,6 @@ Despite that software is integral to most research~\citep{bauer2014exploratory, 
 
 Numerous other methods are possible besides direct search for finding software.  For example, informally, we know that many scientists turn to the scientific literature to learn what others have used for similar tasks or research domains.  Searching the literature can increase the number of relevant results as well as provide other useful information, but it suffers from limitations too: publications can take months or years to produce and may not reflect a tool's \emph{current} capabilities~\cite{wren_2004}, and more importantly, \emph{not all useful software tools have a publication associated with them}.  Still other potential methods for finding software include asking other people, asking on social media, following institutional guidelines, and more.
 
-\note{At this point, I feel like a discussion of related work is best left to a later section.  I added one before the conclusions.  What is your opinion?  Would it be better to put the section earlier?}%
 The difficulty of finding software and the lack of better resources brings the potential for duplication of work, reduced scientific reproducibility, and poor return on investment by funding agencies~\citep{cannata_2005}.  We are interested in developing better resources to help users, particularly scientific users, discover software.  In order to gain a better understanding of the factors that influence how software users locate software, we developed and distributed an electronic survey in September, 2015.  The survey was advertised to numerous mailing lists which serve communities in astronomy and systems biology.  The survey form contained a total of 22 questions (of which 18 were content questions), with switching logic so that the final number of questions actually seen by a user depended on some of their responses.  In total, we received 69 individual responses.  We report on our methods, the survey responses, and our analyses below.
 
 
@@ -28,7 +29,66 @@ The survey was designed to capture current practices and experiences in searchin
 
 \section{Survey demographics}
 
-The survey was advertised on mailing lists and social media forums oriented to the astronomical and biological sciences and particularly to computational subcommunities within those domains. Of the 68 respondents, 54\% identified as working in the physical sciences, 44\% in computing and maths, 28\% in biological sciences and 12\% in others (multiple areas of work were allowed). Assuming a typical 8 hour working day, 94\% regularly spent more than four hours of their time engaged with software and 68\% more than six hours. 88\% of respondents also said that they were free to make software choice decisions. 
+The survey was advertised on mailing lists and social media oriented to the astronomical and biological sciences, particularly to computational subcommunities within those domains.  One of the first questions in the survey was ``What is your primary field of work?'', with multiple choices and ``Other'' as the answer options.  \fig{disciplines} shows the answer choices and the number of responses.  Of 68 respondents, 57\% identified as working in the physical sciences, 46\% in computing and maths, 28\% in biological sciences and 12\% in a range of others.  Multiple areas of work were allowed, and some respondents indicated multiple disciplines.
+
+% In the category of "other":
+%
+% - One person answered thus: Computing & Math Sci. (CMS), "astrophysics", "IT".  I added 1 to the count of physical sciences (the rationale being that astrophysics is a physical science) but didn't change the count of CMS because IT can be considered part of CMS at our level of granularity.
+%
+% - One person answered CMS, and "Pri. A&A" and "Cosmology".  I added 1 more to physical sciences for the A&A and cosmology (because they did not also select Physical Sciences, so this is a case where the count needs to be adjusted).
+%
+% - One person answered "Data science" but not also CMS, so I added 1 to CMS.
+%
+% - Two people answered "Astronomy" for "other" as well as answering "physical sciences".  We would lump astronomy under physical sciences, so it does not change the count for physical sciences.
+%
+% - One person answered "Aerospace Engineering (Robotics)".  I don't know where to put that one, so left it as a real "Other".
+
+\begin{figure}[tb]
+  \centering
+  \small
+  \begin{bchart}[min=0, max=40, step=10, width=3.7in]
+    \bcbar[label=Physical Sciences,                   color=veryverylightgray, text=57\%]{39}
+    \bcbar[label=Computing and Mathematical Sciences, color=veryverylightgray, text=46\%]{31}
+    \bcbar[label=Biology and Biological Engineering,  color=veryverylightgray, text=28\%]{19}
+    \bcbar[label=Chemical and Chemical Engineering,   color=veryverylightgray, text=3\%, value=~~2]{2}
+    \bcbar[label=Geological and Planetary Sciences,   color=veryverylightgray, text=3\%, value=~~2]{2}
+    \bcbar[label=Cognitive and Brain Sciences,        color=veryverylightgray, text=0]{0}
+    \bcbar[label=Social Sciences,                     color=veryverylightgray, text=0]{0}
+    \bcbar[label=``Aerospace Engineering (Robotics)'', color=veryverylightgray, text=1, value=~~1]{1}
+  \end{bchart}
+  \caption{Respondents by discipline.  The survey offered the first eight predefined categories and an additional slot for free text under ``Other''.  Choices were non-exclusive.  In some cases, respondents provided values for ``Other'' but the values were actually subsumed by one of the predefined categories; in those cases, we adjusted the totals appropriately.  One response, ``Aerospace Engineering (Robotics)'', did not fit any predefined category; we included it as a true ``Other'' value.}
+  \label{disciplines}
+\end{figure}
+
+\begin{figure}[b]
+  \centering
+  \small
+  \includegraphics[trim=0.75in 7.75in 1in 1.5in, scale=0.9]{files/histogram-time-spent-with-software.pdf}
+  \caption{Histogram of responses to the question ``In your work, on a
+    typical day, approximately what fraction of your time involves using or
+    interacting directly with software on a computer or other computing
+    device?''}
+\end{figure}
+
+We also asked ``In your work, on a typical day, approximately what fraction of your time involves using or interacting directly with software on a computer or other computing device?''  The answer choices took the form of a pull-down menu with values ranging from 0\% (none) to 100\% (all) in 5\% increments.  \fig{time-with-software} provides a histogram of the responses.  Assuming a typical 8 hour working day, we can conclude that 94\% regularly spent more than four hours of their time engaged with software and 68\% more than six hours.
+
+The next question asked, ``In your work, how much freedom do you usually have to choose the software you use?''.  \fig{freedom} provide the results.  All in all,  88\% of respondents also said that they were free to make software choice decisions.
+
+
+\begin{figure}[tb]
+  \centering
+  \small
+  \begin{bchart}[min=0, max=40, step=10, width=3in]
+    \bcbar[label=I never get to choose the software I use, color=veryverylightgray]{0}
+    \bcbar[label=Sometimes I get to choose the software I use, color=veryverylightgray, text=6\%]{4}
+    \bcbar[label=``Half the time'', color=veryverylightgray, text=6\%]{4}
+    \bcbar[label={More often than not, I choose the software I use}, color=veryverylightgray, text=53\%]{36}
+    \bcbar[label=I always choose the software I use, color=veryverylightgray, text=35\%]{24}
+  \end{bchart}
+  \caption{Responses to the question ``In your work, how much freedom do you usually have to choose the software you use?''.  (Note: the full text of the response option ``Half the time'' was ``Half the time, a situation or task requires using preselected software, and other times I get to choose''.)}
+  \label{freedom}
+\end{figure}
+
 
 These point to a balanced response to the survey from the targeted scientific communities by computer literate individuals. Amongst the 81\% who subsequently indicated that they were involved in software development to some degree (and not just end users), the median number of years of software development experience was 20. This also suggests that the typical respondent is mid-career or part of the pre-mobile device computing generation. In addition to software development per se, 65\% indicated that they were also primarily responsible for project management or software architecture, which are traditionally more senior roles. Typical development team sizes were small, however, with 78\% being in groups of 1 to 5. This is typical for scientific software and multiple roles are therefore common.  
 
