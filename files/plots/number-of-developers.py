@@ -1,0 +1,29 @@
+#!/usr/bin/env python3.4
+
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+from matplotlib import rcParams
+
+rcParams['figure.figsize']      = (2, 2)
+rcParams['text.usetex']         = True
+rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['font.family']         = 'serif'
+rcParams['font.serif']          = ['Utopia']
+rcParams['font.weight']         = 'normal'
+rcParams['font.size']           = 11
+rcParams['xtick.labelsize']     = rcParams['ytick.labelsize'] = 10
+rcParams['ytick.major.width']   = rcParams['xtick.major.width'] = 1
+rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
+rcParams['patch.facecolor']     = "#cccccc"
+rcParams['patch.linewidth']     = 0
+
+# Data straight from the spreadsheet.
+data = [55, 13]
+labels = ['Yes', 'No']
+
+# Histogram.
+plt.pie(data, labels=labels, autopct='%1.f\%%', colors=['#bbbbbb', '#eeeeee'])
+
+plt.savefig('number-of-developers.pdf', bbox_inches='tight')
