@@ -59,6 +59,12 @@
 % Style adjustments.
 % .............................................................................
 
+% Reduce spacing after section headings.
+
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
 % Put a dot after section numbers.
 
 \titlelabel{\thetitle.\quad}
@@ -73,8 +79,8 @@
 
 % Adjust paragraphs to be unindented, with a blank line between them.
 
-\setlength{\parindent}{0 pt}            % Unindented paragraphs, separated ...
-\setlength{\parskip}{1.3 ex}            % ... by roughly one blank line.
+\setlength{\parindent}{0pt}            % Unindented paragraphs, separated ...
+\setlength{\parskip}{1.3ex}            % ... by roughly one blank line.
 \setlength{\partopsep}{-1ex plus 0.1ex minus -0.2ex}
 \setlength{\itemsep}{-0.25ex plus 0.15ex}
 
@@ -204,12 +210,21 @@
 \renewcommand{\sec}[1]{\normallabels\@commonRefNoStar{#1}}
 \WithSuffix\newcommand\sec*[1]{\normallabels\@commonRefStar{#1}}
 
-% Note-making macros.
+
+% Note-making commands.
 % .............................................................................
 
 \reversemarginpar  % Want these be put on the left, not the right.
 
 \newcommand{\note}[1]{\mbox{}\marginpar{\hspace{0pt}\fcolorbox{Gold}{lightyellow}{\scriptsize\begin{minipage}[t]{0.8in}\raggedright\textit{#1}\end{minipage}}}}
+
+
+% Miscellaneous random other commands.
+% .............................................................................
+
+\newcommand{\link}[2]{\textup{\ttfamily{\href{#1}{#2}}}}
+\newcommand{\mailto}[1]{\link{mailto:#1}{#1}}
+
 
 % The end.
 % .............................................................................
