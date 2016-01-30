@@ -5,13 +5,14 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib import rcParams
+import operator
 
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
-rcParams['font.size']           = 11
+rcParams['font.size']           = 9
 rcParams['xtick.labelsize']     = rcParams['ytick.labelsize'] = 10
 rcParams['ytick.major.width']   = rcParams['xtick.major.width'] = 1
 rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
@@ -23,25 +24,34 @@ plt.figure(figsize=(5, 2.5))
 # Data.  Not everyone answered the question.
 # Only one answered something for "Other".
 total_responses = 55
-labels = ["Project management",
-          "Requirements analysis",
-          "Software architecture",
-          "Software development",
-          "Testing/quality assurance",
-          "Technical writing",
-          "Deployment",
-          "Training",
-          "``mediating conflicting stakeholders''"]
-data = [26, 17, 30, 46, 17, 18, 20, 11, 1]
+raw_data = {
+    "Project management"                             : 26,
+    "Requirements analysis"                          : 17,
+    "Software architecture"                          : 30,
+    "Software development"                           : 46,
+    "Testing/quality assurance"                      : 17,
+    "Technical writing"                              : 18,
+    "Deployment"                                     : 20,
+    "Training"                                       : 11,
+    "Other (``mediating conflicting stakeholders'')" : 1
+}
+
 x = [0, 10, 20, 30, 40, 50]
+
+# Sort the data by value, largest value first.
+
+data = sorted(raw_data.items(), key=lambda x: x[1], reverse=True)
+
+labels = [k for k, v in data]
+values = [v for k, v in data]
 
 # Plot.
 # Barh() puts items in the reverse order of how we put them in the
 # lists above, so first we do this to reverse the lists:
 labels = labels[::-1]
-data = data[::-1]
-y_pos = np.arange(len(data))
-plt.barh(y_pos, data, linewidth=0, align='center', color="#cccccc")
+values = values[::-1]
+y_pos = np.arange(len(values))
+plt.barh(y_pos, values, linewidth=0, align='center', color="#cccccc")
 plt.yticks(y_pos, labels)
 plt.xticks(x, fontsize=9)
 
@@ -58,7 +68,7 @@ plt.gca().yaxis.set_ticks_position('none')
 plt.gca().xaxis.set_ticks_position('bottom')
 
 # Write the value to the right of each bars, except the ones that have value 0.
-for rect, value in zip(plt.gca().patches, data):
+for rect, value in zip(plt.gca().patches, values):
     if value:
         width = rect.get_width()
         plt.gca().text(rect.get_x() + width + 1.2, rect.get_y() + rect.get_height()/2, value,
@@ -67,7 +77,7 @@ for rect, value in zip(plt.gca().patches, data):
 # Write the percentage inside the bars, but only if it's more than 1.
 # (Bars are too short if the value is 1.)
 # This requires a bit of fiddling with positioning.
-for rect, value in zip(plt.gca().patches, data):
+for rect, value in zip(plt.gca().patches, values):
     rect.set_height(rect.get_height()/1.1)
     rect.set_y(rect.get_y()*1.001)
     percent = value/total_responses*100
