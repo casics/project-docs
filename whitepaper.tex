@@ -2,6 +2,9 @@
 \usepackage{bchart}
 \renewcommand{\bcfontstyle}{}
 
+\newcommand{\totalrespondents}{69\xspace}
+\newcommand{\totaldevelopers}{56\xspace}
+
 \begin{document}
 \title{White paper on software search and software catalogs survey\note{We need a pithier title than this}}
 \date{\today}
@@ -22,7 +25,7 @@ Despite that software is integral to most research~\citep{bauer2014exploratory, 
 
 Numerous other methods are possible besides direct search for finding software.  For example, informally, we know that many scientists turn to the scientific literature to learn what others have used for similar tasks or research domains.  Searching the literature can increase the number of relevant results as well as provide other useful information, but it suffers from limitations too: publications can take months or years to produce and may not reflect a tool's \emph{current} capabilities~\cite{wren_2004}, and more importantly, \emph{not all useful software tools have a publication associated with them}.  Still other potential methods for finding software include asking other people, asking on social media, following institutional guidelines, and more.
 
-The difficulty of finding software and the lack of better resources brings the potential for duplication of work, reduced scientific reproducibility, and poor return on investment by funding agencies~\citep{cannata_2005}.  We are interested in developing better resources to help users, particularly scientific users, discover software.  In order to gain a better understanding of the factors that influence how software users locate software, we developed and distributed an electronic survey in September, 2015, which we advertised to numerous mailing lists serving communities in astronomy and systems biology.  In total, we received 68 individual responses.  We report on our methods, the survey responses, and our analyses below.
+The difficulty of finding software and the lack of better resources brings the potential for duplication of work, reduced scientific reproducibility, and poor return on investment by funding agencies~\citep{cannata_2005}.  We are interested in developing better resources to help users, particularly scientific users, discover software.  In order to gain a better understanding of the factors that influence how software users locate software, we developed and distributed an electronic survey in September, 2015, which we advertised to numerous mailing lists serving communities in astronomy and systems biology.  In total, we received \totalrespondents individual responses.  We report on our methods, the survey responses, and our analyses below.
 
 
 \section{Survey structure}
@@ -79,7 +82,7 @@ We used convenience sampling with self-selection.  We advertised the survey on m
 
 \section{Results: demographics}
 
-One of the first questions in the survey was ``What is your primary field of work?'', with multiple choices and ``Other'' as the answer options.  \fig{disciplines} shows the answer choices and the number of responses.  Of 68 respondents, 57\% identified as working in the physical sciences, 46\% in computing and maths, 28\% in biological sciences and 12\% in a range of others.  Multiple areas of work were allowed, and some respondents indicated multiple disciplines.
+One of the first questions in the survey was ``What is your primary field of work?'', with multiple choices and ``Other'' as the answer options.  \fig{disciplines} shows the answer choices and the number of responses.  Of \totalrespondents respondents, 57\% identified as working in the physical sciences, 46\% in computing and maths, 28\% in biological sciences and 7\% in a range of others.  Multiple areas of work were allowed, and some respondents indicated multiple disciplines.
 
 % In the category of "other":
 %
@@ -108,6 +111,7 @@ One of the first questions in the survey was ``What is your primary field of wor
     typical day, approximately what fraction of your time involves using or
     interacting directly with software on a computer or other computing
     device?''}
+  \label{time-with-software}
 \end{figure}
 
 We also asked ``In your work, on a typical day, approximately what fraction of your time involves using or interacting directly with software on a computer or other computing device?''  The answer choices were provided in the form of a pull-down menu with values ranging from 0\% (none) to 100\% (all), in 5\% increments.  \fig{time-with-software} provides a bar graph of the responses.  Assuming a typical 8 hour working day, we can conclude that 94\% of respondents regularly spent more than four hours of their time engaged with software, and 68\% more than six hours.
@@ -122,7 +126,7 @@ In another question, we asked, ``In your work, how much freedom do you usually h
   \label{freedom}
 \end{figure}
 
-We also asked ``Are you involved in software development?''.  In all, 55 (81\%) answered ``Yes'' and 13 (19\%) answered ``No''.  The answer to this question was used to control the availability of other questions in the survey form.  Among the questions that were made available for those who answered ``Yes'' were additional demographic questions.  The first such question asked ``For how many years have you been developing software?'' with a free-form text field for answers.  \fig{years} provides a histogram of the responses received.
+We also asked ``Are you involved in software development?''.  In all, \totaldevelopers (81\%) answered ``Yes'' and 13 (19\%) answered ``No''.  The answer to this question was used to control the availability of other questions in the survey form.  Among the questions that were made available for those who answered ``Yes'' were additional demographic questions.  The first such question asked ``For how many years have you been developing software?'' with a free-form text field for answers.  \fig{years} provides a histogram of the responses received.
 
 % Note about the data cleaning:
 % - if someone wrote "x+" or "at least x", I counted it as x.
@@ -132,7 +136,7 @@ We also asked ``Are you involved in software development?''.  In all, 55 (81\%) 
 \begin{figure}[thb]
   \hspace*{0.5in}
   \begin{minipage}[b]{0.25\linewidth}
-    \includegraphics[width=1.25in]{files/plots/number-of-developers.pdf}
+    \includegraphics[width=1.35in]{files/plots/number-of-developers.pdf}
   \end{minipage}%
   \begin{minipage}[b]{0.75\linewidth}
     \includegraphics[width=3.5in]{files/plots/histogram-years.pdf}
@@ -146,20 +150,20 @@ Another question asked of those who indicated they were involved in software dev
 
 \begin{figure}[thb]
   \centering
-  \includegraphics[width=5.5in]{files/plots/responsibilities.pdf}
+  \includegraphics[width=5.6in]{files/plots/responsibilities.pdf}
   \vspace*{-2ex}
-  \caption{Responsibilities indicated by the 55 respondents who answered ``Yes'' to the question of whether they were involved in software development.  This survey question offered the first eight predefined categories and an additional slot for free text under ``Other''; only one respondent provide a value for ``Other''.  Choices were non-exclusive.}
+  \caption{Responsibilities indicated by the 56 respondents who answered ``Yes'' to the question of whether they were involved in software development.  This survey question offered the first eight predefined categories and an additional slot for free text under ``Other''; only one respondent provide a value for ``Other''.  Choices were non-exclusive.}
   \label{responsibilities}
 \end{figure}
 
-We then asked, ``What is the typical team size of projects you are involved with?''  The answers were again in the form of multiple choices with an ``Other'' choice that offered a free-form text field.  Answers were provided by all 55 respondents who answered ``Yes'' to the question of whether they were involved in software development, and none of the respondents selected ``Other''.
+We then asked, ``What is the typical team size of projects you are involved with?''  The answers were again in the form of multiple choices with an ``Other'' choice that offered a free-form text field.  Answers were provided by all \totaldevelopers respondents who answered ``Yes'' to the question of whether they were involved in software development, and none of the respondents selected ``Other''.  \fig{project-sizes} provides a summary of the results.
 
 \begin{figure}[thb]
   \centering
   \includegraphics{files/plots/project-sizes.pdf}
   \vspace*{-2ex}
-  \caption{Project sizes indicated by the 55 respondents who answered ``Yes'' to the question of whether they were involved in software development.}
-  \label{responsibilities}
+  \caption{Project sizes indicated by the \totaldevelopers respondents who answered ``Yes'' to the question of whether they were involved in software development.}
+  \label{project-sizes}
 \end{figure}
 
 Finally, we asked ``Which programming and/or scripting language(s) have you had the most experience with?''  This question provided 22 predefined language choices as multiple choices along with a free-text ``Other'' option.  Choices were non-exclusive, and the elaboration under the question explicitly requested ``Please select up to 3 languages which you have used the most''.   The top five responses were: Python (selected by 59\% of respondents), C (50\%), Java (34\%), shell scripting (32\%), and C++ (27\%).
@@ -177,19 +181,43 @@ Numbers in parentheses in this section indicate the relative rankings or levels 
  
 We first consider the search for software to use for a particular task rather for development purposes. This does not necessarily imply searching for source code.  
  
-\subsubsection{Mechanisms}
+\subsubsection{Approaches}
 
-Personal recommendations (84\%) and general search engines (90\%) are the two main mechanisms employed to find software. If a similar task is also described in the literature then this will be used as a guide (63\%) to identify relevant software to use. Online forums, whether general social media sites or more focused in scope, are underutilized resources (mean of 21\%), although people are slightly more likely to search in a public software project repository (32\%) but not in a domain specific one (10\%). This latter usage pattern mostly likely reflects ignorance of the existence of the topical software index in question but may also reflect a belief that it contains more specific software only. Unfortunately, the question did not address the size of the task being searched for so we cannot answer this for sure.
+To assess how people searched for ready-to-run software, we asked the multiple-choice question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?'', and provided many answer options together with a free-text ``Other'' option.  The specific, predefined answer options were constructed based on our own experiences as well as the questions posed in other surveys~\cite{sim_2011, bajrachary_2009, linstead_2009} and the results of the pilot runs of our survey form.  Respondents were free to choose more than one answer.  \fig{how-find-ready-to-run} summarizes the results.
+
+\begin{figure}[thb]
+  \centering
+  \includegraphics[trim=0.1in 0.1in 0 0,width=6in]{files/plots/how-find-ready-to-run.pdf}
+  \vspace*{-4ex}
+  \caption{Responses to the question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?'' Answer choices were non-exclusive. All \totalrespondents survey participants answered the question.}
+  \label{how-find-ready-to-run}
+\end{figure}
+
+Personal recommendations (83\%) and general search engines (90\%) are the two main mechanisms employed to find software. If a similar task is also described in the literature then this will be used as a guide (62\%) to identify relevant software to use. Online forums, whether general social media sites or more focused in scope, are underutilized resources (mean of 21\%), although people are slightly more likely to search in a public software project repository (32\%) but not in a domain specific one (10\%). This latter usage pattern mostly likely reflects ignorance of the existence of the topical software index in question but may also reflect a belief that it contains more specific software only. Unfortunately, the question did not address the size of the task being searched for so we cannot answer this for sure.
+
+The answers for ``Other'' revealed also a category of options we did not anticipate: all of the write-in answers were about the use of network-based software package installation systems such as MacPorts~\cite{fuller2002macports} and the various systems available for the different Linux operating system distributions.  In retrospect, this is an obvious oversight in our list of predefined categories.  The package management systems offer search capabilities, and thus, this is indeed another way for a person to find ready-to-run software.  Future versions of this survey should include this as a predefined answer choice.
+
 
 \subsubsection{Criteria}
 
-Unsurprisingly, the primary search criterion is the availability of specific features (95\%) in the software. Support for specific data standards and file formats (82\%) and software pricing (81\%) are also major considerations, which reflects the culture of scientific computing were software is normally expected to be free and specific sciences use a limited set of data formats, e.g, FITS in astronomy. Platform requirements, in terms of both operating system (69\%) and hardware (47\%), score more highly than either ease of usage (50\%), installation (40\%) or any performance metrics (39\%). How the software was actually implemented in terms of programming language (23\%) or a particular software architecture (14\%) are unimportant, though. This is most likely related to the dominance of particular computing configurations within specific sciences, e.g., astronomical computing happens predominantly on Apple or Linux systems where biological computing tends more towards the use of Windows-based systems. A more pressing constraint on any piece of software will then be what it can run on rather than how it was written.
+We sought to understand the different selection and evaluation criteria that may come into play when users search for ready-to-run software.  To this end, we posed the question ``In general, how important are the following characteristics when you are searching for ready-to-run software for a task?''  For the answer choices, we provided a two-dimensional grid with different predefined criteria as the rows and, as the columns, check boxes for rating each criterion on an importance scale.  The values on the scale were ``Rarely or never important'', ``Somewhat or occasionally important'', ``Average importance'', ``Usually of above-average importance'', ``Essential''. \fig{criteria-ready-to-run} summarizes the results.
 
-Quality aspects of the software are definitely secondary considerations as far as any software search is concerned with documentation (48\%) rating more highly than either the reputation of the developer (27\%) or the level of software support (18\%). This would tend to suggest that once the software is installed, in-house workarounds will be found for any bugs and that software updates are unlikely to be required. This illustrates how scientific computing is different from both commercial computing where software licenses are purchased with implied support or mobile computing where software updates are automatically pushed out to devices. 
+\begin{figure}[thb]
+  \centering
+  \includegraphics[width=6.1in]{files/plots/bar-graph-criteria-ready-to-run.pdf}
+  \vspace*{-5ex}
+  \caption{Responses to the question ``In general, how important are the following characteristics when you are searching for ready-to-run software for a task?''  All \totalrespondents respondents answered the question, but not all respondents chose to select an option for every possible characteristic.  The bar graph is sorted by the sum of the number of times the options ``Essential'' and ``Usually of above-average importance'' were selected for each characteristic.}
+  \label{criteria-ready-to-run}
+\end{figure}
+
+Unsurprisingly, the primary search criterion is the availability of specific features (95\%) in the software. Support for specific data standards and file formats (82\%) and software pricing (81\%) are also major considerations, which reflects the culture of scientific computing were software is normally expected to be free and specific sciences use a limited set of data formats, e.g, FITS in astronomy. Platform requirements, in terms of both operating system (69\%) and hardware (47\%), score more highly than either ease of usage (50\%), installation (40\%) or any performance metrics (39\%). How the software was actually implemented in terms of programming language (23\%) or a particular software architecture (14\%) are unimportant, though. This may be related to the dominance of particular computing configurations within specific sciences, e.g., astronomical computing happens predominantly on Apple or Linux systems where biological computing tends more towards the use of Windows-based systems. A more pressing constraint on any piece of software will then be what it can run on rather than how it was written.
+
+Quality aspects of the software are definitely secondary considerations as far as any software search is concerned with documentation (48\%) rating more highly than either the reputation of the developer (27\%) or the level of software support (18\%). This would tend to suggest that once the software is installed, users expect that they can find in-house workarounds for any bugs, and that software updates are unlikely to be required. This illustrates how scientific computing is different from both commercial computing where software licenses are purchased with implied support or mobile computing where software updates are automatically pushed out to devices. 
 
 A more surprising result is that other people's opinions of the software (23\%) and its similarity to other software (12\%) are not important search criteria when they are so important as search mechanisms (see above). It therefore seems likely that a search for software is only necessary when there are no word-of-mouth recommendations or literature recipes for particular tasks. In those cases, the approval rating of the software or its apparent familiarity is largely ignored in favor of other criteria.
 
-Lastly we should note that even though the search is for ready-to-use software, the availability of the source code (46\%) and its licensing (41\%) are relatively important. This is probably a survey bias given the large fraction of respondees who identified as developers (to some degree). They are more likely to be willing to and capable of altering the software to meet their specific requirements and these criteria address this need.
+Lastly we should note that even though the search is for ready-to-use software, the availability of the source code (46\%) and its licensing (41\%) are relatively important considerations. This is probably a survey bias given the large fraction of respondees who identified as developers (to some degree). Such users are more likely to be willing to---and capable of---altering the software to meet their specific requirements, and the search criteria address this need.
+
 
 \subsubsection{Search case histories}
 
