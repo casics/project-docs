@@ -19,11 +19,11 @@ rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
 rcParams['patch.facecolor']     = "#cccccc"
 rcParams['patch.linewidth']     = 0
 
-plt.figure(figsize=(3.5, 4.5))
+plt.figure(figsize=(3.5, 5))
 
 # Data.
 
-total_responses = 55
+total_responses = 52
 
 # Choices were not mutually exclusive.
 

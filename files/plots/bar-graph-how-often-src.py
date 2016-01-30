@@ -23,7 +23,7 @@ plt.figure(figsize=(3, 2))
 
 # Data.  Not everyone answered the question.
 # Only one answered something for "Other".
-total_responses = 55
+total_responses = 56
 raw_data = {
     "Never"                           : 1,
     "Rarely -- once every few months" : 11,

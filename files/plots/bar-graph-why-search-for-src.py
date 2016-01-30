@@ -23,7 +23,7 @@ plt.figure(figsize=(3.75, 3.2))
 
 # Data.
 
-total_responses = 55
+total_responses = 54
 
 # Choices were not mutually exclusive.
 
