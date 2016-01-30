@@ -27,14 +27,14 @@ ax = plt.gca()
 ax.tick_params(width=1, length=3, color='#888888')
 
 # Data.
-total_responses = 68
+total_responses = 69
 labels = ["I always choose the software I use",
           "More often than not, I choose the software I use",
           "``Half the time''",
           "Sometimes I get to choose the software I use",
           "I never get to choose the software I use",
 ]
-data = [24, 36, 4, 4, 0]
+data = [25, 36, 4, 4, 0]
 y_pos = np.arange(len(data))
 x = [0, 10, 20, 30, 40]
 
@@ -63,10 +63,9 @@ ax.xaxis.grid(True, color='1', linestyle='solid', linewidth=1)
 
 # Write the value to the right of each bars, except the ones that have value 0.
 for rect, value in zip(ax.patches, data):
-    if value:
-        width = rect.get_width()
-        ax.text(rect.get_x() + width + 1.2, rect.get_y() + rect.get_height()/2, value,
-                ha='center', va='center', fontsize=9)
+    width = rect.get_width()
+    ax.text(rect.get_x() + width + 1.2, rect.get_y() + rect.get_height()/2, value,
+            ha='center', va='center', fontsize=9)
 
 # Write the percentage inside the bars, but only if it's more than 1.
 # (Bars are too short if the value is 1.)
@@ -77,9 +76,9 @@ for rect, value in zip(ax.patches, data):
     percent = value/total_responses*100
     text = '{: >2.0f}\%'.format(percent)
     if value > 1:
-        new_x = rect.get_x() + 1.2
+        new_x = rect.get_x() + 0.5
         new_y = rect.get_y() + rect.get_height()/2.2
-        ax.text(new_x, new_y, text, ha='center', va='center', fontsize=9)
+        ax.text(new_x, new_y, text, ha='left', va='center', fontsize=9)
 
 plt.savefig('how-often-choose-software.pdf', bbox_inches='tight')
 plt.close()

@@ -27,7 +27,7 @@ ax = plt.gca()
 ax.tick_params(width=1, length=3, color='#888888')
 
 # Data.
-total_responses = 68
+total_responses = 69
 labels = ["``Aerospace Engineering (Robotics)''",
           "Social Sciences",
           "Cognitive and Brain Sciences",
@@ -37,7 +37,29 @@ labels = ["``Aerospace Engineering (Robotics)''",
           "Computing and Mathematical Sciences",
           "Physical Sciences",
 ]
-data = [1, 0, 0, 2, 2, 19, 31, 39]
+
+# About the data: in the category of "other", we had the following responses:
+#
+# - One person answered thus: Computing & Math Sci. (CMS), "astrophysics",
+#   "IT".  I added 1 to the count of physical sciences (the rationale being
+#   that astrophysics is a physical science) but didn't change the count of
+#   CMS because IT can be considered part of CMS at our level of granularity.
+#
+# - One person answered CMS, and "Pri. A&A" and "Cosmology".  I added 1 more
+#   to physical sciences for the A&A and cosmology (because they did not also
+#   select Physical Sciences, so this is a case where the count needs to be
+#   adjusted).
+#
+# - One person answered "Data science" but not also CMS, so I added 1 to CMS.
+#
+# - Two people answered "Astronomy" for "other" as well as answering
+#   "physical sciences".  We would lump astronomy under physical sciences, so
+#   it does not change the count for physical sciences.
+#
+# - One person answered "Aerospace Engineering (Robotics)".  I don't know
+#   where to put that one, so left it as a real "Other".
+
+data = [1, 0, 0, 2, 2, 19, 32, 39]
 y_pos = np.arange(len(data))
 x = [0, 10, 20, 30, 40]
 
@@ -83,9 +105,9 @@ for rect, value in zip(ax.patches, data):
     percent = value/total_responses*100
     text = '{: >2.0f}\%'.format(percent)
     if value > 1:
-        new_x = rect.get_x() + 1.2
+        new_x = rect.get_x() + 0.3
         new_y = rect.get_y() + rect.get_height()/2.2
-        ax.text(new_x, new_y, text, ha='center', va='center', fontsize=9)
+        ax.text(new_x, new_y, text, ha='left', va='center', fontsize=9)
 
 plt.savefig('respondents-by-discipline.pdf', bbox_inches='tight')
 plt.close()

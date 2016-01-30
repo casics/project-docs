@@ -32,7 +32,7 @@ labels = ["Project management",
           "Deployment",
           "Training",
           "``mediating conflicting stakeholders''"]
-data = [26, 17, 29, 45, 17, 18, 20, 11, 1]
+data = [26, 17, 30, 46, 17, 18, 20, 11, 1]
 x = [0, 10, 20, 30, 40, 50]
 
 # Plot.
@@ -73,8 +73,8 @@ for rect, value in zip(plt.gca().patches, data):
     percent = value/total_responses*100
     text = '{: >2.0f}\%'.format(percent)
     if value > 1:
-        new_x = rect.get_x() + 2
+        new_x = rect.get_x() + 0.5
         new_y = rect.get_y() + rect.get_height()/2.2
-        plt.gca().text(new_x, new_y, text, ha='center', va='center', fontsize=9)
+        plt.gca().text(new_x, new_y, text, ha='left', va='center', fontsize=9)
 
 plt.savefig('responsibilities.pdf', bbox_inches='tight')

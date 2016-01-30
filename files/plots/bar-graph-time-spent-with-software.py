@@ -21,7 +21,7 @@ rcParams['patch.linewidth']     = 0
 
 # Data.
 x = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
-y = [0, 0,  0,  0,  1,  1,  1,  0,  1,  0,  8,  1,  3,  1,  4,  5,  8,  4, 14,  7,  9]
+y = [0, 0,  0,  0,  1,  1,  1,  0,  1,  0,  8,  1,  3,  1,  4,  5,  9,  4, 14,  7,  9]
 
 # Set up axes.
 plt.ylim(0, 15)
@@ -52,4 +52,4 @@ for rect, label in zip(plt.gca().patches, y):
         plt.gca().text(rect.get_x() + rect.get_width()/2, height + 0.5, label,
                        ha='center', va='bottom', fontsize=10, fontweight='normal')
 
-plt.savefig('histogram-time-spent-with-software.pdf', bbox_inches='tight')
+plt.savefig('bar-graph-time-spent-with-software.pdf', bbox_inches='tight')

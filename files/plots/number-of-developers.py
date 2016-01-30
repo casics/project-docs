@@ -20,7 +20,7 @@ rcParams['patch.facecolor']     = "#cccccc"
 rcParams['patch.linewidth']     = 0
 
 # Data straight from the spreadsheet.
-data = [55, 13]
+data = [56, 13]
 labels = ['Yes', 'No']
 
 # Histogram.

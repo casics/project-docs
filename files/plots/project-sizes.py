@@ -22,11 +22,11 @@ plt.figure(figsize=(4, 0.65))
 
 # Data.  Not everyone answered the question.
 # Only one answered something for "Other".
-total_responses = 55
+total_responses = 56
 labels = ["Small (1--5 people)",
           "Medium (6--25 people)",
           "Large (more than 25 people)"]
-data = [43, 11, 1]
+data = [43, 12, 1]
 x = [0, 10, 20, 30, 40, 50]
 
 # Plot.
