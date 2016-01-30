@@ -103,7 +103,8 @@
 
 % Spacing of floats.
 
-\setlength{\intextsep}{10pt plus 4pt minus 0pt}
+\setlength{\intextsep}{1.5em plus 4pt minus 0pt}
+\setlength{\textfloatsep}{1.5em plus 4pt minus 0pt}
 
 % Make floats that appear alone on a page appear at the top, rather than
 % (as is the LaTeX default) appearing centered vertically on the page.
