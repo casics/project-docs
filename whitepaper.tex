@@ -299,7 +299,7 @@ We also sought to understand the motivations for why people search for software 
 
 \begin{figure}[thb]
   \centering
-  \includegraphics[width=5.75in]{files/plots/bar-graph-why-search-for-src.pdf}
+  \includegraphics[width=5.7in]{files/plots/bar-graph-why-search-for-src.pdf}
   \vspace*{-2ex}
   \caption{Responses to the question ``What are some reasons why you look for source code (when you do look)?''  This question offered the first eight predefined categories and an additional slot for free text under ``Other''.  Answer choices were non-exclusive.}
   \label{why-search-for-src}
@@ -312,16 +312,62 @@ Two respondents wrote answers in the ``Other'' field: one wrote ``Find software 
 
 \subsubsection{Approaches}
 
-General-purpose search engines (91\%) remain the primary mechanism used to search for source code but personal recommendations (54\%) and similar work reported in the scientific literature (45\%) are employed significantly less than when looking for ready-to-use software. This suggests that software development is a more subjective activity and so source code searches have a more personalized signature to them, determined in part by personal coding styles. This may have implications for any search anonymity issues. This is also supported by the two main factors identified for the failure of past source code searches: an inability to find any code suitable for purpose (69\%) and a belief that the search requirements were too unique (65\%).
+The survey question ``What are some approaches you have used to look for source code in the past?'' concerned the methods used by developers to find source code.  This question was similar to the earlier question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''\ but included different answer options that are more relevant to searching for source code.  Answer options were nonexclusive multiple choices, including an ``Other'' option with a field for free-text input.  \fig{how-find-src} provides a summary of the results.  The question was answered by all \totalsearchers respondents who indicated they searched for source code on at least some occasions.
 
-Online forums remain underutilized (with a mean of 23\%) but there is slightly greater use of public code repositories (46\%), although though not significantly so. Specialized code search engines (19\%) and software indexes (22\%) are also less used than expected but this may again reflect a lack of knowledge of their existence or coverage. It may also be another instance of sample bias with a more mature audience less likely to use or trust newer domain-specific software, preferring more proven general-purpose mechanisms.
-24\% cited lack of trust in the options found as the reason for a previous failed search result.
+\begin{figure}[thb]
+  \centering
+  \includegraphics[width=6.1in]{files/plots/how-find-src.pdf}
+  \vspace*{-5ex}
+  \caption{Responses to the question ``What are some approaches you have used to look for source code in the past?''  This question offered the first eleven predefined categories and an additional slot for free text under ``Other''.  Answer choices were non-exclusive.  A total of \totalsearchers respondents answered this question.}
+  \label{how-find-src}
+\end{figure}
+
+
+% FIXME report "other"
+
+
+General-purpose search engines (91\%) remain the primary mechanism used to search for source code but personal recommendations (54\%) and similar work reported in the scientific literature (45\%) are employed significantly less than when looking for ready-to-use software. This suggests that software development is a more subjective activity and so source code searches have a more personalized signature to them, determined in part by personal coding styles. This may have implications for any search anonymity issues. This is also supported by the two main factors identified for the failure of past source code searches (see below): an inability to find any code suitable for purpose (69\%) and a belief that the search requirements were too unique (65\%).
+
+The results also indicate that online forums remain underutilized (with a mean of 23\%) but there is slightly greater use of public code repositories (46\%), although not significantly so. Specialized code search engines (19\%) and software indexes (22\%) are also less used than expected but this may again reflect a lack of knowledge of their existence or coverage. It may also be another instance of sample bias with a more mature audience being less likely to use or trust newer domain-specific software, preferring instead more proven general-purpose mechanisms.  24\% cited lack of trust in the options found as the reason for a previous failed search result.
+
 
 \subsubsection{Failure}
 
+The inability to find suitable source code would hinder software reuse.  From our own experiences, we know a search for software can fail for a variety of reasons.  This motivated our inclusion of another question in thes survey, ``What are some factors that have hindered your ability to FIND source code in the past?''  The question included a variety of nonexclusive predefined options, along with an ``Other'' option offering a free-text input field.  The results are summarized in \fig{factors-that-hindered}.
+
+\begin{figure}[b]
+  \centering
+  \includegraphics[width=6in]{files/plots/factors-that-hindered-finding-src.pdf}
+  \vspace*{-5ex}
+  \caption{Responses to the question ``What are some factors that have hindered your ability to FIND source code in the past?''  This question offered the first six predefined categories and an additional slot for free text under ``Other''.  Answer choices were non-exclusive.  A total of 51 survey respondents answered this question.}
+  \label{factors-that-hindered}
+\end{figure}
+
 There is a reasonable indication (47\%) that not enough time is available to conduct proper searches for source code or to evaluate the results. General-purpose search engines are likely to find millions of matches to search terms which may make it difficult to find any true search result easily, particularly if the ranking system of the search engine is optimizing a commercial metric, such as potential advertising revenue. It also seems that software licensing (16\%) was a minor hindrance to previous successful source code searches, even though it was a relatively important criterion for ready-to-use software, but was a large factor (49\%) in not actually reusing the source code found. This would suggest that intellectual property information is not sufficiently visible during software searches.
 
+% Here are the "Other" answers:
+%
+% I miss freshmeat.net
+% Laziness (didn't try very hard)
+% Lack of proper documentation
+% I'm not an expert 
+% Some scientific software is hidden from search engines as authors did not bother to put it online or make a small website for it.
+% Lack of documentation for evaluation of product
+
+The write-in answers for the ``Other'' field in this survey question provided some additional insights into factors that contribute to being unable to locate suitable software.  Six respondents provided ``Other'' answers, of which three were explanatory.  Of these three, two of the respondents cited lack of documentation as a hindrance to either locating or evaluating software.  The third hindrance noted by a respondent was ``Some scientific software is hidden from search engines as authors did not bother to put it online or make a small website for it.''
+
+
 \subsubsection{Result reliability: code reuse}
+
+Being able to find software source code is not the only factor determining whether developers ultimately make use of the code found; other factors can hinder its use.  This motivated our survey question ``If you searched and found source code in the past, what are some factors that may have prevented you from REUSING the source code you found?''  As with most of the other questions in this survey, this one took the form of a multiple choice question with nonexclusive answer options and a free-text ``Other'' field.  We developed the answer choices based on our own personal experiences and feedback from the pilot survey.  \fig{hindrance-to-reusing-src} summarizes the results.
+
+\begin{figure}[thb]
+  \centering
+  \includegraphics[width=5.65in]{files/plots/hindrance-to-reusing-src.pdf}
+  \vspace*{-2ex}
+  \caption{Responses to the question ``If you searched and found source code in the past, what are some factors that may have prevented you from REUSING the source code you found?''  This question offered the first 17 predefined categories and an additional slot for free text under ``Other''.  Answer choices were non-exclusive.  A total of 51 survey respondents answered this question.}
+  \label{hindrance-to-reusing-src}
+\end{figure}
 
 The quality of the documentation (61\%) and implementation details -- language (61\%) and operating system (51\%) -- are the prime factors in determining whether found software will be reused. An inability to compile (45\%) or install (29\%) the source code also seems to be a relatively common problem, although it is unclear whether this is due to issues with third-party dependencies, compiler versioning, or the actual source code itself. There is also some discrepancy between what code purports to do (and so matches a search) and whether it actually can: this seems to be more common with functionality (39\%) aspects than support for particular standards (16\%). 
 
