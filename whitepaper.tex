@@ -71,20 +71,22 @@ Questions in section No.~2 aimed to establish the relative importance of differe
 
 \subsection{Sampling plan}
 
-We used nonprobabilistic convenience sampling with self-selection.  We advertised the survey on mailing lists and social media oriented to the astronomical and biological sciences, particularly to computational subcommunities within those domains.    The number of potential participants is unknown, because we cannot track the redistribution of the survey invitation.  Thus, the response rate is unknown.
+We used nonprobabilistic convenience sampling with self-selection.  We advertised the survey on mailing lists and social media oriented to the astronomical and biological sciences.    The number of potential participants is unknown, because we cannot track the redistribution of the survey invitation.  Thus, the response rate is unknown.
 
 Potential biasing factors in the results are the same as those common to most self-selected written surveys that use convenience sampling.  This include response bias (i.e., people who responded may have different characteristics than those who did not), coverage errors (i.e., the representation of respondents may not be balanced across different subcommunities), and item bias (i.e., some questions may have been skipped intentionally or unintentionally).  An additional possible source of bias is that we (the authors) are relatively well-known within the subcommunities to which we advertised the survey, and thus the respondents may have been influenced by their personal knowledge or relationships to us.  
 
 
 \subsection{Administration}
 
-We used convenience sampling with self-selection.  We advertised the survey on mailing lists and social media oriented to the astronomical and biological sciences, particularly to computational subcommunities within those domains.  Any recipients were free to participate if they chose.  The survey had no express closing date.  We analyzed the results obtained by December 31, 2015.  In total, we received \totalrespondents individual responses.
+We used Google Forms~\cite{googleforms} to implement the survey instrument.  Our version of Google Forms was the free edition made available by Google, Inc. in the second half of 2015.  Prior to making the survey form public and inviting participation in the survey, we obtained approval for the survey protocol from the California Institute of Technology's Committee for the Protection of Human Subjects (IRB).  The survey form itself included a Web link to an electronic version of the informed consent form for survey participation.  The first question in the survey provided a clickable checkbox by which subjects had to indicate they had read the informed consent form and consented to our use of their responses to the survey.  This was the only question in the survey that required a response; all other questions were optional.
+
+On September 1, 2012, we used electronic mail to invite participation in the survey.  As mentioned above, we advertised the survey on mailing lists and social media oriented to the astronomical and biological sciences, particularly to computational subcommunities within those domains.  Any recipients were free to participate if they chose.  The survey had no express closing date.  We analyzed the results obtained by December 31, 2015.  In total, we received \totalrespondents individual responses.
 
 
 \section{Results: demographics}
 \label{demographics}
 
-One of the first questions in the survey was ``What is your primary field of work?'', with multiple choices and ``Other'' as the answer options.  \fig{disciplines} shows the answer choices and the number of responses.  Of \totalrespondents respondents, 57\% identified as working in the physical sciences, 46\% in computing and maths, 28\% in biological sciences and 7\% in a range of others.  Multiple areas of work were allowed, and some respondents indicated multiple disciplines.
+The survey included several questions to gather general demographic information about the respondents.  One of the first questions in the survey was ``What is your primary field of work?'', with multiple choices and ``Other'' as the answer options.  \fig{disciplines} shows the answer choices and the number of responses.  Of \totalrespondents respondents, 57\% identified as working in the physical sciences, 46\% in computing and maths, 28\% in biological sciences and 7\% in a range of others.  Subjects could select more than one field, and respondents made use of this feature: 17 respondents selected two fields of work, six selected three fields, and one indicated four fields of work.
 
 % In the category of "other":
 %
@@ -103,11 +105,13 @@ One of the first questions in the survey was ``What is your primary field of wor
   \centering
   \includegraphics{files/plots/respondents-by-discipline.pdf}
   \vspace*{-2ex}
-  \caption{Respondents by discipline.  The survey offered the first eight predefined categories and an additional slot for free text under ``Other''.  Choices were non-exclusive.  In some cases, respondents provided values for ``Other'' but the values were actually subsumed by one of the predefined categories; in those cases, we adjusted the totals appropriately.  One response, ``Aerospace Engineering (Robotics)'', did not fit any predefined category; we included it as a true ``Other'' value.}
+  \caption{Respondents by discipline.  The survey offered the first eight predefined categories and an additional slot for free text under ``Other''.  Choices were non-exclusive.  In some cases, respondents provided values for ``Other'' but the values were subsumed by one of the predefined categories; in those cases, we adjusted the totals appropriately.  One response, ``Aerospace Engineering (Robotics)'', did not fit any predefined category; we included it as a true ``Other'' value.}
   \label{disciplines}
 \end{figure}
 
-\begin{figure}[b]
+To permit us to gauge how computer-intensive people's work activities are, the survey included the question ``In your work, on a typical day, approximately what fraction of your time involves using or interacting directly with software on a computer or other computing device?''  The answer options were in the form of a pull-down menu with values ranging from 0\% (none) to 100\% (all), in 5\% increments.  \fig{time-with-software} provides a bar graph of the responses.  The results show that the overwhelming majority of our respondents spend over 50\% of their day interacting with software.  To quantify this further, assuming a typical 8~hour working day, we can conclude that 94\% of respondents regularly spent more than four hours of their day engaged with software, and 68\% more than six hours.
+
+\begin{figure}[bht]
   \centering
   \includegraphics[trim=0.1in 0.1in 0 0,width=6.25in]{files/plots/bar-graph-time-spent-with-software.pdf}
   \caption{Bar graph of responses to the question ``In your work, on a
@@ -117,11 +121,10 @@ One of the first questions in the survey was ``What is your primary field of wor
   \label{time-with-software}
 \end{figure}
 
-We also asked ``In your work, on a typical day, approximately what fraction of your time involves using or interacting directly with software on a computer or other computing device?''  The answer choices were provided in the form of a pull-down menu with values ranging from 0\% (none) to 100\% (all), in 5\% increments.  \fig{time-with-software} provides a bar graph of the responses.  Assuming a typical 8 hour working day, we can conclude that 94\% of respondents regularly spent more than four hours of their time engaged with software, and 68\% more than six hours.
-
-In another question, we asked, ``In your work, how much freedom do you usually have to choose the software you use?''.  \fig{freedom} provide the results.  All in all,  88\% of respondents said that they were free to make software choice decisions.
+As already mentioned, the overall motivation for the survey was to understand how people find software.  Thus, an important precondition was whether subjects actually had a choice in the software they used.  (If a person has no choice but to use software that is already provided or selected for them, then their answers to questions about how they find software would not be meaningful.)  This consideration motivated another question in the survey: ``In your work, how much freedom do you usually have to choose the software you use?''.   Answers to this question were used to select subsequent survey questions: if a respondent answered ``Never'' to this question, then the remaining questions were skipped and they were shown the final survey feedback page.  \fig{freedom} provides the results for this question.  It shows that every one of our respondents had some choice in the software they, and consequently all \totalrespondents respondents were shown the next set of questions in the survey.  In all, 88\% of respondents said that they had \emph{some} degree of freedom to choose the software they used.
 
 \begin{figure}[thb]
+  \vspace*{-1ex}
   \centering
   \includegraphics[trim=0.1in 0.1in 0 0,width=6.1in]{files/plots/how-often-choose-software.pdf}
   \vspace*{-4ex}
@@ -129,14 +132,14 @@ In another question, we asked, ``In your work, how much freedom do you usually h
   \label{freedom}
 \end{figure}
 
-We also asked ``Are you involved in software development?''.  In all, \totaldevelopers (81\%) answered ``Yes'' and 13 (19\%) answered ``No''.  The answer to this question was used to control the availability of other questions in the survey form.  Among the questions that were made available for those who answered ``Yes'' were additional demographic questions.  The first such question asked ``For how many years have you been developing software?'' with a free-form text field for answers.  \fig{years} provides a histogram of the responses received.
+In response to another question, ``Are you involved in software development?'', \totaldevelopers (81\%) answered ``Yes'' and 13 (19\%) answered ``No''.  The answer to this question controlled the display of another set of questions in the survey form.  Among those that were made available for those who answered ``Yes'' were additional demographic questions.  The first such question asked ``For how many years have you been developing software?'' with a free-form text field for answers.  \fig{years} provides a histogram of the responses received.
 
 % Note about the data cleaning:
 % - if someone wrote "x+" or "at least x", I counted it as x.
 % - if someone wrote "~x", I counted it as x.
 % - one person wrote "depends on who you ask". I deleted that result.
 
-\begin{figure}[thb]
+\begin{figure}[b]
   \hspace*{0.5in}
   \begin{minipage}[b]{0.25\linewidth}
     \includegraphics[width=1.35in]{files/plots/number-of-developers.pdf}
@@ -145,7 +148,7 @@ We also asked ``Are you involved in software development?''.  In all, \totaldeve
     \includegraphics[width=3.5in]{files/plots/histogram-years.pdf}
   \end{minipage}%
   \vspace*{-2ex}
-  \caption{(Left) Responses to the question  ``Are you involved in software development?'' (Right) Histogram of years that respondents have been developing software (for those who also answered ``Yes'' to the question of whether they were involved in software development).}
+  \caption{(Left) Responses to the question  ``Are you involved in software development?'' (Right) Histogram and rug plot of years that respondents have been developing software (for those who also answered ``Yes'' to the question of whether they were involved in software development).}
   \label{years}
 \end{figure}
 
@@ -156,13 +159,13 @@ Another question asked of those who indicated they were involved in software dev
   \centering
   \includegraphics[width=6in]{files/plots/responsibilities.pdf}
   \vspace*{-5ex}
-  \caption{Responsibilities indicated by the 56 respondents who answered ``Yes'' to the question of whether they were involved in software development.  This survey question offered the first eight predefined categories and an additional slot for free text under ``Other''; only one respondent provide a value for ``Other''.  Choices were non-exclusive.}
+  \caption{Responses to the question  ``In your current (or most recent) software development project, what is (or was) your primary responsibility?''  This question was shown only to the 56 respondents who answered ``Yes'' to the question of whether they were involved in software development.  This survey question offered the first eight predefined categories and an additional slot for free text under ``Other''; only one respondent provide a value for ``Other''.  Choices were non-exclusive.}
   \label{responsibilities}
 \end{figure}
 
-In another question, we then asked, ``What is the typical team size of projects you are involved with?''  The answers were again in the form of multiple choices with an ``Other'' choice that offered a free-form text field.  Answers were provided by all \totaldevelopers respondents who answered ``Yes'' to the question of whether they were involved in software development, and none of the respondents selected ``Other''.  \fig{project-sizes} provides a summary of the results.
+We also asked, ``What is the typical team size of projects you are involved with?''  The form of the answers was again a set of multiple choice click boxes with an ``Other'' choice that offered a free-form text field.  Answers were provided by all \totaldevelopers respondents who answered ``Yes'' to the question of whether they were involved in software development, and none of the respondents selected ``Other''.  \fig{project-sizes} provides a summary of the results.
 
-\begin{figure}[t]
+\begin{figure}[htb]
   \centering
   \includegraphics{files/plots/project-sizes.pdf}
   \vspace*{-2ex}
@@ -170,7 +173,7 @@ In another question, we then asked, ``What is the typical team size of projects 
   \label{project-sizes}
 \end{figure}
 
-Finally, we asked ``Which programming and/or scripting language(s) have you had the most experience with?''  This question provided 22 predefined language choices as multiple choices along with a free-text ``Other'' option.  Choices were non-exclusive, and the elaboration under the question explicitly requested ``Please select up to 3 languages which you have used the most''.   The top five responses were: Python (selected by 59\% of respondents), C (50\%), Java (34\%), shell scripting (32\%), and C++ (27\%).
+In the final demographic question, we asked ``Which programming and/or scripting language(s) have you had the most experience with?''  This question provided 22 predefined language choices as multiple choices along with a free-text ``Other'' option.  Choices were non-exclusive, and the elaboration under the question explicitly requested ``Please select up to 3 languages which you have used the most''.   The top five responses were: Python (selected by 59\% of respondents), C (50\%), Java (34\%), shell scripting (32\%), and C++ (27\%).
 
 These responses are consistent with most expectations for the targeted scientific communities.  We expected to reach computer literate individuals, and due to the distribution channels we used, most likely reached those working in research environments.  Most respondents indicated they are involved in software development, and typical development team sizes were small, with 77\% being in groups of 1 to 5 persons.  This is common in scientific software development, and the fact that many respondents indicated they had multiple roles is also consistent---small teams generally require members to take on more than one role.
 
@@ -191,7 +194,7 @@ We first consider the search for software to use for a particular task rather fo
 
 To assess how people located or discovered ready-to-run software, we asked the multiple-choice question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''  The question provided many answer options together with a free-text ``Other'' option.  The specific, predefined answer options were constructed based on our own experiences as well as the questions posed in other surveys~\cite{sim_2011, bajrachary_2009, linstead_2009} and the results of the pilot runs of our survey form.  Respondents were free to choose more than one answer.  \fig{how-find-ready-to-run} summarizes the results.
 
-\begin{figure}[thb]
+\begin{figure}[b]
   \centering
   \includegraphics[trim=0.1in 0.1in 0 0,width=6in]{files/plots/how-find-ready-to-run.pdf}
   \vspace*{-4ex}
@@ -376,7 +379,7 @@ The actual quality (35\%) of the code itself, its structure (33\%), and the desi
 The level of support (23\%) for any code remains a minor factor and pricing (31\%) is also a less significant consideration than for ready-to-run software. Once code has been identified that actually meets the search parameters, it seems that developers are more willing to pay for it (presumably there may be some way to pass the costs on to end-users).
 
 
-\subsection{Software metadata}
+\section{Results: desirable metadata about software}
 
 A potential aid to finding software would be a software catalog or index that would classify known software and allow people to browse and search for software by various criteria.  As part of our survey, we sought to determine what kind of information would be important to record about each entry in such an index.  We therefore posed a question of all respondents who indicated they had the freedom to choose software.  (In other words, not only those who indicated they developed software.)  The question was, ``Suppose that it were possible to create a public, searchable catalog or index of software, one that would record information about software of all kinds found anywhere.  What kind of information would you find most useful to include for each entry in such a catalog or index?''  As with most other questions in our survey, we provided answer choices as nonexclusive multiple choices, with an additional free-text option titled ``Other''.  All \totalrespondents respondents to our survey replied to this question.  \fig{info-to-include} summarizes the results.
 
@@ -393,7 +396,7 @@ The results indicate that simple terms related to functional aspects -- the name
 Implementation details, such as the availability of source code (62\%), which language(s) (57\%) was used, and the name of the developer (43\%), would be more important to developers. Again, however, more formal aspects -- test cases (28\%), well-commented code (26\%) or metrics evaluating code quality (26\%) -- rank low. It should be noted that the development status of any code (53\%) and when it was last updated (71\%) rate more highly. This suggests that there is a preference for current software rather than legacy or dead projects, even if they match other search requirements.
 
 
-\subsection{Survey feedback}
+\section{Results: survey feedback}
 
 In the final question of the survey, we asked respondents to provide feedback on the survey itself.  The 14 comments we received were largely positive, with one or two suggestions about the survey style. Many expressed the opinion that the amount of software available in the world made the construction of a software catalog or index a difficult task but, importantly, that it would a worthwhile endeavor. A few also commented on the broader issue of searching for software, saying that "although [they] do this quite often, [they] never really considered how or why code search succeed or not", and the survey "caused a bit of thinking about issues I rarely consider." One response was more specific on this point: "I wasn't conscious of having explicitly searched for software for a long time. I had to think about it, but turns out I do, quite a lot -- but indirectly. I don't search for software -- I search for solutions. I search for information about a specific issue, using a fragment from a stack trace, a specific error code, or two or three key words to describe the issue... An indirect reference, such as a one-liner that says 'use xyz to check the status' is more likely to result in a follow up than a whole article written specifically about a product."
 
@@ -543,6 +546,12 @@ Although the survey response was not large\note{how many would we consider large
 \item Licensing metadata
 \item Full-text index matching from READMEs against search strings to identify "one-liners" rather than just keywords
 \end{enumerate}
+
+
+\section{Acknowledgments}
+
+This work was funded by the USA National Science Foundation, award \#1533792.
+
 
 
 % ......................................................................
