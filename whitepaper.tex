@@ -7,7 +7,7 @@
 \newcommand{\totalsearchers}{55\xspace}
 
 \begin{document}
-\title{An empirical study of approaches used by scientific users to find software}
+\title{How scientific software users choose what they use: preliminary results from an empirical survey}
 \date{\today}
 \author{Matthew J. Graham and Michael Hucka\\
 \mailto{mjg@caltech.edu},\quad\mailto{mhucka@caltech.edu}\\
@@ -397,19 +397,18 @@ Implementation details, such as the availability of source code (62\%), which la
 
 In the final question of the survey, we asked respondents to provide feedback on the survey itself.  The 14 comments we received were largely positive, with one or two suggestions about the survey style. Many expressed the opinion that the amount of software available in the world made the construction of a software catalog or index a difficult task but, importantly, that it would a worthwhile endeavor. A few also commented on the broader issue of searching for software, saying that "although [they] do this quite often, [they] never really considered how or why code search succeed or not", and the survey "caused a bit of thinking about issues I rarely consider." One response was more specific on this point: "I wasn't conscious of having explicitly searched for software for a long time. I had to think about it, but turns out I do, quite a lot -- but indirectly. I don't search for software -- I search for solutions. I search for information about a specific issue, using a fragment from a stack trace, a specific error code, or two or three key words to describe the issue... An indirect reference, such as a one-liner that says 'use xyz to check the status' is more likely to result in a follow up than a whole article written specifically about a product."
 
-% FIXME maybe say more about other comments, as a way to close.
-
 
 \section{Related work}
 
-As part of this project, we performed a lengthy literature survey seeking out research on topics relevant to those in our survey.  We especially sought out past work that may have surveyed how people find or discover software.  We discuss our findings in this section.
+As part of this project, we performed a lengthy literature survey seeking out research on topics relevant to those in our survey.  We especially sought out other work that may have surveyed how people find or discover software.  We discuss our findings in this section.
+
 
 \subsection{Surveys examining how software users find ready-to-run software}
 
 Though numerous past surveys have examined software developers and search characteristics in the context of software \emph{code} reuse, extremely few have examined how users---whether they are developers or not---go about locating \emph{ready-to-run} software.  Our research uncovered only two reports of surveys that were not focused specifically on a software development context~\cite{joppa2013troubling, huang2013provenance}.
 
-Joppa et al.~\cite{joppa2013troubling} surveyed 596 scientists working in a single domain (species distribution modeling) in 2013, and asked them what software they used and why they chose that particular software.  The reasons given by the respondents provide some insight into how the scientists found the software they used, thus addressing indirectly the same topic underlying our survey question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''  In order of most popular to least, the answers that mention something about ``how'' were:
-\begin{itemize}
+Joppa et al.~\cite{joppa2013troubling} surveyed 596 scientists working in a single domain (biological species distribution modeling), and asked them what software they used and why they chose that particular software.  The reasons given by the respondents provide some insight into how the scientists found the software they used, thus addressing indirectly the same topic underlying our survey question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''  In order of most popular to least, the answers that mention something about ``how'' were:
+\begin{itemize}[itemsep=0ex]
 
 \item ``I tried lots of software and this is the best'' (18\% of respondents)
 \item ``Recommendation from close colleagues'' (18\%)
@@ -421,14 +420,16 @@ Joppa et al.~\cite{joppa2013troubling} surveyed 596 scientists working in a sing
 
 \end{itemize}
 
-It is interesting to note that none of the responses in Joppa et al.'s~\cite{joppa2013troubling} survey explicitly mentioned searching the web, although it is possible that some of the answers such as ``I tried lots of software and this is the best'' and ``Other'' subsumed web searches.
+It is interesting to note that none of the responses in Joppa et al.'s~\cite{joppa2013troubling} survey explicitly mentioned searching the Internet via (e.g.)\ a web search engine, although it is possible that some of the answers such as ``I tried lots of software and this is the best'' and ``Other'' subsumed web searches.
 
-A report by Huang et al.~\cite{huang2013provenance} summarizes interviews of 15 researchers working in bioinformatics.  The subjects included students and full-time faculty.  The authors reported four factors influenced the selection of scientific software: (1) suggestions given by mentors or more senior members of an institution to students or more junior members; (2) mentor involvement in the development of the software, in cases where mentors are also developers; (3) the number of publications \emph{about} some software; and (4) the reputation of the software, assessed by counting the number of publications mentioning the \emph{use} of the software.  Huang et al.'s report~\cite{huang2013provenance} does not include any quantitative or qualitative data about the relative importance of these factors.
+Huang et al.~\cite{huang2013provenance} summarize interviews of 15 researchers working in bioinformatics.  Their subjects included students and full-time faculty.  The authors reported four factors influenced the selection of scientific software: (1) suggestions given by mentors or senior members of an institution; (2) mentor involvement in the development of the software, in cases where mentors are also developers; (3) the number of publications \emph{about} some software; and (4) the reputation of the software, assessed by counting the number of publications mentioning the \emph{use} of the software.  Huang et al.'s report~\cite{huang2013provenance} does not include any quantitative or qualitative data about the relative importance of these factors.
 
 
 \subsection{Surveys examining how developers reuse software}
 
-Most studies of how users find software have done so in the context of software development and the reuse of software code.  The types of reuse in these situations range from black-box reuse of libraries or other software components (i.e., reusing code ``as-is''), to reuse of code fragments; in addition, in programming contexts, many studies examine the reuse of other kinds of artifacts such as documentation, specifications, architectural patterns, and more.  It is important to keep in mind that the approaches used by developers in these situations will likely be different from those used by end users to find software, both because developers are known to use different strategies~\cite{} and because are likely to be considering different characteristics (e.g., APIs).  Nevertheless, such studies are related to our survey.  For the purposes of this review, we discuss general studies about code reuse in this section, and leave those specifically about code search to the next section.
+% It is important to keep in mind that the approaches used by developers in these situations will likely be different from those used by end users to find software, both because developers are known to use different strategies~\cite{} and because are likely to be considering different characteristics (e.g., APIs).  Nevertheless, such studies are related to our survey.
+
+Most studies of how users find software have done so in the context of software development and the reuse of software code.  The types of reuse in these situations range from black-box reuse of libraries or other software components (i.e., reusing code ``as-is''), to reuse of code fragments; in addition, in programming contexts, many studies examined the reuse of other kinds of artifacts such as documentation, specifications, architectural patterns, and more.  For the purposes of this review, we discuss general studies about code reuse in this section, and leave those specifically about code search to the next section.
 
 One of the earliest surveys of software developers in the context of software reuse was published by Frakes and Fox~\cite{frakes1995sixteen}.  In their 1991--1992 survey of 28 U.S. organizations, they received responses to 16 questions from 113 people about questions ranging from programming language and tool preferences to the impact of legal issues.  Several of their questions and results are relevant to the topics of our own survey:
 \begin{itemize}
@@ -470,15 +471,17 @@ The same study was reprised in 2005 with a wider audience that included members 
 In a different NASA-centered study, Orrego and Mundy~\cite{orrego_2007_study} studied software reuse in the context of flight control systems at NASA's Independent Verification \& Validation (IV\&V) Facility.  They studied 63 projects using interviews, surveys and case studies.  In interviews with 15 people, they found that black-box reuse and other types of reuse did occur, and the degree to which a given project reused software ranged from 0\% to 80\%.  The difficulty of assessing the characteristics of software was stated as the most problematic aspect of reusing software, usually because of inadequate documentation for the software components to reused.  Unfortunately, the Orrego and Mundy did not report the specific approaches attempted by people to locate software.
 
 Singer et al.~\cite{singer2014software} examined how software developers active on GitHub use Twitter.  They conducted an initial exploratory survey with 271 users of GitHub users (270 of who said they develop software) and followed it up with a validation survey involving 1,413 GitHub users (1,412 of whom said they develop software).  Their results have the following relevance to the topic of how people find and choose software:
+
 \begin{itemize}
 
 \item Developers increase their awareness of people, trends and practices by subscribing to Twitter accounts by (a) individual developers as well as project news channels relevant to their work, (b) news services or news curators, (c) ``thought leaders'' or experts in different subject areas.  
 
-\item Developers extend their knowledge of software (including new software tools and components) by asking and answering questions, participating in conversations, and following experts.  This can learn to serendipitous discovery of reusable methods, software components and software tools.  Singer et al. noted ``Some developers mentioned that Twitter helps them nd and learn about things that they would not have been able to search for themselves, such as emerging technolo-gies that are too new to appear in web searches.''
+\item Developers extend their knowledge of software (including new software tools and components) by asking and answering questions, participating in conversations, and following experts.  This can learn to serendipitous discovery of reusable methods, software components and software tools.  Singer et al. noted ``Some developers mentioned that Twitter helps them find and learn about things that they would not have been able to search for themselves, such as emerging technologies that are too new to appear in web searches.''
 
 \end{itemize}
 
 Bauer et al.~\cite{bauer2014exploratory} describe a study of reuse practices by developers at Google.  Despite the nature of Google as one of the preeminent software organizations today, it is surprising that there is no centrally-controlled mandate about reuse of software.  The question of what to reuse, and how, is left to engineers and managers.  (There are core libraries and software components that get reused company-wide; these are under the care of dedicated teams, but the decision of what to use for a given task or application is evidently up to individuals and product teams.)  Several of the questions in Bauer et al.'s survey~\cite{bauer2014exploratory} are relevant to the present study.
+
 \begin{itemize}
 
 \item In one question, they asked subjects for their top three ways of sharing software components.  They received 63 responses: common repository (97\%), packaged libraries (34\%), tutorials (31\%), blogs (19\%), email (9\%), ``I do not share artefacts'' (3\%), and ``other'' (3\%).
@@ -492,9 +495,10 @@ Bauer et al.~\cite{bauer2014exploratory} describe a study of reuse practices by 
 
 \subsection{Surveys examining code search by developers}
 
-A number of other studies have examined how developers use search to discover software.  While obviously relevant to the general question of how users find software, these studies presuppose an answer: the users are performing computer-based search, and not (say) reading papers or asking colleagues for recommendations.  Thus, they have a narrower scope than our survey both in terms of the population studied and in terms of approaches to finding software; on the other hand, they can delve more deeply into the details of how, where, when, and why the subjects searched for software.
+It has been long known from studies of developers at work~\cite[e.g.,][]{singer1997examination} that search is always a common activity.  A number of studies have also examined more specifically how developers use search to discover software.  It is important to keep mind, however, that while they are relevant to the general question of how users find software, such studies presuppose an answer: the users are \emph{performing search} on a computer, and not (say) reading papers or asking colleagues for recommendations.  Thus, the studies have a narrower scope than our survey, both in terms of the populations studied and in terms of approaches to finding software; on the other hand, they can delve more deeply into the details of how, where, when, and why the subjects searched for software.
 
 Umarji et al.~\cite{umarji_2008, umarji_2013} surveyed Java programmers in 2006--2007 to understand how and why they searched for source code.  They solicited participation to fill out a web survey via invitations to mailing lists and newsgroups, and received 69 responses.  In the 2008 paper and the 2013 book chapter, they focused on one of the survey questions asking people to describe 1--2 scenarios in which they looked for source code on the Internet.  (A similar but earlier study by Sim et al.~\cite{sim_1998} predated the common use of Internet search for code; it has less relevance to the present work, so we do not report on it here.)  Several facets of the Umarji et al. study are especially relevant to our own survey:
+
 \begin{itemize}
 
 \item With respect to why developers searched, out of a total of 51 searchers described, Umarji et al.~\cite{umarji_2008} found that the largest fraction were concerned with finding either (a) reusable code (67\% of the 51 results), (b) reference examples (33\%), or debugging activities (10\%).  Within the reuse category (a), the authors identified four themes: (1) search for code fragments; (2) search for subsystems that implemented reusable data structures, algorithms, or other elements that could be incorporated into an implementation; (3) search for packages or API libraries; and (4) search for stand-alone tools or systems (in the words of a respondent, ``big piece of code that does more or less what I want'').  Within the category of reference examples (b), Umarji at al. also identified four (different) themes: (1) search for code fragments that illustrate syntax; (2) search for implementations of data structure, algorithm or widgets in order to verify a programmer's own approach or use as a basis for reimplementation; (3) search for examples of how to use a library; and (4) search for similar software to generate new ideas.  Within the category of debugging (c), developers searched for solutions to software defects (``patches'') or explanations for the cause of an error.
@@ -510,6 +514,21 @@ Umarji et al.~\cite{umarji_2008, umarji_2013} surveyed Java programmers in 2006-
 Gallardo-Valencia and Sim~\cite{gallardo2011kinds} examined the web search behaviors of 25 developers working at a software company that develops transactional software for banks and other organizations.  The authors used several methods to gather their data: they asked developers to self-report their activities using record sheets, they performed interviews, and they performed observation of developer activities during their work days.  They reported that 8\% of the web searches performed by developers during the study period were to download libraries or other tools, and another 5\% of the web searches were to collect information to help judge the suitability of software components to be used in implementations.  The rest of the searches concerned finding information about how to do specific tasks or write specific kinds of programs, and debugging problems involving errors in software.
 
 Sim et al.~\cite{sim2012software} performed a pair of surveys as part of an effort to understanding developers' approaches to code search.  One survey was exploratory and used to inform a second, quantitative survey.  They report only a small part of the survey results, specifically concerning the nature of the searches performed in the different surveys.  For purposes of the current review, the quantitative survey results are more relevant.  On the topic of what subjects searched for, 92\% of respondents in their survey answered they had searched for code snippets on past occasions, and 69\% said they had searched for software components.  In terms of motivations for why they conducted searches, 96\% of respondents said they had sought reference examples on past occasions, and 35\% said that they had searched for code to reuse as-is.
+
+Sadowski et al.~\cite{sadowski2015developers} surveyed and analyzed search behaviors of 40 software developers at Googlee, Inc.  They developed a Web browser extension that directed developers to a survey system when the developers accessed an internal code search system at the company, and asked the survey participants to install this browser extension when they worked.  The survey system asked developers four multiple-choice questions before they started a search.  Sadowski et al.\ also analyzed search logs, but their survey is most pertinent to our efforts.  Two questions are directly related to questions we also asked in our own survey:
+
+\begin{itemize}
+
+\item They investigated why developers searched and what questions they tried to answer with their code search.  The most common theme (33.5\% of the survey responses) dealt with getting specific information about an API library or examples of its use.
+
+\item They also investigated the contexts in which code search is used.  The most common situation (39\% of survey responses) was performing searches while working on a code change during development.  In this context, almost half of the developers (46\%) used code search to understand how code worked.
+
+\end{itemize}
+
+
+\subsection{Other studies}
+
+In addition to the related surveys reported here, there are other works not reviewed here that have applied other methods to examining developer behavior.  The two main classes of non-survey techniques have been the analysis of search engine logs~\cite{bajrachary_2009, bajracharya2012analyzing, jansen_2006, teevan_2004, brandt2010example, Li2009751, ge2014developers, volske2015users}, and observational studies (often coupled with interviews), either in institutional settings or in laboratory environments~\cite{banker1993repository, gallardo2013software, sim2013controlled, murphyhill2015how, sim2011getting, dabbish_2012}.  Due to the different techniques and intentions behind these efforts, the results are difficult to compare directly to our survey.  Nevertheless, in future work we may seek to analyze them more systematically, with the goal of extracting information about how the subjects proceeded to find software and what features subjects found most useful when selecting between software options.
 
 
 \section{Conclusions}
