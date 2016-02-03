@@ -19,7 +19,7 @@ rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
 rcParams['patch.facecolor']     = "#cccccc"
 rcParams['patch.linewidth']     = 0
 
-plt.figure(figsize=(3.75, 7))
+plt.figure(figsize=(3.5, 7))
 
 # Data.
 
@@ -32,7 +32,7 @@ raw_data = {
     "Domain/subject/field of application"                   : 54,
     "Purpose of software"                                   : 63,
     "Name(s) of developer(s)"                               : 30,
-    "Data formats supported"                                : 53,
+    "Data formats supported"                                : 54,
     "License terms of software"                             : 54,
     "Operating system(s) supported"                         : 63,
     "Software libraries needed"                             : 47,
@@ -104,7 +104,7 @@ for rect, value in zip(plt.gca().patches, values):
     percent = value/total_responses*100
     text = '{} ({: >2.0f})\%'.format(value, percent)
     width = rect.get_width()
-    plt.gca().text(rect.get_x() + width + 6,
+    plt.gca().text(rect.get_x() + width + 7,
                    rect.get_y() + rect.get_height()/2,
                    text, ha='center', va='center', fontsize=9)
 
