@@ -21,25 +21,35 @@ font = {'family' : 'serif',
 matplotlib.rc('text', usetex=True)
 matplotlib.rc('font', **font)
 
-plt.figure(figsize=(6, 1.75))
+plt.figure(figsize=(4.5, 2))
 ax = plt.subplot(111)
 ax = plt.gca()
 ax.tick_params(width=1, length=3, color='#888888')
 
 # Data.
 total_responses = 69
-labels = ["I always choose the software I use",
-          "More often than not, I choose the software I use",
-          "``Half the time''",
-          "Sometimes I get to choose the software I use",
-          "I never get to choose the software I use",
-]
-data = [25, 36, 4, 4, 0]
-y_pos = np.arange(len(data))
-x = [0, 10, 20, 30, 40]
+raw_data = {"I always choose the software I use"               : 25,
+            "More often than not, I choose the software I use" : 36,
+            "Half the time, a situation or task requires using\npreselected software, and other times I get to choose" : 4,
+            "Sometimes I get to choose the software I use"     : 4,
+            "I never get to choose the software I use"         : 0}
 
-plt.barh(y_pos, data, linewidth=0, align='center', color="#cccccc")
+# Sort the data by value, largest value first.
+
+data = sorted(raw_data.items(), key=lambda x: x[1], reverse=True)
+labels = [k for k, v in data]
+values = [v for k, v in data]
+
+# Plot.
+# Barh() puts items in the reverse order of how we put them in the
+# lists above, so first we do this to reverse the lists:
+labels = labels[::-1]
+values = values[::-1]
+y_pos = np.arange(len(values))
+plt.barh(y_pos, values, linewidth=0, align='center', color="#cccccc")
 plt.yticks(y_pos, labels)
+
+ax.text(0.7, 0.1, 'Total responses: {}.'.format(total_responses), transform=ax.transAxes)
 
 # Styling.
 
@@ -47,9 +57,11 @@ plt.yticks(y_pos, labels)
 ax.spines["top"].set_visible(False)
 ax.spines["bottom"].set_visible(False)
 ax.spines["right"].set_visible(False)
-ax.spines["left"].set_visible(False)
 
-ax.get_xaxis().tick_bottom()
+ax.spines['left'].set_bounds(-0.5, 4.5)
+ax.spines['left'].set_color('#888888')
+
+ax.get_xaxis().set_visible(False)
 ax.get_yaxis().tick_left()
 plt.xticks(x, fontsize=9)
 plt.tick_params(
@@ -59,26 +71,14 @@ plt.tick_params(
     left='off',                     # ticks along the top edge are off
     top='off')
 
-ax.xaxis.grid(True, color='1', linestyle='solid', linewidth=1)
-
-# Write the value to the right of each bars, except the ones that have value 0.
-for rect, value in zip(ax.patches, data):
+# Write the value to the right of each bars.
+for rect, value in zip(ax.patches, values):
     width = rect.get_width()
-    ax.text(rect.get_x() + width + 1.2, rect.get_y() + rect.get_height()/2, value,
-            ha='center', va='center', fontsize=9)
-
-# Write the percentage inside the bars, but only if it's more than 1.
-# (Bars are too short if the value is 1.)
-# This requires a bit of fiddling with positioning.
-for rect, value in zip(ax.patches, data):
-    rect.set_height(rect.get_height()/1.1)
-    rect.set_y(rect.get_y()*1.001)
     percent = value/total_responses*100
-    text = '{: >2.0f}\%'.format(percent)
-    if value > 1:
-        new_x = rect.get_x() + 0.5
-        new_y = rect.get_y() + rect.get_height()/2.2
-        ax.text(new_x, new_y, text, ha='left', va='center', fontsize=9)
+    text = '{} ({: >2.0f})\%'.format(value, percent)
+    offset = 3 if value > 4 else 2.5
+    ax.text(rect.get_x() + width + offset, rect.get_y() + rect.get_height()/2,
+            text, ha='center', va='center', fontsize=9)
 
 plt.savefig('how-often-choose-software.pdf', bbox_inches='tight')
 plt.close()

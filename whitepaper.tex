@@ -103,10 +103,10 @@ The survey had no express closing date.  We analyzed the results obtained by Dec
 % - One person answered "Aerospace Engineering (Robotics)".  I don't know where to put that one, so left it as a real "Other".
 
 \begin{figure}[b]
-  \vspace*{-1ex}
+  \vspace*{-2ex}
   \centering
   \includegraphics{files/plots/respondents-by-discipline.pdf}
-  \vspace*{-2ex}
+  \vspace*{-3ex}
   \caption{Respondents by discipline.  The survey offered the first eight predefined categories and an additional slot for free text under ``Other''.  Choices were non-exclusive.  In some cases, respondents provided values for ``Other'' but the values were subsumed by one of the predefined categories; in those cases, we adjusted the totals appropriately.  One response, ``Aerospace Engineering (Robotics)'', did not fit any predefined category; we included it as a true ``Other'' value.}
   \label{disciplines}
 \end{figure}
@@ -130,13 +130,13 @@ As mentioned above, the overall motivation for the survey was to understand how 
 \begin{figure}[htb]
   \vspace*{-1ex}
   \centering
-  \includegraphics[trim=0.1in 0.1in 0 0,width=6.1in]{files/plots/how-often-choose-software.pdf}
-  \vspace*{-4ex}
-  \caption{Responses to the question ``In your work, how much freedom do you usually have to choose the software you use?''.  (Note: the full text of the response option ``Half the time'' was ``Half the time, a situation or task requires using preselected software, and other times I get to choose''.)}
+  \includegraphics[width=6in]{files/plots/how-often-choose-software.pdf}
+  \vspace*{-7ex}
+  \caption{Responses to ``In your work, how much freedom do you usually have to choose the software you use?''.}
   \label{freedom}
 \end{figure}
 
-In response to another question, ``Are you involved in software development?'', \totaldevelopers (81\%) answered ``Yes'' and 13 (19\%) answered ``No''.  The answer to this question controlled the display of an additional set of questions relevant to developers.  Among the questions that were made available to the \totaldevelopers who answered ``Yes'' were additional demographic questions.  (Those who answered ``No'' were not shown these additional demographic questions or the questions relevant to developers, and were instead taken to the final survey feedback page.  This happened to 13 respondents.)  The first developer-related demographic question was ``For how many years have you been developing software?'' with a free-form text field for answers.  We manually processed the \totaldevelopers text responses to remove extraneous text and reduce them to numbers, and then tabulated the values.  \fig{years} provides a histogram of the responses received.
+In response to another question, ``Are you involved in software development?'', \totaldevelopers (81\%) answered ``Yes'' and 13 (19\%) answered ``No''.  The answer to this question controlled the display of an additional set of questions relevant to developers.  Among the questions that were made available to the \totaldevelopers who answered ``Yes'' were additional demographic questions.  (Those who answered ``No'' were not shown these additional demographic questions or the questions relevant to developers, and were instead taken to the final survey feedback page.  This happened to 13 respondents.)  The first developer-related demographic question was ``For how many years have you been developing software?'' with a free-form text field for answers.  We manually processed the \totaldevelopers text responses to remove extraneous text and reduce them to numbers, and then tabulated the values.  \fig{years} provides a histogram of the responses received for those who answered the question with a usable answer (55 out of \totaldevelopers).
 
 % Note about the data cleaning:
 % - if someone wrote "x+" or "at least x", I counted it as x.
@@ -145,7 +145,7 @@ In response to another question, ``Are you involved in software development?'', 
 
 \begin{figure}[thb]
   \hspace*{0.5in}
-  \begin{minipage}[b]{0.25\linewidth}
+  \begin{minipage}[b]{0.3\linewidth}
     \includegraphics[width=1.35in]{files/plots/number-of-developers.pdf}
   \end{minipage}%
   \begin{minipage}[b]{0.75\linewidth}
@@ -172,8 +172,8 @@ We also asked, ``What is the typical team size of projects you are involved with
 \begin{figure}[htb]
   \centering
   \includegraphics{files/plots/project-sizes.pdf}
-  \vspace*{-2ex}
-  \caption{Project sizes indicated by the \totaldevelopers respondents who answered ``Yes'' to the question of whether they were involved in software development.}
+  \vspace*{-3ex}
+  \caption{Project sizes reported by the \totaldevelopers respondents who indicated they were involved in software development.}
   \label{project-sizes}
 \end{figure}
 
@@ -208,7 +208,7 @@ To assess how people located or discovered ready-to-run software, we  asked ``Wh
 
 Personal recommendations (83\%) and general search engines (90\%) are the two main mechanisms employed to find software by our respondents. If a similar task is also described in the literature, then this will be used as a guide (62\%) to identify relevant software to use. Online forums, whether general social media sites or more focused in scope, are an underutilized resources (mean of 21\%), although people are slightly more likely to search in a public software project repository (32\%) but not in a domain specific one (10\%). This latter usage pattern may reflect ignorance of the existence of the topical indexes in question, but may also reflect a belief that such resources are too narrowly focused in scope for their needs. Unfortunately, the question did not address the size of the task being searched for so we cannot answer this for sure.
 
-The write-in answers for ``Other'' revealed also a category of options we did not anticipate: all of the answers concerned the use of network-based software package installation systems such as MacPorts~\cite{fuller2002macports} and the systems available for the different Linux operating system distributions.  In retrospect, this is an obvious oversight in our list of predefined categories---the package management systems offer search capabilities, and thus, this is indeed another way for a person to find ready-to-run software.  Future versions of this survey should include this as a predefined answer choice.
+The write-in answers for ``Other'' revealed a category of options we did not anticipate: all of the answers concerned the use of network-based software package installation systems such as MacPorts~\cite{fuller2002macports} and the systems available for the different Linux operating system distributions.  In retrospect, this is an obvious oversight in our list of predefined categories---the package management systems offer search capabilities, and thus, this is indeed another way for a person to find ready-to-run software.  Future versions of this survey should include this as a predefined answer choice.
 
 
 \subsubsection{Criteria}
@@ -298,7 +298,7 @@ Out of the overall \totalrespondents respondents, \totalsearchers (80\%) of them
 \begin{figure}[bht]
   \centering
   \includegraphics[scale=0.9]{files/plots/bar-graph-how-often-src.pdf}
-  \vspace*{-2ex}
+  \vspace*{-3ex}
   \caption{Responses to the question  ``How often do you search online for software source code?''  Answer choices were presented as the mutually-exclusive multiple choices shown on the vertical axis.}
   \label{how-often-search-for-src}
 \end{figure}
@@ -360,7 +360,7 @@ There is a reasonable indication (47\%) that not enough time is available to con
 % Some scientific software is hidden from search engines as authors did not bother to put it online or make a small website for it.
 % Lack of documentation for evaluation of product
 
-The write-in answers for the ``Other'' field in this survey question provided some additional insights into factors that contribute to being unable to locate suitable software.  Six respondents provided ``Other'' answers, of which three were explanatory.  Of these three, two of the respondents cited lack of documentation as a hindrance to either locating or evaluating software.  The third hindrance noted by a respondent was ``Some scientific software is hidden from search engines as authors did not bother to put it online or make a small website for it.''
+The write-in answers for the ``Other'' field provided some additional insights into factors that contribute to being unable to locate suitable software.  Six respondents provided ``Other'' answers, of which three were explanatory.  Of these three, two of the respondents cited lack of documentation as a hindrance to either locating or evaluating software.  The third hindrance noted by a respondent was ``Some scientific software is hidden from search engines as authors did not bother to put it online or make a small website for it.''
 
 
 \subsubsection{Result reliability: code reuse}

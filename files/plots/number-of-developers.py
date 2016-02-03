@@ -24,6 +24,10 @@ data = [56, 13]
 labels = ['Yes', 'No']
 
 # Histogram.
-plt.pie(data, labels=labels, autopct='%1.f\%%', colors=['#bbbbbb', '#eeeeee'])
+plt.pie(data, startangle=160, labels=labels, autopct='%1.f\%%', colors=['#bbbbbb', '#eeeeee'])
+
+plt.gca().text(0, 1, 'Total responses: 69.', horizontalalignment='left',
+               transform=plt.gca().transAxes, fontsize=9)
 
 plt.savefig('number-of-developers.pdf', bbox_inches='tight')
+plt.close()

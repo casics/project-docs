@@ -31,6 +31,11 @@ plt.xlim(0, 105)
 # Plot.
 plt.bar(x, y, width=2, align='center')
 
+plt.gca().text(0.05, 0.95,
+               'Total individual responses: 69.',
+               horizontalalignment='left',
+               transform=plt.gca().transAxes)
+
 # Remove the plot frame lines.
 for spine in ['top', 'bottom', 'left', 'right']:
     plt.gca().spines[spine].set_visible(False)
@@ -53,3 +58,4 @@ for rect, label in zip(plt.gca().patches, y):
                        ha='center', va='bottom', fontsize=10, fontweight='normal')
 
 plt.savefig('bar-graph-time-spent-with-software.pdf', bbox_inches='tight')
+plt.close()

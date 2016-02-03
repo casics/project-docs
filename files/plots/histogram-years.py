@@ -35,6 +35,18 @@ plt.hist(data, bins=np.linspace(0, 45, 10), facecolor="#cccccc")
 # Rugplot.
 plt.gca().plot(data, [0.25]*len(data), '|', color='#cc0000')
 
+# Info
+total  = len(data)
+minval = min(data)
+maxval = max(data)
+mean   = np.mean(data)
+stdev  = np.std(data)
+text   = 'Total responses: {}\nMean: {:.2f}\nStd. dev.: {:.2f}\nMinimum: {}\nMaximum: {}'.format(
+    total, mean, stdev, minval, maxval)
+
+plt.gca().text(1, 0.6, text, horizontalalignment='right', fontsize=9,
+               transform=plt.gca().transAxes)
+
 # Remove the plot frame lines.
 for spine in ['top', 'bottom', 'left', 'right']:
     plt.gca().spines[spine].set_visible(False)
@@ -46,3 +58,4 @@ plt.gca().yaxis.set_ticks_position('left')
 plt.gca().xaxis.set_ticks_position('bottom')
 
 plt.savefig('histogram-years.pdf', bbox_inches='tight')
+plt.close()

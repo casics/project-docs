@@ -155,6 +155,9 @@ plt.gca().xaxis.set_ticks_position('bottom')
 #         plt.gca().text(text_x, text_y, text, ha='left', va='center', fontsize=9)
 
 plt.savefig('bar-graph-criteria-ready-to-run.pdf', bbox_inches='tight')
+plt.close()
+
+
 
 
 # Stuff saved.

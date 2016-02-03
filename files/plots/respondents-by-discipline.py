@@ -21,7 +21,7 @@ font = {'family' : 'serif',
 matplotlib.rc('text', usetex=True)
 matplotlib.rc('font', **font)
 
-plt.figure(figsize=(4.5, 2.25))
+plt.figure(figsize=(3.75, 2.25))
 ax = plt.subplot(111)
 ax = plt.gca()
 ax.tick_params(width=1, length=3, color='#888888')
@@ -76,38 +76,27 @@ ax.spines["right"].set_visible(False)
 ax.spines['left'].set_bounds(-0.5, 7.5)
 ax.spines['left'].set_color('#888888')
 
-ax.get_xaxis().tick_bottom()
+ax.text(1.1, 0.07,
+        'Total individual responses: {}.\nMultiple selections allowed.'.format(total_responses),
+        horizontalalignment='right',
+        transform=ax.transAxes)
+
+ax.get_xaxis().set_visible(False)
 ax.get_yaxis().tick_left()
-plt.xticks(x, fontsize=9)
 plt.tick_params(
     axis='y',                       # changes apply to the x-axis
     which='both',                   # both major and minor ticks are affected
-    bottom='off',                   # ticks along the bottom edge are off
     left='off',                     # ticks along the top edge are off
-    top='off')
-plt.gcf().subplots_adjust(bottom=0.15)
-
-ax.xaxis.grid(True, color='1', linestyle='solid', linewidth=1)
+    right='off')                    # ticks along the top edge are off
 
 # Write the value to the right of each bars, except the ones that have value 0.
 for rect, value in zip(ax.patches, data):
     width = rect.get_width()
-    x_pos = (rect.get_x() + width + 1.2) if value else (rect.get_x() + 0.5)
+    x_pos = (rect.get_x() + width + 3 if value else 2.5)
     y_pos = rect.get_y() + rect.get_height()/2
-    ax.text(x_pos, y_pos, value, ha='center', va='center', fontsize=8)
-
-# Write the percentage inside the bars, but only if it's more than 1.
-# (Bars are too short if the value is 1.)
-# This requires a bit of fiddling with positioning.
-for rect, value in zip(ax.patches, data):
-    rect.set_height(rect.get_height()/1.1)
-    rect.set_y(rect.get_y()*1.001)
     percent = value/total_responses*100
-    text = '{: >2.0f}\%'.format(percent)
-    if value > 1:
-        new_x = rect.get_x() + 0.3
-        new_y = rect.get_y() + rect.get_height()/2.2
-        ax.text(new_x, new_y, text, ha='left', va='center', fontsize=9)
+    text = '{} ({: >2.0f})\%'.format(value, percent)
+    ax.text(x_pos, y_pos, text, ha='center', va='center', fontsize=8)
 
 plt.savefig('respondents-by-discipline.pdf', bbox_inches='tight')
 plt.close()

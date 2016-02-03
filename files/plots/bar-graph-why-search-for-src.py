@@ -69,38 +69,29 @@ plt.yticks(y_pos, labels, fontsize=9)
 plt.xticks(x, fontsize=9)
 plt.ylim([ylim_bottom, ylim_top])
 
+plt.gca().text(1.05, 0.025,
+               'Total individual responses: {}\nMultiple selections allowed'.format(total_responses),
+               horizontalalignment='right',
+               transform=plt.gca().transAxes)
+
 # Remove the plot frame lines leaving only the left vertical one.
 
 for spine in ['top', 'bottom', 'right']:
     plt.gca().spines[spine].set_visible(False)
 plt.gca().spines['left'].set_bounds(ylim_bottom, ylim_top)
 plt.gca().spines['left'].set_color('#888888')
-
-# Get rid of excess lines and make grid lines lighter in color.
-
 plt.gca().tick_params(color='#888888')
-plt.gca().xaxis.grid(True, color='#ffffff', linewidth=1, linestyle='solid')
 plt.gca().yaxis.set_ticks_position('none')
-plt.gca().xaxis.set_ticks_position('bottom')
+plt.gca().get_xaxis().set_visible(False)
 
-# Write the value to the right of each bars, except the ones that have value 0.
+# Write the value to the right of each bars.
 for rect, value in zip(plt.gca().patches, values):
-    if value:
-        width = rect.get_width()
-        plt.gca().text(rect.get_x() + width + 1.2, rect.get_y() + rect.get_height()/2, value,
-                ha='center', va='center', fontsize=9)
-
-# Write the percentage inside the bars, but only if it's more than 1.
-# (Bars are too short if the value is 1.)
-# This requires a bit of fiddling with positioning.
-for rect, value in zip(plt.gca().patches, values):
-    rect.set_height(rect.get_height()/1.1)
-    rect.set_y(rect.get_y()*1.001)
     percent = value/total_responses*100
-    text = '{: >2.0f}\%'.format(percent)
-    if value > 2:
-        new_x = rect.get_x() + 0.5
-        new_y = rect.get_y() + rect.get_height()/2.2
-        plt.gca().text(new_x, new_y, text, ha='left', va='center', fontsize=9)
+    text = '{} ({: >2.0f})\%'.format(value, percent)
+    width = rect.get_width()
+    plt.gca().text(rect.get_x() + width + 4.5,
+                   rect.get_y() + rect.get_height()/2,
+                   text, ha='center', va='center', fontsize=9)
 
 plt.savefig('bar-graph-why-search-for-src.pdf', bbox_inches='tight')
+plt.close()
