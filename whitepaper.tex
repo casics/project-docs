@@ -213,7 +213,7 @@ The write-in answers for ``Other'' revealed a category of options we did not ant
 
 \subsubsection{Criteria}
 
-We sought to understand the different selection and evaluation criteria that may come into play when users try to find ready-to-run software.  To this end, we posed the question ``In general, how important are the following characteristics when you are searching for ready-to-run software for a task?''  For the answer options, we provided a two-dimensional grid with different predefined criteria as the rows and values on a rating scale for the columns.  The available values on the scale were ``Rarely or never important'', ``Somewhat or occasionally important'', ``Average importance'', ``Usually of above-average importance'', and ``Essential''. \fig{criteria-ready-to-run} summarizes the results.  We sorted the rows of the bar graph using sum of ratings for ``Essential'' and ``Usually of above-average importance'' for each criterion, to reveal the most robust trends in the ratings.  It is worth noting is that not all respondents provided a value for every criterion in the table, which may be due either to oversight (e.g., if they did not notice they missed a row in the grid) or confusion about the instructions (if they thought they should only rate the ones they cared about).
+We sought to understand the selection and evaluation criteria that may come into play when users try to find ready-to-run software.  To this end, we posed the question ``In general, how important are the following characteristics when you are searching for ready-to-run software for a task?''  For the answer options, we provided a two-dimensional grid with different predefined criteria as the rows, and values on a unipolar rating scale for the columns.  The available values on the scale were ``Rarely or never important'', ``Somewhat or occasionally important'', ``Average importance'', ``Usually of above-average importance'', and ``Essential''. \fig{criteria-ready-to-run} summarizes the results.  We sorted the rows of the bar graph using sum of ratings for ``Essential'' and ``Usually of above-average importance'' for each criterion, to reveal the most robust trends in the ratings.  It is worth noting is that not all respondents provided a value for every criterion in the table, which may be due either to oversight (e.g., if they did not notice they missed a row in the grid) or confusion about the instructions (if they thought they should only rate the ones they cared about).
 
 \begin{figure}[bht]
   \centering
@@ -321,6 +321,7 @@ Two respondents wrote answers in the ``Other'' field: one wrote ``Find software 
 The survey question ``What are some approaches you have used to look for source code in the past?'' concerned the methods used by developers to find source code.  This question was similar to the earlier question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''\ but included different answer options that are more relevant to searching for source code.  Answer options were nonexclusive multiple choices, including an ``Other'' option with a field for free-text input.  \fig{how-find-src} provides a summary of the results.  The question was answered by all \totalsearchers respondents who indicated they searched for source code on at least some occasions.
 
 \begin{figure}[thb]
+  \vspace*{-1ex}
   \centering
   \includegraphics[width=6.1in]{files/plots/how-find-src.pdf}
   \vspace*{-5ex}
@@ -331,8 +332,7 @@ The survey question ``What are some approaches you have used to look for source 
 
 % FIXME report "other"
 
-
-General-purpose search engines (91\%) remain the primary mechanism used to search for source code but personal recommendations (54\%) and similar work reported in the scientific literature (45\%) are employed significantly less than when looking for ready-to-use software. This suggests that software development is a more subjective activity and so source code searches have a more personalized signature to them, determined in part by personal coding styles. This may have implications for any search anonymity issues. This is also supported by the two main factors identified for the failure of past source code searches (see below): an inability to find any code suitable for purpose (69\%) and a belief that the search requirements were too unique (65\%).
+General-purpose search engines (91\%) remain the primary mechanism used to search for source code but personal recommendations (54\%) and similar work reported in the scientific literature (45\%) are employed significantly less than when looking for ready-to-use software. This suggests that software development is a more subjective activity and so source code searches have a more personalized signature, determined in part by personal coding styles. This may have implications for search anonymity issues. This is also supported by the two main factors identified for the failure of past code searches (see below): an inability to find any code suitable for purpose (69\%) and a belief that the requirements were too unique (65\%).
 
 The results also indicate that online forums remain underutilized (with a mean of 23\%) but there is slightly greater use of public code repositories (46\%), although not significantly so. Specialized code search engines (19\%) and software indexes (22\%) are also less used than expected but this may again reflect a lack of knowledge of their existence or coverage. It may also be another instance of sample bias with a more mature audience being less likely to use or trust newer domain-specific software, preferring instead more proven general-purpose mechanisms.  24\% cited lack of trust in the options found as the reason for a previous failed search result.
 
@@ -341,10 +341,10 @@ The results also indicate that online forums remain underutilized (with a mean o
 
 The inability to find suitable source code would hinder software reuse.  From our own experiences, we know a search for software can fail for a variety of reasons.  This motivated our inclusion of another question in thes survey, ``What are some factors that have hindered your ability to FIND source code in the past?''  The question included a variety of nonexclusive predefined options, along with an ``Other'' option offering a free-text input field.  The results are summarized in \fig{factors-that-hindered}.
 
-\begin{figure}[b]
+\begin{figure}[htb]
   \centering
   \includegraphics[width=6in]{files/plots/factors-that-hindered-finding-src.pdf}
-  \vspace*{-5ex}
+  \vspace*{-4ex}
   \caption{Responses to the question ``What are some factors that have hindered your ability to FIND source code in the past?''  This question offered the first six predefined categories and an additional slot for free text under ``Other''.  Answer choices were nonexclusive.  A total of 51 survey respondents answered this question.}
   \label{factors-that-hindered}
 \end{figure}
@@ -370,7 +370,7 @@ Being able to find software source code is not the only factor determining wheth
 \begin{figure}[thb]
   \centering
   \includegraphics[width=5.65in]{files/plots/hindrance-to-reusing-src.pdf}
-  \vspace*{-2ex}
+  \vspace*{-1.5ex}
   \caption{Responses to the question ``If you searched and found source code in the past, what are some factors that may have prevented you from REUSING the source code you found?''  This question offered the first 17 predefined categories and an additional slot for free text under ``Other''.  Answer choices were nonexclusive.  A total of 52 survey respondents answered this question.}
   \label{hindrance-to-reusing-src}
 \end{figure}
@@ -386,7 +386,7 @@ The level of support (23\%) for any code remains a minor factor and pricing (31\
 
 A potential aid to finding software is a software catalog or index that would classify known software and allow people to browse and search for software by various criteria~\cite{marshall2006software}.  As part of our survey, we sought to determine what kind of information would be important to record about each entry in such an index.  We therefore posed a question of all respondents who indicated they had the freedom to choose software.  (In other words, not only those who indicated they developed software.)  The question was, ``Suppose that it were possible to create a public, searchable catalog or index of software, one that would record information about software of all kinds found anywhere.  What kind of information would you find most useful to include for each entry in such a catalog or index?''  As with most other questions in our survey, we provided answer choices as nonexclusive multiple choices, with an additional free-text option titled ``Other''.  All \totalrespondents respondents to our survey replied to this question.  \fig{info-to-include} summarizes the results.
 
-\begin{figure}[b]
+\begin{figure}[t]
   \centering
   \includegraphics[width=6.1in]{files/plots/info-to-include-in-index.pdf}
   \vspace*{-5ex}
@@ -394,9 +394,39 @@ A potential aid to finding software is a software catalog or index that would cl
   \label{info-to-include}
 \end{figure}
 
+% Here are the values for "Other":
+%   "see also"
+%   URL of version control repo
+%   size,price
+%   whether it is packaged for Debian
+%   Documentation!!!
+%   Inputs needed (data, parameter format)
+%   cost; stability of parent organization
+%   Aprrox size of user base
+%   Availability of (updated) installation instructions; Availability of plugins (list); Similar tools (list)
+%   Size/nature of user base
+% 
+% I included the "inputs needed" as part of the count of "data formats supported" because it seems like that's what person more or less had in mind.  The rest are unique and discussed below.
+
 The results indicate that simple terms related to functional aspects -- the name (88\%), purpose (93\%), domain of application (78\%), data formats supported (76\%) -- and operational aspects -- operating system(s) (91\%), data licensing (78\%), and dependencies (69\%) -- scored most highly. Terms related to an increased degree of sophistication in these areas, such as the types of user interfaces offered (56\%), a programmable API (51\%), or if the installation process made use of common tools (40\%), were ranked less highly.  The availability of documentation, either online (78\%), in online forums (54\%), or in an associated paper (50\%), was also an relatively important criterion, although the availability of support (49\%) or bug tracking (41\%) continue not to be so.
 
 Implementation details, such as the availability of source code (62\%), which language(s) (57\%) was used, and the name of the developer (43\%), would be more important to developers. Again, however, more formal aspects -- test cases (28\%), well-commented code (26\%) or metrics evaluating code quality (26\%) -- rank low. It should be noted that the development status of any code (53\%) and when it was last updated (71\%) rate more highly. This suggests that there is a preference for current software rather than legacy or dead projects, even if they match other search requirements.
+
+Finally, ten individuals wrote additional text in the ``Other'' field of the question.  Analysis of these responses revealed that one was similar enough to the predefined categories that we included it in the counts shown in the graph, and one response was not interpretable, but the remaining write-in values constitute sufficiently different categories of information that they are not truly subsumed by any of the options we provided:
+
+\begin{itemize}[itemsep=0ex]
+
+\item Price (two mentions)
+\item Size of the user base (two mentions)
+\item Availability of documentation (two mentions)
+\item Size of the software
+\item Whether it is packaged for Debian
+\item URL of version control repository
+\item List of plug-ins available
+\item List of similar tools
+\item Stability of parent organization
+
+\end{itemize}
 
 
 \section{Results: survey feedback}
