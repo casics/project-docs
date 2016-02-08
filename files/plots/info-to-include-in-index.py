@@ -32,7 +32,7 @@ raw_data = {
     "Domain/subject/field of application"                   : 54,
     "Purpose of software"                                   : 63,
     "Name(s) of developer(s)"                               : 30,
-    "Data formats supported"                                : 54,
+    "Data formats supported"                                : 53,
     "License terms of software"                             : 54,
     "Operating system(s) supported"                         : 63,
     "Software libraries needed"                             : 47,
