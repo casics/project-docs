@@ -234,7 +234,7 @@
 \ifnum\pdfshellescape=1
   \message{Shell escapes enabled.}
   \newcommand{\dateAndVersion}{%
-    \immediate\write18{/opt/local/bin/git rev-list --count --first-parent HEAD > \jobname.info}%
+    \immediate\write18{git rev-list --count --first-parent HEAD > \jobname.info}%
     \today\ (git revision \input{\jobname.info}\unskip)}
 \else
   \message{Shell escape not enabled; cannot obtain git revision number.}
