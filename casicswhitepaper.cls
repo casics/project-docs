@@ -8,13 +8,13 @@
 \ProvidesClass{casicswhitepaper}
 
 \ProcessOptions
-\LoadClass{article}
+\LoadClass[11pt]{article}
 
 % Latex package dependencies.
 % .............................................................................
 
 \RequirePackage[pdftex,rgb,dvipsnames,svgnames,hyperref,table]{xcolor}
-\RequirePackage[letterpaper,centering,top=0.75in,total={6in,9.5in}]{geometry}
+\RequirePackage[letterpaper,centering,top=0.75in,total={6.5in,9.5in}]{geometry}
 \RequirePackage{fourier}
 \RequirePackage{microtype}
 \RequirePackage{array}
