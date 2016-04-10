@@ -220,6 +220,27 @@
 \newcommand{\note}[1]{\mbox{}\marginpar{\hspace{0pt}\fcolorbox{Gold}{lightyellow}{\scriptsize\begin{minipage}[t]{0.8in}\raggedright\textit{#1}\end{minipage}}}}
 
 
+% Version numbering.
+% .............................................................................
+% There is a package, gitinfo2 (https://github.com/Hightor/gitinfo2), which
+% could be used to provide version number info into the document; however, it
+% requires the use of a post-commit hook, which we can't use with Overleaf.
+% The approach below is based on ideas found in the following resources:
+%   http://b.wardje.eu/2013/08/automated-git-commit-number-in-latex.html
+%   http://tex.stackexchange.com/a/75339/8318
+% The essential point is to run the Latex command with the -shell-escape flag;
+% e.g., pdflatex -shell-escape whitepaper.tex
+
+\ifnum\pdfshellescape=1
+  \message{Shell escapes enabled.}
+  \newcommand{\dateAndVersion}{%
+    \immediate\write18{/opt/local/bin/git rev-list --count --first-parent HEAD > \jobname.info}%
+    \today\ (git revision \input{\jobname.info}\unskip)}
+\else
+  \message{Shell escape not enabled; cannot obtain git revision number.}
+  \newcommand{\dateAndVersion}{\today}
+\fi
+
 % Miscellaneous random other commands.
 % .............................................................................
 
