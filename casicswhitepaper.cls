@@ -235,10 +235,10 @@
   \message{Shell escapes enabled.}
   \newcommand{\dateAndVersion}{%
     \immediate\write18{git rev-list --count --first-parent HEAD > \jobname.info}%
-    \today\ (git revision \input{\jobname.info}\unskip)}
+    {\normalsize\today\ (based on revision \input{\jobname.info}\unskip)}}
 \else
   \message{Shell escape not enabled; cannot obtain git revision number.}
-  \newcommand{\dateAndVersion}{\today}
+  \newcommand{\dateAndVersion}{\normalsize\today}
 \fi
 
 % Miscellaneous random other commands.
