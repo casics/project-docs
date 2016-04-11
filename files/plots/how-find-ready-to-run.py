@@ -11,14 +11,14 @@ rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fo
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
-rcParams['font.size']           = 9
+rcParams['font.size']           = 10
 rcParams['xtick.labelsize']     = rcParams['ytick.labelsize'] = 10
 rcParams['ytick.major.width']   = rcParams['xtick.major.width'] = 1
 rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
 rcParams['patch.facecolor']     = "#cccccc"
 rcParams['patch.linewidth']     = 0
 
-plt.figure(figsize=(4.75, 4))
+plt.figure(figsize=(4.1, 4.25))
 
 # Data.  Not everyone answered the question.
 # Only one answered something for "Other".
@@ -55,8 +55,8 @@ y_pos = np.arange(len(data))
 ylim_bottom = -0.5
 ylim_top = len(data)-0.5
 plt.barh(y_pos, data, linewidth=0, align='center', color="#cccccc")
-plt.yticks(y_pos, labels, fontsize=9)
-plt.xticks(x, fontsize=9)
+plt.yticks(y_pos, labels, fontsize=10)
+plt.xticks(x, fontsize=10)
 plt.ylim([ylim_bottom, ylim_top])
 
 plt.gca().text(1, 0.025,
@@ -78,10 +78,10 @@ for rect, value in zip(plt.gca().patches, data):
     percent = value/total_responses*100
     text = '{} ({: >2.0f})\%'.format(value, percent)
     width = rect.get_width()
-    offset = 5 if value > 5 else 4
+    offset = 7 if value > 5 else 6
     plt.gca().text(rect.get_x() + width + offset,
                    rect.get_y() + rect.get_height()/2,
-                   text, ha='center', va='center', fontsize=9)
+                   text, ha='center', va='center', fontsize=10)
 
 plt.savefig('how-find-ready-to-run.pdf', bbox_inches='tight')
 plt.close()

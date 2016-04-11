@@ -5,23 +5,21 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+from matplotlib import rcParams
 
-plt.rcParams.update({
-    'text.usetex': True,
-    'text.latex.preamble': [
-        r"\usepackage{fourier}",
-        r"\usepackage[T1]{fontenc}",
-    ]
-})
+rcParams['text.usetex']         = True
+rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['font.family']         = 'serif'
+rcParams['font.serif']          = ['Utopia']
+rcParams['font.weight']         = 'normal'
+rcParams['font.size']           = 10
+rcParams['xtick.labelsize']     = rcParams['ytick.labelsize'] = 10
+rcParams['ytick.major.width']   = rcParams['xtick.major.width'] = 1
+rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
+rcParams['patch.facecolor']     = "#cccccc"
+rcParams['patch.linewidth']     = 0
 
-font = {'family' : 'serif',
-        'serif'  : 'Utopia',
-        'size'   : 10
-}
-matplotlib.rc('text', usetex=True)
-matplotlib.rc('font', **font)
-
-plt.figure(figsize=(4.5, 2))
+plt.figure(figsize=(3.8, 1.85))
 ax = plt.subplot(111)
 ax = plt.gca()
 ax.tick_params(width=1, length=3, color='#888888')
@@ -63,7 +61,6 @@ ax.spines['left'].set_color('#888888')
 
 ax.get_xaxis().set_visible(False)
 ax.get_yaxis().tick_left()
-plt.xticks(x, fontsize=9)
 plt.tick_params(
     axis='y',                       # changes apply to the x-axis
     which='both',                   # both major and minor ticks are affected
@@ -76,9 +73,9 @@ for rect, value in zip(ax.patches, values):
     width = rect.get_width()
     percent = value/total_responses*100
     text = '{} ({: >2.0f})\%'.format(value, percent)
-    offset = 3 if value > 4 else 2.5
+    offset = 4 if value > 4 else 3
     ax.text(rect.get_x() + width + offset, rect.get_y() + rect.get_height()/2,
-            text, ha='center', va='center', fontsize=9)
+            text, ha='center', va='center', fontsize=10)
 
 plt.savefig('how-often-choose-software.pdf', bbox_inches='tight')
 plt.close()

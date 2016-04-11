@@ -6,13 +6,13 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib import rcParams
 
-rcParams['figure.figsize']      = (10, 1.75)
+rcParams['figure.figsize']      = (8, 1.5)
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
-rcParams['font.size']           = 11
+rcParams['font.size']           = 10
 rcParams['xtick.labelsize']     = rcParams['ytick.labelsize'] = 10
 rcParams['ytick.major.width']   = rcParams['xtick.major.width'] = 1
 rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
@@ -29,7 +29,7 @@ plt.yticks([0, 5, 10, 15])
 plt.xlim(0, 105)
 
 # Plot.
-plt.bar(x, y, width=2, align='center')
+plt.bar(x, y, width=2.75, align='center')
 
 plt.gca().text(0.05, 0.95,
                'Total individual responses: 69.',

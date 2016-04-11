@@ -12,7 +12,7 @@ rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fo
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
-rcParams['font.size']           = 9
+rcParams['font.size']           = 10
 rcParams['xtick.labelsize']     = rcParams['ytick.labelsize'] = 10
 rcParams['ytick.major.width']   = rcParams['xtick.major.width'] = 1
 rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
@@ -50,7 +50,7 @@ values = values[::-1]
 y_pos = np.arange(len(values))
 plt.barh(y_pos, values, linewidth=0, align='center', color="#cccccc")
 plt.yticks(y_pos, labels)
-plt.xticks(x, fontsize=9)
+plt.xticks(x, fontsize=10)
 
 plt.gca().text(1.05, 0.075,
                'Total individual responses: {}'.format(total_responses),
@@ -73,7 +73,7 @@ for rect, value in zip(plt.gca().patches, values):
     width = rect.get_width()
     plt.gca().text(rect.get_x() + width + 2.5,
                    rect.get_y() + rect.get_height()/2,
-                   text, ha='center', va='center', fontsize=9)
+                   text, ha='center', va='center', fontsize=10)
 
 plt.savefig('bar-graph-how-often-src.pdf', bbox_inches='tight')
 plt.close()

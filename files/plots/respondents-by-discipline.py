@@ -16,12 +16,12 @@ plt.rcParams.update({
 
 font = {'family' : 'serif',
         'serif'  : 'Utopia',
-        'size'   : 9
+        'size'   : 10
 }
 matplotlib.rc('text', usetex=True)
 matplotlib.rc('font', **font)
 
-plt.figure(figsize=(3.75, 2.25))
+plt.figure(figsize=(3.75, 2.5))
 ax = plt.subplot(111)
 ax = plt.gca()
 ax.tick_params(width=1, length=3, color='#888888')
@@ -92,11 +92,11 @@ plt.tick_params(
 # Write the value to the right of each bars, except the ones that have value 0.
 for rect, value in zip(ax.patches, data):
     width = rect.get_width()
-    x_pos = (rect.get_x() + width + 3 if value else 2.5)
+    x_pos = (rect.get_x() + width + 4 if value else 3.5)
     y_pos = rect.get_y() + rect.get_height()/2
     percent = value/total_responses*100
     text = '{} ({: >2.0f})\%'.format(value, percent)
-    ax.text(x_pos, y_pos, text, ha='center', va='center', fontsize=8)
+    ax.text(x_pos, y_pos, text, ha='center', va='center', fontsize=10)
 
 plt.savefig('respondents-by-discipline.pdf', bbox_inches='tight')
 plt.close()

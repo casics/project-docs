@@ -11,14 +11,14 @@ rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fo
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
-rcParams['font.size']           = 9
+rcParams['font.size']           = 10
 rcParams['xtick.labelsize']     = rcParams['ytick.labelsize'] = 10
 rcParams['ytick.major.width']   = rcParams['xtick.major.width'] = 1
 rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
 rcParams['patch.facecolor']     = "#cccccc"
 rcParams['patch.linewidth']     = 0
 
-plt.figure(figsize=(2.5, 0.65))
+plt.figure(figsize=(2.5, 0.85))
 
 # Data.  Not everyone answered the question.
 # Only one answered something for "Other".
@@ -36,7 +36,7 @@ labels = labels[::-1]
 data = data[::-1]
 y_pos = np.arange(len(data))
 plt.barh(y_pos, data, linewidth=0, align='center', color="#cccccc")
-plt.yticks(y_pos, labels, fontsize=9)
+plt.yticks(y_pos, labels, fontsize=10)
 
 # Remove the plot frame lines leaving only the left vertical one.
 for spine in ['top', 'bottom', 'right']:
@@ -52,9 +52,9 @@ for rect, value in zip(plt.gca().patches, data):
     percent = value/total_responses*100
     text = '{} ({: >2.0f})\%'.format(value, percent)
     width = rect.get_width()
-    plt.gca().text(rect.get_x() + width + 6,
+    plt.gca().text(rect.get_x() + width + 8 if value > 1 else 7,
                    rect.get_y() + rect.get_height()/2,
-                   text, ha='center', va='center', fontsize=9)
+                   text, ha='center', va='center', fontsize=10)
 
 plt.savefig('project-sizes.pdf', bbox_inches='tight')
 plt.close()

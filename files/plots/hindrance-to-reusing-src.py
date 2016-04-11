@@ -12,14 +12,14 @@ rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fo
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
-rcParams['font.size']           = 9
+rcParams['font.size']           = 10
 rcParams['xtick.labelsize']     = rcParams['ytick.labelsize'] = 10
 rcParams['ytick.major.width']   = rcParams['xtick.major.width'] = 1
 rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
 rcParams['patch.facecolor']     = "#cccccc"
 rcParams['patch.linewidth']     = 0
 
-plt.figure(figsize=(3.5, 5))
+plt.figure(figsize=(3.5, 5.5))
 
 # Data.
 
@@ -74,8 +74,8 @@ ylim_top = len(data)-0.5
 
 plt.barh(y_pos, values, linewidth=0, align='center', color="#cccccc")
 
-plt.yticks(y_pos, labels, fontsize=9)
-plt.xticks(x, fontsize=9)
+plt.yticks(y_pos, labels, fontsize=10)
+plt.xticks(x, fontsize=10)
 plt.ylim([ylim_bottom, ylim_top])
 
 plt.gca().text(0.96, 0.01,
@@ -99,9 +99,10 @@ for rect, value in zip(plt.gca().patches, values):
     text = '{} ({: >2.0f})\%'.format(value, percent)
     width = rect.get_width()
     width = rect.get_width()
-    plt.gca().text(rect.get_x() + width +4,
+    offset = 5 if value > 10 else 4
+    plt.gca().text(rect.get_x() + width + offset,
                    rect.get_y() + rect.get_height()/2,
-                   text, ha='center', va='center', fontsize=9)
+                   text, ha='center', va='center', fontsize=10)
 
 plt.savefig('hindrance-to-reusing-src.pdf', bbox_inches='tight')
 plt.close()

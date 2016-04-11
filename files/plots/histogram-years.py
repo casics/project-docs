@@ -6,13 +6,13 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib import rcParams
 
-rcParams['figure.figsize']      = (5, 1.75)
+rcParams['figure.figsize']      = (4.5, 1.5)
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
-rcParams['font.size']           = 11
+rcParams['font.size']           = 10
 rcParams['xtick.labelsize']     = rcParams['ytick.labelsize'] = 10
 rcParams['ytick.major.width']   = rcParams['xtick.major.width'] = 1
 rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
@@ -44,7 +44,7 @@ stdev  = np.std(data)
 text   = 'Total responses: {}\nMean: {:.2f}\nStd. dev.: {:.2f}\nMinimum: {}\nMaximum: {}'.format(
     total, mean, stdev, minval, maxval)
 
-plt.gca().text(1, 0.6, text, horizontalalignment='right', fontsize=9,
+plt.gca().text(1.075, 0.5, text, horizontalalignment='right', fontsize=10,
                transform=plt.gca().transAxes)
 
 # Remove the plot frame lines.

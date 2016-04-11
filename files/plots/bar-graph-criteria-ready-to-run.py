@@ -11,14 +11,14 @@ rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fo
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
-rcParams['font.size']           = 9
+rcParams['font.size']           = 10
 rcParams['xtick.labelsize']     = rcParams['ytick.labelsize'] = 10
 rcParams['ytick.major.width']   = rcParams['xtick.major.width'] = 1
 rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
 rcParams['patch.facecolor']     = "#cccccc"
 rcParams['patch.linewidth']     = 0
 
-plt.figure(figsize=(4.5, 5.5))
+plt.figure(figsize=(4.2, 5.75))
 
 # Data.  We had 69 respondents, but not everyone gave a rating to every
 # item in the list.
@@ -115,11 +115,11 @@ plt.legend([h_essential, h_aboveavg, h_avg, h_somewhat, h_rarely],
             'Average importance',
             'Somewhat or occasionally important',
             'Rarely or never important'],
-           fontsize=8, ncol=3, loc='upper center',
-           frameon=False, bbox_to_anchor=(0.12, -0.05))
+           fontsize=8.5, ncol=3, loc='upper center',
+           frameon=False, bbox_to_anchor=(0.03, -0.05))
 
-plt.yticks(y_pos, labels, fontsize=9)
-plt.xticks(x, fontsize=9)
+plt.yticks(y_pos, labels, fontsize=10)
+plt.xticks(x, fontsize=10)
 plt.ylim([ylim_bottom, ylim_top])
 
 # Remove the plot frame lines leaving only the left vertical one.
