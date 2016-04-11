@@ -218,6 +218,7 @@ The write-in answers for ``Other'' revealed a category of options we did not ant
 
 
 \subsubsection{Criteria}
+\label{criteria-ready-to-use}
 
 We sought to understand the selection and evaluation criteria that may come into play when users try to find ready-to-run software.  We posed the question ``In general, how important are the following characteristics when you are searching for ready-to-run software for a task?''  For the answer options, we provided a two-dimensional grid with different predefined criteria as the rows, and values on a unipolar rating scale for the columns.  The available values on the scale were ``Rarely or never important'', ``Somewhat or occasionally important'', ``Average importance'', ``Usually of above-average importance'', and ``Essential''. \fig{criteria-ready-to-run} summarizes the results.  The rows of the bar graph are sorted using sum of ratings for ``Essential'' and ``Usually of above-average importance'' for each criterion, to reveal the most robust trends in the ratings.  Not all respondents provided a value for every criterion in the table, which may be due either to oversight (e.g., if they did not notice they missed a row in the grid) or confusion about the instructions (if they thought they should only rate the ones they cared about).
 
@@ -391,6 +392,7 @@ The level of support (23\%) for any code remains a minor factor and pricing (31\
 
 
 \section{Results: desirable metadata about software}
+\label{desirable-metadata}
 
 A potential aid to finding software is a software catalog or index that would classify known software and allow people to browse and search for software by various criteria~\cite{marshall2006software}.  As part of our survey, we sought to determine what kind of information would be important to record about each entry in such an index.  We therefore posed a question of all respondents who indicated they had the freedom to choose software.  (In other words, not only those who indicated they developed software.)  The question was, ``Suppose that it were possible to create a public, searchable catalog or index of software, one that would record information about software of all kinds found anywhere.  What kind of information would you find most useful to include for each entry in such a catalog or index?''  As with most other questions in our survey, we provided answer choices as nonexclusive multiple choices, with an additional free-text option titled ``Other''.  All \totalrespondents respondents to our survey replied to this question.  \fig{info-to-include} summarizes the results.
 
@@ -422,7 +424,7 @@ Implementation details, such as the availability of source code (62\%), which la
 
 Finally, ten individuals wrote additional text in the ``Other'' field of the question.  Analysis of these responses revealed that one answer was similar enough to the predefined categories that we included it in the counts shown in the graph, and one response was not interpretable, but the remaining write-in values constitute sufficiently different categories of information that they are not truly subsumed by any of the options we provided.  The following are the distinct themes that were raised in these responses:
 
-\begin{itemize}[itemsep=0ex]
+\begin{itemize}[itemsep=-0.5ex]
 
 \item Price (two mentions)
 \item Size of the user base (two mentions)
@@ -449,10 +451,10 @@ As part of this project, we performed a lengthy literature survey seeking out re
 
 \subsection{Surveys examining how software users find ready-to-run software}
 
-Though numerous past surveys have examined software developers and search characteristics in the context of software \emph{code} reuse, extremely few have examined how users---whether they are developers or not---go about locating \emph{ready-to-run} software.  Our research uncovered only three reports of surveys that were not focused specifically on a software development context~\cite{joppa2013troubling, huang2013provenance}.
+Though many surveys have examined software developers and search characteristics in the context of software \emph{code} reuse, extremely few have examined how users---whether they are developers or not---go about locating \emph{ready-to-run} software.  Our research uncovered only three reports of surveys that were not focused specifically on a software development context~\cite{joppa2013troubling, huang2013provenance, lawrence2015science}.
 
-Joppa et al.~\cite{joppa2013troubling} surveyed 596 scientists working in a single domain (biological species distribution modeling), and asked them what software they used and why they chose that particular software.  The reasons given by the respondents provide some insight into how the scientists found the software they used, thus addressing indirectly the same topic underlying our survey question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''  In order of most popular to least, the answers that mention something about ``how'' were:
-\begin{itemize}[itemsep=0ex]
+Joppa et al.~\cite{joppa2013troubling} surveyed 596 scientists working in a single domain (biological species distribution modeling), and asked them what software they used and why they chose that particular software.  The reasons given by the respondents provide some insight into how the scientists found the software they used, thus addressing indirectly the same topic as one of our survey questions (see \sec{approaches-ready-to-use}).  In order of most popular to least, the answers that mention something about ``how'' were:
+\begin{itemize}[itemsep=-0.5ex]
 
 \item ``I tried lots of software and this is the best'' (18\% of respondents)
 \item ``Recommendation from close colleagues'' (18\%)
@@ -466,7 +468,50 @@ Joppa et al.~\cite{joppa2013troubling} surveyed 596 scientists working in a sing
 
 It is interesting to note that none of the responses in Joppa et al.'s~\cite{joppa2013troubling} survey explicitly mentioned searching the Internet via (e.g.)\ a web search engine, although it is possible that some of the answers such as ``I tried lots of software and this is the best'' and ``Other'' subsumed web searches.
 
-Huang et al.~\cite{huang2013provenance} summarize interviews of 15 researchers working in bioinformatics.  Their subjects included students and full-time faculty.  The authors reported four factors influenced the selection of scientific software: (1) suggestions given by mentors or senior members of an institution; (2) mentor involvement in the development of the software, in cases where mentors are also developers; (3) the number of publications \emph{about} some software; and (4) the reputation of the software, assessed by counting the number of publications mentioning the \emph{use} of the software.  Huang et al.'s report~\cite{huang2013provenance} does not include any quantitative or qualitative data about the relative importance of these factors.
+Huang et al.~\cite{huang2013provenance} summarized their interviews of 15 students and full-time faculty working in bioinformatics.  They found that four factors influenced the selection of scientific software: (1) suggestions from mentors or senior members of an institution; (2) mentor involvement in the tool's development, in cases where mentors are also developers; (3) the number of publications \emph{about} the software; and (4) the software's reputation, based on the number of publications mentioning the \emph{use} of the tool.  Huang et al.'s report does not include any quantitative or qualitative data about the relative importance of these factors.
+
+Lawrence et al.~\cite{lawrence2015science, lawrence2014who} conducted a large survey in 2014 about the use of science gateways by members of scientific communities.  Their nearly 5000 respondents consisted largely of NSF-funded principal investigators, as well as members of scientific computing centers and others who expressed interest in science gateways.  Several of their questions and results are highly relevant to the topics of our own survey:
+
+\begin{itemize}
+
+\item They asked respondents to indicate domains of expertise, and permitted multiple selections.  The top five were ``Physical and Mathematical Sciences'' (30\%), ``Life Sciences'' (22\%), ``Computer and Information Sciences'' (16\%), ``Engineering'' (16\%), and ``Environmental Sciences'' (14\%), though 16\% did not indicate a domain.  Their top three fields are thus very similar to those chosen by our survey respondents (see \fig{disciplines}), though the proportions are different.
+
+\item They asked how people learn about and choose gateways---a question closely related to our own survey's question about finding software (see \sec{how-find-ready-to-run}).  Their results were that 78\% indicated they learned about technologies from colleagues, 61\% indicated conferences and other meetings as a source, 51\% said publications, 38\% said Web searches and speciality sites, 33\% from students, and less than 10\% from mailing lists or other methods such as magazine advertisements.
+
+\item They asked respondents about the types of Web-based resources were important to their work from the perspective of researchers and/or educators.  The form included a matrix of ten predefined options and 5-term rating scale (``Very important'', ``Somewhat important'', etc.).  The five highest rated resources where: ``Data collections'' (75\% indicated somewhat or very important), ``Data analysis tools, including visualization and mining'' (72\%), ``Computational tools'' (72\%), ``Tools for rapidly publishing and/or finding articles and data'' (69\%), and ``Educational tools'' (67\%).
+
+\item In another question, Lawrence et al.~\cite{lawrence2015science} asked respondents ``Assuming cost is not a factor, what are the most important factors you consider when adopting a new technology? Please select the three (3) most important factors in your decision-making process''.  Since this question had direct relevance to two of our survey's questions (see \fig{criteria-ready-to-run} and \fig{info-to-include}), we include the full response results here:
+
+\begin{itemize}[itemsep=0ex]
+\item ``Documentation available'' (49\%)
+\item ``Ability to Adapt/Customize'' (35\%)
+\item ``Demonstrated Production-Quality Reliability'' (31\%)
+\item ``Availability of Technical Support'' (30\%)
+\item ``Open Source'' (27\%)
+\item ``Existing User Community'' (20\%)
+\item ``Interoperability with Other Systems'' (20\%)
+\item ``Availability of Support for Bug Fixes \& Requests'' (19\%)
+\item ``Testimonials/User Ratings'' (16\%)
+\item ``Project Longevity'' (13\%)
+\item ``Licensing Requirements'' (12\%)
+\item ``Availability of Long-Term Maintenance'' (11\%)
+\item ``Reputation of Those Who Built the Software'' (11\%)
+\end{itemize}
+
+\end{itemize}
+
+The last outcome summarized above from Lawrence et al.'s survey~\cite{lawrence2015science} is surprisingly different from the results of a similar question in our survey.  Comparing the criteria above to our \fig{criteria-ready-to-run}, neither the relative ordering of the chosen criteria, nor the absolute positions, are consistent between the two sets of survey responses.  The differences are puzzling.  While it is true that our survey included many more possible criteria, and in addition, some criteria in Lawrence et al.'s survey question were coarser in detail, many items in both surveys are comparable, so these two differences alone are unlikely to explain the results.  It is possible that the rankings are influenced by the different answer formats: we asked respondents to rank the importance of each criterion, while Lawrence et al. asked respondents pick their top three criteria.  In an effort to assess whether this is a possible cause, we reanalyzed our results by ranking the responses based on the sum of the number of times ``Essential'', ``Usually of above-average importance'', and ``Average importance'' were selected for each criterion.  The results are shown in \fig{criteria-ready-to-run-reranked}.  Now the quality of documentation is sixth highest in rank, and quality of the software is fourth highest, which begins to approach the high ranks these two criteria had in Lawrence et al.'s survey.  However, other features remain quite different in rankings between the survey results.
+
+\begin{figure}[bht]
+  \vspace*{-1ex}
+  \centering
+  \includegraphics[width=6.1in]{files/plots/bar-graph-criteria-ready-to-run-reranked.pdf}
+  \vspace*{-2ex}
+  \caption{Reanalysis of the responses to the question of \protect\fig{criteria-ready-to-run}.  In this bar graph, we sorted the possible criteria by the sum of the number of times the options ``Essential'', ``Usually of above-average importance'' and ``Average importance'' were selected for each one.}
+  \label{criteria-ready-to-run-reranked}
+\end{figure}
+
+Other factors therefore must be responsible for the differences in results between our survey and that of Lawrence et al.~\cite{lawrence2015science}.  We hypothesize two possibilities.  First, the context of their survey was scientific computing gateways, whereas our survey was not focused on this and considered people working with any kind of software environment.  This may influence the criteria people use to select between software options.  Second, Lawrence et al.'s survey had far more respondents than we did.  It is possible that our results for this question would be different if we had more respondents.
 
 
 \subsection{Surveys examining how developers reuse software}
@@ -475,12 +520,13 @@ Huang et al.~\cite{huang2013provenance} summarize interviews of 15 researchers w
 
 Most studies of how users find software have done so in the context of software development and the reuse of software code.  The types of reuse in these situations range from black-box reuse of libraries or other software components (i.e., reusing code ``as-is''), to reuse of code fragments; in addition, in programming contexts, many studies examined the reuse of other kinds of artifacts such as documentation, specifications, architectural patterns, and more.  For the purposes of this review, we discuss general studies about code reuse in this section, and leave those specifically about code search to the next section.
 
-One of the earliest surveys of software developers in the context of software reuse was published by Frakes and Fox~\cite{frakes1995sixteen}.  In their 1991--1992 survey of 28 U.S. organizations, they received responses to 16 questions from 113 people about questions ranging from programming language and tool preferences to the impact of legal issues.  Several of their questions and results are relevant to the topics of our own survey:
+One of the earliest surveys of software developers in the context of software reuse was published by Frakes and Fox~\cite{frakes1995sixteen}.  In their 1991--1992 survey of 28 U.S. organizations, they received responses to 16 questions from 113 people about questions ranging from programming language and tool preferences to the impact of legal issues.  Several results from this survey are relevant to the topics of our own survey:
+
 \begin{itemize}
 
-\item On the topic of whether reuse is more common in some industries than others, they found that indeed it is.  The subjects in Frakes and Fox's study~\cite{frakes1995sixteen} mostly came from high-technology sectors such as the software industry, aerospace and telecommunications.  The authors found significant differences in the reuse of artifacts between different industries, as well as the types of artifacts that were reused.  The telecommunications industry had the highest level of reuse and had the aerospace the lowest.
+\item They found that reuse is more common in some industries than others.  The subjects in Frakes and Fox's study~\cite{frakes1995sixteen} mostly came from high-technology sectors such as the software industry, aerospace and telecommunications.  The authors found significant differences in the reuse of artifacts between different industries, as well as the types of artifacts that were reused.  The telecommunications industry had the highest level of reuse and had the aerospace the lowest.
 
-\item On the topic of whether having a repository improved reuse, they found that it did not.  Frakes and Fox reported that ``organizations with a repository have median code reuse levels 10 percent higher than organizations that do not have reuse repositories, but this difference is not statistically significant at the 0.05 level.''
+\item They did not find that having a repository improved reuse.  Frakes and Fox reported that ``organizations with a repository have median code reuse levels 10 percent higher than organizations that do not have reuse repositories, but this difference is not statistically significant at the 0.05 level.''
 
 \item The authors also examined whether company, division or project sizes were predictive of systematic reuse in an organization.  They found no significant correlation between reuse levels and sizes.
 
@@ -491,17 +537,19 @@ One of the earliest surveys of software developers in the context of software re
 \end{itemize}
 
 Samadi et al.~\cite{samadi_2004} report preliminary findings from a 2004 survey conducted by the NASA Earth Science Software Reuse Working Group. Their survey was distributed to government employees and contractors in the Earth science community, and asked about people's recent reuse experiences and community needs.  Several results from the study are pertinent to our work:
+
 \begin{itemize}
 
 \item On the topic of how people found reusable software artifacts, the following approaches were noted: (1) word of mouth or personal experiences from past projects, (2) general web search engines (e.g., Google), (3) catalogs and repositories.  The authors report ``Generic search tools (such as Google) were rated as somewhat important, whereas specialist reuse catalogs or repositories were not cited as being particularly important''.
 
-\item On the topic of the criteria used by people to decide which specific components to choose, the authors report that ``most respondents chose saving time/money and ensuring reliability as their primary drivers for reuse''.  Further, the following additional considerations were noted: (1) ``ease of adaption/integration'', (2) availability of source code'', (3) ``cost of creating/acquiring alternative'', and (4) ``recommendation from a colleague''.  The authors further report that (a) availability of support, (b) standards compliance, and (c) testing/certification, were ``not ranked as particularly important''.
+\item As far as criteria used to decide which specific components to choose, the authors report that ``most respondents chose saving time/money and ensuring reliability as their primary drivers for reuse''.  Further, the following additional considerations were noted: (1) ``ease of adaption/integration'', (2) availability of source code'', (3) ``cost of creating/acquiring alternative'', and (4) ``recommendation from a colleague''.  The authors further report that (a) availability of support, (b) standards compliance, and (c) testing/certification, were ``not ranked as particularly important''.
 
 \item On the topic of barriers to reuse, two common types of barriers emerged: (1) if available software did not meet a person's specific requirements, and (2) if a given software artifact was ``difficult to understand or poorly documented''.
 
 \end{itemize}
 
-The same study was reprised in 2005 with a wider audience that included members of academia.  The survey and the results of 100 responses they received are summarized by Marshall et al.~\cite{marshall2006software}.  There were four groups of questions: background information, recent reuse experiences, reuse development practices, and community needs.  (The actual questions and detailed responses are not provided in the paper.)  According to Marshall et al., the larger 2005 survey produced essentially similar results to the preliminary 2004 survey.  The noted the following:
+The same study was reprised in 2005 with a wider audience that included members of academia.  The survey and the results of 100 responses they received are summarized by Marshall et al.~\cite{marshall2006software}.  According to Marshall et al., the larger 2005 survey produced essentially similar results to the preliminary 2004 survey.  The noted the following:
+
 \begin{itemize}
 
 \item The primary reason given by people for not reusing software from outside of their group was that ``they did not know where to look for reusable artifacts and they did not know suitable artifacts existed at the time''.
