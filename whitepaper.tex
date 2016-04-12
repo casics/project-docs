@@ -5,7 +5,7 @@
 \newcommand{\totalsearchers}{55\xspace}
 
 \begin{document}
-\title{\textls[10]{How scientists choose the software they use}:\\
+\title{\vspace*{-3ex}\textls[10]{How scientists choose the software they use}:\\
 preliminary results from an empirical survey}
 \date{\dateAndVersion}
 \author{Matthew J. Graham and Michael Hucka\\
@@ -107,10 +107,10 @@ Simple descriptive statistics were performed using custom programs written in th
 % - One person answered "Aerospace Engineering (Robotics)".  I don't know where to put that one, so left it as a real "Other".
 
 \begin{figure}[b]
-  \vspace*{-2ex}
+  \vspace*{-3ex}
   \centering
   \includegraphics{files/plots/respondents-by-discipline.pdf}
-  \vspace*{-3ex}
+  \vspace*{-3.5ex}
   \caption{Respondents by discipline.  The survey offered the first eight predefined categories and an additional slot for write-in, free-text answers.  Choices were nonexclusive.  Some respondents included write-in answers but the answers were subsumed by one of the predefined categories; in those cases, we adjusted the totals appropriately.  One response, ``Aerospace Engineering (Robotics)'', did not fit any predefined category; we included it as a true ``Other'' value.}
   \label{disciplines}
 \end{figure}
@@ -120,10 +120,10 @@ The survey included several questions to gather general demographic information 
 To gauge how computer-intensive people's work activities are, the survey included the question ``In your work, on a typical day, approximately what fraction of your time involves using or interacting directly with software on a computer or other computing device?''  The answer options were in the form of a pull-down menu with values ranging from 0\% (none) to 100\% (all), in 5\% increments.  Note the question was not limited to time spent using technical software---respondents were free to interpret this broadly to mean any software used in a work context.  \fig{time-with-software} provides a bar graph of the responses.  The results show that the overwhelming majority of our respondents spend over 50\% of their day interacting with software.  To quantify this further, assuming a typical 8~hour working day, we can conclude that 94\% of respondents regularly spent more than four hours of their day engaged with software, and 68\% more than six hours.
 
 \begin{figure}[bht]
-  \vspace*{-3ex}
+  \vspace*{-1ex}
   \centering
   \includegraphics{files/plots/bar-graph-time-spent-with-software.pdf}
-  \vspace*{-4ex}
+  \vspace*{-4.5ex}
   \caption{Bar graph of responses to the question ``In your work, on a
     typical day, approximately what fraction of your time involves using or
     interacting directly with software on a computer or other computing
@@ -134,7 +134,7 @@ To gauge how computer-intensive people's work activities are, the survey include
 As mentioned above, the overall motivation for the survey was to understand how people find software.  Thus, an important precondition was whether subjects actually had a choice in the software they used.  (The rationale for this is that if a person has no choice but to use software that is already provided or selected for them, then their answers to questions about how they find software would not be meaningful.)  This consideration motivated another question in the survey: ``In your work, how much freedom do you usually have to choose the software you use?''.   Answers to this question were used to select subsequent survey questions: if a respondent answered ``Never'' to this question, then the remaining questions were skipped and they were shown the final survey feedback page.  \fig{freedom} provides the results for this question.  It shows that every one of our respondents had some choice in the software they, and consequently all \totalrespondents respondents were shown the next set of questions in the survey.  %In all, 88\% of respondents said that they had \emph{some} degree of freedom to choose the software they used.
 
 \begin{figure}[htb]
-  \vspace*{-3ex}
+  \vspace*{-2ex}
   \centering
   \includegraphics{files/plots/how-often-choose-software.pdf}
   \vspace*{-4ex}
@@ -668,10 +668,10 @@ The survey results help identify a number of current community practices in sear
 
 \end{enumerate}
 
-These have implications for development of catalogs or other resources to help people find software.  
+% These have implications for development of catalogs or other resources to help people find software.  
 
-Finally, in this survey, we did not target or exclude scientific gateway communities.  The survey questions generally did not mention gateways or portals explicitly; the closest was the question discussed in \sec{desirable-metadata}, which included workflow environments as an answer choice.  Based on the responses reported in \fig{info-to-include}, 25\% respondents consider support for workflow environments a criterion in selecting software.  Since we did not ask about it explicitly, it is unclear whether any of the respondents had the use of gateways in mind and framed their responses accordingly.  It is also not clear what effect this would have had on their responses.  It is therefore possible that this is a confounding factor in our results: gateways concentrate software resources in one location and typically provide an index or other means of finding software provided by the gateway, and it is conceivable that this may change the nature of how users think of finding software or the criteria they use to discriminate between available alternatives.  Future surveys should make this aspect explicit.
 
+Finally, analyzing the survey results has led us to recognize aspects of the survey that could have been improved.  First, in the demographic profile questions (\sec{demographics}), it would have been useful to gather more specific data.  For example, the work fields question could have offered finer-grained options, and additional questions could have asked respondents about their institutional affiliation (e.g., educational, government, industry) as well as their work roles (e.g., student, staff, faculty).  Of course, the benefits of additional questions must be weighed against respondents' patience.  Second, the questions asking about software search could have had an explicit answer choice about the use of scientific gateways.  The survey questions generally did not mention gateways or portals explicitly; the closest was the question discussed in \sec{desirable-metadata}, which included workflow environments as an answer choice.  Based on the responses reported in \fig{info-to-include}, 25\% respondents consider support for workflow environments a criterion in selecting software.  Since we did not ask about it explicitly, it is unclear whether any of the respondents had the use of gateways in mind and framed their responses accordingly.  It is also not clear what effect this would have had on their responses.  Gateways concentrate software resources in one location and typically provide an index or other means of finding software provided by the gateway, and it is conceivable that this may change the nature of how users think of finding software or the criteria they use to discriminate between available alternatives.  It is therefore possible that this is a confounding factor in our results.  Future surveys should address this aspect explicitly.
 
 % The breadth and maturity of response has helped to identify a number of current community practices in science in searching for both ready-to-use software and source code. It has also raised a number of issues that need to be considered in the design of a software index or catalog:
 
