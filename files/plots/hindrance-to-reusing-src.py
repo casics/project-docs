@@ -19,7 +19,7 @@ rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
 rcParams['patch.facecolor']     = "#cccccc"
 rcParams['patch.linewidth']     = 0
 
-plt.figure(figsize=(3.5, 5.5))
+plt.figure(figsize=(3.5, 5.4))
 
 # Data.
 
