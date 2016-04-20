@@ -61,9 +61,9 @@
 
 % Reduce spacing after section headings.
 
-\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
-\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
-\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\section{0pt}{8pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{8pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{8pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 
 % Put a dot after section numbers.
 
@@ -117,7 +117,7 @@
 
 \DeclareMathAlphabet{\mathtt}{T1}{txtt}{m}{n}
 \SetMathAlphabet{\mathtt}{bold}{T1}{txtt}{b}{n}
-\def\Txtt@scale{0.98}
+\def\Txtt@scale{0.97}
 \edef\Txtt@@scale{s*[\csname Txtt@scale\endcsname]}%
 \DeclareFontFamily{T1}{txtt}{\hyphenchar \font\m@ne}
 \DeclareFontShape{T1}{txtt}{m}{n}{	% regular
