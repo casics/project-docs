@@ -5,7 +5,7 @@
 \newcommand{\totalsearchers}{55\xspace}
 
 \begin{document}
-\title{\vspace*{-3ex}\textls[10]{How scientists choose the software they use}:\\
+\title{\vspace*{-4ex}\textls[15]{How scientists choose the software they use}:\\
 preliminary results from an empirical survey}
 \date{\dateAndVersion}
 \author{Matthew J. Graham and Michael Hucka\\
@@ -21,11 +21,11 @@ When they seek software for a task, how do scientists go about finding it?  Past
 
 \section{Introduction}
 
-Despite that software is critical to most research~\citep{bauer2014exploratory, hettrick_2014, hannay_2009, baxter_2006, wilson_2006}, finding software suitable for a given purpose remains surprisingly difficult~\cite{cannata_2005, Bourne::2015, SoftwareDiscoveryIndex:2014}.  Few effective resources exist to help users discover alternatives or understand the differences between them.  The pervasiveness of the problem was made clear in a recent study of developers at Google; the authors found that the factor ``most disruptive to the [software] reuse process'' was ``difficulties in finding artifacts''~\cite{bauer2014exploratory}.  In other words, \emph{even the developers at Google have difficulty finding software}.
+Software is critical to most research~\citep{bauer2014exploratory, hettrick_2014, hannay_2009, baxter_2006, wilson_2006}, yet finding software suitable for a given purpose is surprisingly difficult~\cite{cannata_2005, Bourne::2015, SoftwareDiscoveryIndex:2014}.  Few resources exist to help users discover alternatives or understand the differences between them.  A recent study of developers at Google underscored how pervasive the problem is; the authors found that the factor ``most disruptive to the [software] reuse process'' was ``difficulties in finding artifacts''~\cite{bauer2014exploratory}.  In other words, \emph{even the developers at Google have difficulty finding software}.
 
-When asked, many people reply that they look for software by searching the web with a general-purpose search engine such as Google.  Despite its popularity, this approach suffers from significant problems: Web searches can yield dozens of viable candidates---and millions of irrelevant results.  Moreover, some questions cannot be answered through Web searches without substantial additional effort, such as what are the \emph{specific} characteristics of different software tools or how do tools \emph{differ} from each other.  Many scientists also turn to the scientific literature to learn what others have used for similar tasks or research domains.  Searching the literature can increase the relevance of results and provide other useful information, but it suffers from limitations too: publications are static documents that can take years to produce and may not reflect a tool's current capabilities~\cite{wren_2004}, and moreover, not all tools are mentioned in publications or have a publication associated with them.  (As an example, the recent article~\cite{abbott2016observation} announcing the first-ever detection of gravitational waves lacked any mention of any software used.)  This may be for various reasons, such as article page length limits or a disinclination on the part of researchers to describe their full software stack or workflow.  Still other potential methods for finding software include asking colleagues, asking on social media, searching scientific computing gateways, and more.
+When asked, many people reply that they look for software by searching the web with a general-purpose search engine such as Google.  Despite its popularity, this approach suffers from significant problems: Web searches can yield dozens of viable candidates---and millions of irrelevant results.  Moreover, some questions cannot be answered through Web searches without substantial additional effort, such as what are the \emph{specific} characteristics of each software tool or how do tools \emph{differ} from each other.  Many scientists also look in the scientific literature to learn what others have used for similar tasks.  Searching the literature can increase the relevance of results and provide other useful information, but it suffers from limitations too: publications are static documents that may not reflect a tool's current capabilities~\cite{wren_2004}, and moreover, not all publications cite the software they use.  (As an example, the recent article~\cite{abbott2016observation} announcing the first-ever detection of gravitational waves lacked any mention of any software used.)  This may happen for various reasons, such as article page length limits or a disinclination on the part of researchers to describe their full software stack or workflow.  Still other methods for finding software include asking colleagues, asking on social media, searching scientific computing gateways, and more.
 
-The difficulty of finding software and the lack of better resources brings the potential for duplication of work, reduced scientific reproducibility, and poor return on investment by funding agencies~\citep{cannata_2005}.  We are interested in developing better resources to help users, particularly scientific users, discover software.  In order to gain a better understanding of the factors that influence how software users locate software, we developed and distributed an electronic survey beginning in September, 2015, which we advertised to numerous mailing lists serving communities in astronomy and systems biology.  We report on our methods, the survey responses, and our analyses below.
+The difficulty of finding software and the lack of better resources brings the potential for duplication of work, reduced scientific reproducibility, and poor return on investment by funding agencies~\citep{cannata_2005}.  We are interested in developing better resources to help users, especially scientific users, discover software.  In order to gain a better understanding of the factors that influence how software users locate software, we developed and distributed an electronic survey beginning in September, 2015, which we advertised to numerous mailing lists serving communities in astronomy and systems biology.  We report on our methods, the survey responses, and our analyses below.
 
 
 \section{Survey design}
@@ -72,7 +72,16 @@ The survey form used a mixture of four types of questions: check boxes, pull-dow
 
 \subsection{Sampling plan}
 
-We used nonprobabilistic convenience sampling with self-selection.  We advertised the survey on mailing lists and social media oriented to the astronomical and biological sciences.    The number of potential participants is unknown, because we cannot track the redistribution of the survey invitation.  Consequently, the response rate is unknown.
+% Where we sent it:
+%   cds-all: 
+%   sbml-interoperability: 62
+%   sysbio: 215
+%   sbml team: 6
+%   
+
+\newcommand{\totalrecipients}{NNN\xspace}
+
+We used nonprobabilistic convenience sampling with self-selection.  We advertised the survey on mailing lists oriented to the astronomical and biological sciences.  The lists were: \emph{astro lists?}, \texttt{sysbio@caltech.edu} (a general systems biology mailing list), \texttt{sbml-interoperability@googlegroups.com} (a software development list for the SBML format in systems biology), \texttt{cds-all@caltech.edu} (a departmental mailing list), and our own work groups.  Combined, we estimate the number of recipients in the mail announcements totaled at least \totalrecipients; however, it must be noted that we cannot be certain of whether further redistribution took place.  Consequently, we can only estimate a lower bound on the response rate (discussed below).
 
 Potential biasing factors in the results are the same as those common to most self-selected written surveys that use convenience sampling.  These include response bias (i.e., people who responded may have different characteristics than those who did not), coverage errors (i.e., the representation of respondents may not be balanced across different subcommunities), and item bias (i.e., some questions may have been skipped intentionally or unintentionally).  An additional possible source of bias is that we (the authors) are relatively well-known within the subcommunities to which we advertised the survey, and thus the respondents may have been influenced by their personal knowledge or relationships to us.  
 
@@ -84,12 +93,15 @@ We used Google Forms~\cite{googleforms} to implement the survey instrument.  The
 On September 1, 2015, we invited participation in the survey.  As mentioned above, we advertised the survey on mailing lists and social media oriented to the astronomical and biological sciences, particularly to computational subcommunities within those domains.  Recipients were free to participate if they chose.  The introduction and instructions for the survey were brief.  The survey itself gave the motivations as ``Your answers to this survey's questions will help us understand some of the approaches people use to find software today, and will help us plan the development of facilities that could help people find software more easily in the future.''  The instructions given in the email messages sent to mailing lists consisted of variations on the following: ``As part of an NSF-funded project to prototype a software cataloguing system, we are running a survey to assess how people find software today.  We very much welcome the input of fellow [\emph{community}] people in this survey.  Here is a link to the electronic form: [\emph{URL}]''.
 
 The survey had no express closing date.  We analyzed the results obtained by December 31, 2015.  We received \totalrespondents responses by that date; they were stored in a spreadsheet generated by the survey system.
+As mentioned above, we estimate that at least \totalrecipients recipients received the invitation, but can only estimate a lower bound on the response rate because we are uncertain of the total recipients.  The response rate is at least NNNN.
 
 
 \subsection{Analysis}
 
 Simple descriptive statistics were performed using custom programs written in the language Python~\cite{vanRossum1991interactively, perez2011python}, version~3.4, in combination with the NumPy~\cite{vanderwalt2011numpy} package, version~1.10.4.  The figures in this paper were generated using Matplotlib~\cite{hunter2007matplotlib} version~1.5.1.
 
+
+\clearpage
 
 \section{Results: demographics}
 \label{demographics}
@@ -106,8 +118,10 @@ Simple descriptive statistics were performed using custom programs written in th
 %
 % - One person answered "Aerospace Engineering (Robotics)".  I don't know where to put that one, so left it as a real "Other".
 
-\begin{figure}[b]
-  \vspace*{-3ex}
+The survey included several questions to gather general demographic information about the respondents.  One of the first questions in the survey was ``What is your primary field of work?'', with multiple choices and ``Other'' as the answer options.  \fig{disciplines} shows the answer choices and the number of responses.  Of \totalrespondents respondents, 57\% identified as working in the physical sciences, 46\% in computing and maths, 28\% in biological sciences and 7\% in a range of others.  Subjects could select more than one field, and respondents made use of this feature: 17 respondents selected two fields of work, six selected three fields, and one indicated four fields of work.
+
+\begin{figure}[h]
+  \vspace*{-1ex}
   \centering
   \includegraphics{files/plots/respondents-by-discipline.pdf}
   \vspace*{-3.5ex}
@@ -115,12 +129,9 @@ Simple descriptive statistics were performed using custom programs written in th
   \label{disciplines}
 \end{figure}
 
-The survey included several questions to gather general demographic information about the respondents.  One of the first questions in the survey was ``What is your primary field of work?'', with multiple choices and ``Other'' as the answer options.  \fig{disciplines} shows the answer choices and the number of responses.  Of \totalrespondents respondents, 57\% identified as working in the physical sciences, 46\% in computing and maths, 28\% in biological sciences and 7\% in a range of others.  Subjects could select more than one field, and respondents made use of this feature: 17 respondents selected two fields of work, six selected three fields, and one indicated four fields of work.
-
 To gauge how computer-intensive people's work activities are, the survey included the question ``In your work, on a typical day, approximately what fraction of your time involves using or interacting directly with software on a computer or other computing device?''  The answer options were in the form of a pull-down menu with values ranging from 0\% (none) to 100\% (all), in 5\% increments.  Note the question was not limited to time spent using technical software---respondents were free to interpret this broadly to mean any software used in a work context.  \fig{time-with-software} provides a bar graph of the responses.  The results show that the overwhelming majority of our respondents spend over 50\% of their day interacting with software.  To quantify this further, assuming a typical 8~hour working day, we can conclude that 94\% of respondents regularly spent more than four hours of their day engaged with software, and 68\% more than six hours.
 
-\begin{figure}[bht]
-  \vspace*{-1ex}
+\begin{figure}[bth]
   \centering
   \includegraphics{files/plots/bar-graph-time-spent-with-software.pdf}
   \vspace*{-4.5ex}
@@ -134,7 +145,6 @@ To gauge how computer-intensive people's work activities are, the survey include
 As mentioned above, the overall motivation for the survey was to understand how people find software.  Thus, an important precondition was whether subjects actually had a choice in the software they used.  (The rationale for this is that if a person has no choice but to use software that is already provided or selected for them, then their answers to questions about how they find software would not be meaningful.)  This consideration motivated another question in the survey: ``In your work, how much freedom do you usually have to choose the software you use?''.   Answers to this question were used to select subsequent survey questions: if a respondent answered ``Never'' to this question, then the remaining questions were skipped and they were shown the final survey feedback page.  \fig{freedom} provides the results for this question.  It shows that every one of our respondents had some choice in the software they, and consequently all \totalrespondents respondents were shown the next set of questions in the survey.  %In all, 88\% of respondents said that they had \emph{some} degree of freedom to choose the software they used.
 
 \begin{figure}[htb]
-  \vspace*{-2ex}
   \centering
   \includegraphics{files/plots/how-often-choose-software.pdf}
   \vspace*{-4ex}
@@ -150,7 +160,7 @@ In response to another question, ``Are you involved in software development?'', 
 % - one person wrote "depends on who you ask". I deleted that result.
 
 \begin{figure}[thb]
-  \vspace*{-1ex}
+  \vspace*{1ex}
   \hspace*{0.25in}
   \begin{minipage}[b]{0.3\linewidth}
     \includegraphics{files/plots/number-of-developers.pdf}
@@ -194,7 +204,7 @@ Among the 81\% of respondents who subsequently indicated that they were involved
 
 \section{Results: how respondents find software}
 
-Numbers in parentheses in this section indicate the relative rankings or levels of importance (essential and above-average) given in the survey.
+All respondents were shown the questions in this section because all respondents indicated they have some choice in the software they use.
 
 
 \subsection{Ready-to-use software}
@@ -205,19 +215,21 @@ We first consider the search for software to use for a particular task rather fo
 \subsubsection{Approaches}
 \label{approaches-ready-to-use}
 
-To assess how people located or discovered ready-to-run software, we  asked ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''  The question provided multiple nonexclusive answer choices together with a free-text ``Other'' option.  The specific, predefined answer options were developed based on our own experiences as well as the similar questions posed in other surveys~\cite{sim_2011, bajrachary_2009, linstead_2009} and the results of our pilot run.  Respondents were free to choose more than one answer.  \fig{how-find-ready-to-run} summarizes the results.
+To assess how people located or discovered ready-to-run software, we asked ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''  The question provided multiple nonexclusive answer choices together with a free-text ``Other'' option.  The predefined answer options were developed based on our own experiences as well as similar questions posed in other surveys~\cite{sim_2011, bajrachary_2009, linstead_2009} and the results of our pilot run.  Respondents were free to choose more than one answer.  \fig{how-find-ready-to-run} summarizes the results.  We separated the responses based on how individuals answered the question about software development (\ref{demographics}).  The graph is sorted by the total number of responses (summing across developers and non-developers) for each answer category.
 
 \begin{figure}[htb]
   \centering
-  \includegraphics{files/plots/how-find-ready-to-run.pdf}
-  \vspace*{-2ex}
-  \caption{Responses to the question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?'' Answer choices were nonexclusive. All \totalrespondents survey participants answered the question.}
+  \includegraphics{files/plots/how-find-ready-to-run-v2.pdf}
+  \vspace*{-4ex}
+  \caption{Responses to the question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?'' Answer choices were nonexclusive.   All 69 survey respondents answered this question; results are shown subdivided according to respondents' answers to the question in \fig{years} (left).}
   \label{how-find-ready-to-run}
 \end{figure}
 
-Personal recommendations (83\%) and general search engines (90\%) are the two main mechanisms employed to find software by our respondents. If a similar task is also described in the literature, then this will be used as a guide (62\%) to identify relevant software to use. Online forums, whether general social media sites or more focused in scope, are an underutilized resources (mean of 21\%), although people are slightly more likely to search in a public software project repository (32\%) but not in a domain specific one (10\%). This latter usage pattern may reflect ignorance of the existence of the topical indexes in question, but may also reflect a belief that such resources are too narrowly focused in scope for their needs.  The question did not address the size of the task being searched for so we cannot answer this for sure.
+For both software developers and non-developers, the top three choices were (1) using general search engines, (2) seeking personal recommendations and (3) looking in the literature.  However, developers differ slightly from non-developers in the order of these choices: the top choice for developers was search engines, whereas for non-developers, it was personal recommendations.  An even larger difference is evident in the use of social help sites such as Stack Overflow, with very few non-developers indicating they use this approach.  This may reflect a lack of awareness about the existence or purpose of such sites, but it may also reflect a poor choice of examples on our part: while Quora is a general-purpose social help site, Stack Overflow is for software developers, and so the pattern of responses here may reflect an assumption about the meaning of that particular answer choice.  On the other hand, a similar difference is exhibited with respect to searching public software project repositories such as SourceForge and GitHub, and this pattern is less surprising: the sites are more strongly associated with software developers, and non-developers may simply be unaccustomed to thinking about looking for ready-to-run software there.
 
-The write-in answers for ``Other'' revealed a category of options we did not anticipate: all of the answers concerned the use of network-based software package installation systems such as MacPorts~\cite{fuller2002macports} and the systems available for the different Linux operating system distributions.  In retrospect, this is an obvious oversight in our list of predefined categories---the package management systems offer search capabilities, and thus, this is indeed another way for a person to find ready-to-run software.  Future versions of this survey should include this as a predefined answer choice.
+General media sites such as Facebook appear to be underutilized by both subsets of respondents when searching for ready-to-run software.  Similarly, both subgroups rarely selected domain-specific catalogs such as ASCL.net.  This last result is surprising.  It may reflect ignorance of the existence of such topical indexes, or it may reflect a belief that such resources are too narrowly focused in scope for their needs.  The question did not address the size of the task being searched for so we cannot answer this for sure.
+
+Finally, the write-in answers for ``Other'' revealed a category of options we did not anticipate: all of the answers concerned the use of network-based software package installation systems such as MacPorts~\cite{fuller2002macports} and the systems available for the different Linux operating system distributions.  In retrospect, this is an obvious oversight in our list of predefined categories---the package management systems offer search capabilities, and thus, this is indeed another way for a person to find ready-to-run software.  Future versions of this survey should include this as a predefined answer choice.
 
 
 \subsubsection{Criteria}
@@ -310,7 +322,7 @@ As described in \sec{demographics}, the survey included the question ``Are you i
 Out of the overall \totalrespondents respondents, \totalsearchers (80\%) of them indicated they searched for source code at least some of the time.  \fig{how-often-search-for-src} summarizes the responses received to the question ``How often do you search online for software source code?''  To help understand the motivations for why people search for software, we also asked the question ``What are some reasons why you look for source code (when you do look)?''  Similar to other questions in the survey, it included multiple nonexclusive choices and a free-text ``Other'' field as the answer options.  \fig{why-search-for-src} summarizes the responses.
 
 \begin{figure}[bht]
-  \vspace*{-2ex}
+  \vspace*{-3ex}
   \centering
   \includegraphics{files/plots/bar-graph-how-often-src.pdf}
   \vspace*{-3ex}
@@ -319,7 +331,7 @@ Out of the overall \totalrespondents respondents, \totalsearchers (80\%) of them
 \end{figure}
 
 \begin{figure}[b]
-  \vspace*{3ex}
+  \vspace*{-2ex}
   \centering
   \includegraphics{files/plots/bar-graph-why-search-for-src.pdf}
   \vspace*{-2ex}
@@ -333,6 +345,7 @@ Two respondents wrote answers in the ``Other'' field: ``Find software libraries 
 
 
 \subsubsection{Approaches}
+\label{approaches-find-src}
 
 The survey question ``What are some approaches you have used to look for source code in the past?'' concerned the methods used by developers to find source code.  This question was similar to the earlier question ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''\ but included different answer options that are more relevant to searching for source code.  Answer options were nonexclusive multiple choices, including an ``Other'' option with a field for free-text input.  \fig{how-find-src} provides a summary of the results.  The question was answered by all \totalsearchers respondents who indicated they searched for source code on at least some occasions.
 
@@ -344,12 +357,27 @@ The survey question ``What are some approaches you have used to look for source 
   \label{how-find-src}
 \end{figure}
 
-
 % FIXME report "other"
 
 General-purpose search engines (91\%) remain the primary mechanism used to search for source code but personal recommendations (54\%) and the scientific literature (45\%) are employed significantly less than when looking for ready-to-use software (\sec{approaches-ready-to-use}). This suggests that software development is a more subjective activity and so source code searches have a more personalized signature, determined in part by personal coding styles. (This may have implications for search anonymity issues.) This view is supported by the two main factors identified for the failure of past code searches (see below): an inability to find any code suitable for purpose (69\%) and a belief that the requirements were too unique (65\%).
 
 The results also indicate that online forums remain underutilized (with a mean of 23\%) but there is slightly greater use of public code repositories (46\%), although not significantly so. Specialized code search engines (19\%) and software indexes (22\%) are also less used than expected but this may again reflect a lack of knowledge of their existence or coverage. It may also be another instance of sample bias with a more mature audience being less likely to use or trust newer domain-specific software, preferring instead more proven general-purpose mechanisms.  24\% cited lack of trust in the options found as the reason for a previous failed search result.
+
+How do these results compare to those of \sec{approaches-ready-to-use} (finding read-to-run software)?  The two questions are not identical: there are slightly different answer choices because the contexts lend themselves to different options, and in addition, the question from \ref{approaches-ready-to-use} involved only software developers whereas \emph{this} question involved both developers and non-developers.  To make comparison possible, we extracted the subset of respondents to \fig{how-find-ready-to-run} who also answered ``Yes'' to the question of whether they were involved in software development, and in \fig{compare-how-find}, plotted the results side-by-side with the results from \ref{how-find-src} after converting results to percentages.
+
+\begin{figure}[thb]
+  \vspace*{-1ex}
+  \centering
+  \includegraphics{files/plots/compare-how-find.pdf}
+  \vspace*{-4ex}
+  \caption{(Left) Subset of results from \ref{how-find-ready-to-run} for the respondents who indicated they were involved in software development.  The results have been expressed as percentages of the total number of responses (56) for this subgroup of people.  (Right) Reproduction of the results of \ref{how-find-src}, after converting to percentages of the total number of responses (55) to the question.  Blank bars indicate answer options that appeared in one question but not the other.}
+  \label{compare-how-find}
+\end{figure}
+
+\fig{compare-how-find} shows that the top three approaches for finding \emph{both} ready-to-run software and source code are nearly identical (searching the web, asking colleagues, looking in the literature), but 
+compared to looking for ready-to-run software, searching public repositories such as SourceForge and GitHub rises in popularity and is tied for third place when it comes to looking for source code.  This popularity is unsurprising considering that the respondents are all developers; what is perhaps more surprising is how popular looking in the scientific literature is when searching for source code.  This likely reflects a population sample bias towards academic developers---certainly we would not expect non-academic developers to think of looking in the literature as often as searching in GitHub.
+
+In other respects, the results in both the ready-to-run and source code cases follow largely the same trends.  The most notable difference is that searching in topical software indexes rises in popularity when searching for source code (compared to searching for ready-to-run software).  This result may reflect an incorrect belief among respondents that these indexes are specialized towards source code.  Follow-up studies could explore this topic further.
 
 
 \subsubsection{Reasons for search failures}
@@ -357,6 +385,7 @@ The results also indicate that online forums remain underutilized (with a mean o
 The inability to find suitable source code would hinder software reuse.  From our own experiences, we know a search for software can fail for a variety of reasons.  This motivated our inclusion of another question in thes survey, ``What are some factors that have hindered your ability to FIND source code in the past?''  The question included a variety of nonexclusive predefined options, along with an ``Other'' option offering a free-text input field.  The results are summarized in \fig{factors-that-hindered}.
 
 \begin{figure}[htb]
+  \vspace*{-1ex}
   \centering
   \includegraphics[width=6.5in]{files/plots/factors-that-hindered-finding-src.pdf}
   \vspace*{-4ex}
@@ -364,7 +393,7 @@ The inability to find suitable source code would hinder software reuse.  From ou
   \label{factors-that-hindered}
 \end{figure}
 
-There is a reasonable indication (46\%) that time limitations often impact the ability to conduct proper searches for source code or to evaluate the results. This is may be due to the large number of results that general-purpose search engines can return, which in turn may make it difficult to find suitable results easily. This can be particularly the case if the ranking system of the search engine is optimizing a commercial metric, such as potential advertising revenue, rather than metrics more pertinent to searching for software.  The results also suggest that software licensing (12\%) was a minor hindrance to previous successful source code searches, even though it was a relatively important criterion for ready-to-use software (\sec{approaches-ready-to-use}), but it was a large factor (48\%) in not actually reusing the source code found (\sec{reuse-failures}). This suggests that intellectual property information is not sufficiently visible during searches.
+Time limitations appear to often (46\%) impact the ability to conduct proper searches for source code or to evaluate the results.  This is may be due to the large number of results that general-purpose search engines can return, which in turn may make it difficult to find suitable results easily. This can be particularly the case if the ranking system of the search engine is optimizing a commercial metric, such as potential advertising revenue, rather than metrics more pertinent to searching for software.  The results also suggest that software licensing (12\%) was a minor hindrance to previous successful source code searches, even though it was a relatively important criterion for ready-to-use software (\sec{approaches-ready-to-use}), but it was a large factor (48\%) in not actually reusing the source code found (\sec{reuse-failures}). This suggests that intellectual property information is not sufficiently visible during searches.
 
 % Here are the "Other" answers:
 %
@@ -384,30 +413,30 @@ The write-in answers for the ``Other'' field provided additional insights into f
 Being able to find software source code is not the only factor determining whether developers ultimately make use of the code found; other factors can hinder its use.  This motivated our survey question ``If you searched and found source code in the past, what are some factors that may have prevented you from REUSING the source code you found?''  As with most of the other questions in this survey, this one took the form of a multiple choice question with nonexclusive answer options and a free-text ``Other'' field.  We developed the multiple choice options based on our own personal experiences and feedback from the pilot survey.  \fig{hindrance-to-reusing-src} summarizes the results.
 
 \begin{figure}[thb]
+  \vspace*{-1ex}
   \centering
   \includegraphics{files/plots/hindrance-to-reusing-src.pdf}
   \vspace*{-1.5ex}
-  \caption{Responses to the question ``If you searched and found source code in the past, what are some factors that may have prevented you from REUSING the source code you found?''  This question offered the first 17 predefined categories and an additional slot for free text under ``Other''.  Answer choices were nonexclusive.  A total of 52 survey respondents answered this question.}
+  \caption{Responses to ``If you searched and found source code in the past, what are some factors that may have prevented you from REUSING the source code you found?''  The first 17 options were predefined; a free-text slot for ``Other'' was also provided.  Answer choices were nonexclusive.  A total of 52 survey respondents answered this question.}
   \label{hindrance-to-reusing-src}
 \end{figure}
 
 The results show that the quality of the documentation (62\%) and implementation details---language (60\%) and operating system (50\%)---are the prime factors in determining whether found software will be reused. An inability to compile (44\%) or install (29\%) the source code also appears to be a relatively common problem, although it is unclear whether this is due to issues with third-party dependencies, compiler versioning, or the actual source code itself.  Other common hindrances are discrepancies between what code purports to do (and so matches a search) and whether it actually \emph{can}: this seems to be more common with functionality (38\%) aspects than support for particular standards (15\%).
 
-The actual quality (35\%) of the code itself, its structure (33\%), and the design of any algorithm (29\%) are less significant factors. Performance (21\%) and verifiability (8\%) are also surprisingly minor considerations to reuse, but this may be related to the didactic nature of many searches: it may not actually be that important if the code is efficient (or even fully functional) if you just want to learn something.
-
-The level of support (23\%) for any code remains a minor factor and pricing (31\%) is also a less significant consideration than for ready-to-run software. Once code has been identified that actually meets the search parameters, it seems that developers are more willing to pay for it (presumably there may be some way to pass the costs on to end-users).
+The actual quality (35\%) of the code itself, its structure (33\%), and the design of any algorithm (29\%) are less significant factors. Performance (21\%) and verifiability (8\%) are also surprisingly minor considerations to reuse, but this may be related to the didactic nature of many searches: it may not actually be that important if the code is efficient (or even fully functional) if you just want to learn something.  Finally, the level of support (23\%) for any code remains a minor factor and pricing (31\%) is also a less significant consideration than for ready-to-run software. Once code has been identified that actually meets the search parameters, it seems that developers are more willing to pay for it (presumably there may be some way to pass the costs on to end-users).
 
 
 \section{Results: information desired about software}
 \label{desirable-metadata}
 
-A potential aid to finding software is a software catalog or index that would classify known software and allow people to browse and search for software by various criteria~\cite{marshall2006software}.  As part of our survey, we sought to determine what kind of information would be important to record about each entry in such an index.  We therefore posed a question of all respondents who indicated they had the freedom to choose software.  (In other words, not only those who indicated they developed software.)  The question was, ``Suppose that it were possible to create a public, searchable catalog or index of software, one that would record information about software of all kinds found anywhere.  What kind of information would you find most useful to include for each entry in such a catalog or index?''  As with most other questions in our survey, we provided answer choices as nonexclusive multiple choices, with an additional free-text option titled ``Other''.  All \totalrespondents respondents to our survey replied to this question.  \fig{info-to-include} summarizes the results.
+A potential aid to finding software is a software catalog or index that would classify known software and allow people to browse and search by various criteria~\cite{marshall2006software}.  We sought to determine what kind of information would be important to record about each entry in such an index.  We posed a question of all respondents who indicated they had the freedom to choose software.  (In other words, not only those who indicated they developed software.)  The question was, ``Suppose that it were possible to create a public, searchable catalog or index of software, one that would record information about software of all kinds found anywhere.  What kind of information would you find most useful to include for each entry in such a catalog or index?''  As with most other questions in our survey, we provided answer choices as nonexclusive multiple choices, with an additional free-text option titled ``Other''.  All \totalrespondents respondents to our survey replied to this question.  \fig{info-to-include} summarizes the results.
 
 \begin{figure}[t]
+  \vspace*{-1ex}
   \centering
-  \includegraphics{files/plots/info-to-include-in-index.pdf}
-  \vspace*{-4ex}
-  \caption{Responses to the question ``Suppose that it were possible to create a public, searchable catalog or index of software, one that would record information about software of all kinds found anywhere.  What kind of information would you find most useful to include for each entry in such a catalog or index?'' This question offered the first 24 predefined categories and an additional slot for free text under ``Other''.  Answer choices were nonexclusive.  A total of 69 survey respondents answered this question.}
+  \includegraphics{files/plots/info-to-include-in-index-v3.pdf}
+  \vspace*{-5ex}
+  \caption{Responses to the question ``Suppose that it were possible to create a public, searchable catalog or index of software, one that would record information about software of all kinds found anywhere.  What kind of information would you find most useful to include for each entry in such a catalog or index?'' There were 24 predefined items and a slot for free text under ``Other''.  Choices were nonexclusive.  All 69 survey respondents answered this question; results are shown subdivided according to respondents' answers to the question in \fig{years} (left).  The graph is sorted by totals; e.g., ``Name of software'' was the third most selected choice across both developers and non-developers.}
   \label{info-to-include}
 \end{figure}
 
