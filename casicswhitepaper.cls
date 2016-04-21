@@ -117,7 +117,7 @@
 
 \DeclareMathAlphabet{\mathtt}{T1}{txtt}{m}{n}
 \SetMathAlphabet{\mathtt}{bold}{T1}{txtt}{b}{n}
-\def\Txtt@scale{0.97}
+\def\Txtt@scale{0.96}
 \edef\Txtt@@scale{s*[\csname Txtt@scale\endcsname]}%
 \DeclareFontFamily{T1}{txtt}{\hyphenchar \font\m@ne}
 \DeclareFontShape{T1}{txtt}{m}{n}{	% regular
