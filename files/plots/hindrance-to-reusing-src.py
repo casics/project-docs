@@ -7,8 +7,11 @@ import matplotlib.ticker as ticker
 from matplotlib import rcParams
 import operator
 
+textcolor = '#222222'
+
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -74,14 +77,14 @@ ylim_top = len(data)-0.5
 
 plt.barh(y_pos, values, linewidth=0, align='center', color="#cccccc")
 
-plt.yticks(y_pos, labels, fontsize=10)
-plt.xticks(x, fontsize=10)
+plt.yticks(y_pos, labels, fontsize=10, color=textcolor)
+plt.xticks(x, fontsize=10, color=textcolor)
 plt.ylim([ylim_bottom, ylim_top])
 
 plt.gca().text(0.96, 0.01,
                'Total individual responses: {}\nMultiple selections allowed'.format(total_responses),
                horizontalalignment='right',
-               transform=plt.gca().transAxes)
+               transform=plt.gca().transAxes, color=textcolor)
 
 # Remove the plot frame lines leaving only the left vertical one.
 
@@ -96,13 +99,13 @@ plt.gca().get_xaxis().set_visible(False)
 # Write the value to the right of each bars.
 for rect, value in zip(plt.gca().patches, values):
     percent = value/total_responses*100
-    text = '{} ({: >2.0f})\%'.format(value, percent)
+    text = '{} ({: >2.0f}\%)'.format(value, percent)
     width = rect.get_width()
     width = rect.get_width()
     offset = 5 if value > 10 else 4
     plt.gca().text(rect.get_x() + width + offset,
                    rect.get_y() + rect.get_height()/2,
-                   text, ha='center', va='center', fontsize=10)
+                   text, ha='center', va='center', fontsize=10, color=textcolor)
 
 plt.savefig('hindrance-to-reusing-src.pdf', bbox_inches='tight')
 plt.close()

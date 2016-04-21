@@ -7,8 +7,11 @@ import matplotlib.ticker as ticker
 from matplotlib import rcParams
 import operator
 
+textcolor = '#222222'
+
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -19,7 +22,7 @@ rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
 rcParams['patch.facecolor']     = "#cccccc"
 rcParams['patch.linewidth']     = 0
 
-plt.figure(figsize=(3, 2))
+plt.figure(figsize=(2, 2.5))
 
 # Data.  Not everyone answered the question.
 # Only one answered something for "Other".
@@ -49,13 +52,13 @@ labels = labels[::-1]
 values = values[::-1]
 y_pos = np.arange(len(values))
 plt.barh(y_pos, values, linewidth=0, align='center', color="#cccccc")
-plt.yticks(y_pos, labels)
-plt.xticks(x, fontsize=10)
+plt.yticks(y_pos, labels, color=textcolor)
+plt.xticks(x, fontsize=10, color=textcolor)
 
-plt.gca().text(1.05, 0.075,
-               'Total individual responses: {}'.format(total_responses),
+plt.gca().text(1.25, 0.08,
+               'Total responses: {}'.format(total_responses),
                horizontalalignment='right',
-               transform=plt.gca().transAxes)
+               transform=plt.gca().transAxes, color=textcolor)
 
 # Remove the plot frame lines leaving only the left vertical one.
 for spine in ['top', 'bottom', 'right']:
@@ -69,11 +72,11 @@ plt.gca().get_xaxis().set_visible(False)
 # Write the value to the right of each bars.
 for rect, value in zip(plt.gca().patches, values):
     percent = value/total_responses*100
-    text = '{} ({: >2.0f})\%'.format(value, percent)
+    text = '{} ({: >2.0f}\%)'.format(value, percent)
     width = rect.get_width()
-    plt.gca().text(rect.get_x() + width + 2.5,
+    plt.gca().text(rect.get_x() + width + 3.5,
                    rect.get_y() + rect.get_height()/2,
-                   text, ha='center', va='center', fontsize=10)
+                   text, ha='center', va='center', fontsize=10, color=textcolor)
 
 plt.savefig('bar-graph-how-often-src.pdf', bbox_inches='tight')
 plt.close()

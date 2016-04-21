@@ -7,8 +7,11 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib import rcParams
 
+textcolor = '#222222'
+
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -47,7 +50,8 @@ y_pos = np.arange(len(values))
 plt.barh(y_pos, values, linewidth=0, align='center', color="#cccccc")
 plt.yticks(y_pos, labels)
 
-ax.text(0.7, 0.1, 'Total responses: {}.'.format(total_responses), transform=ax.transAxes)
+ax.text(0.7, 0.1, 'Total responses: {}.'.format(total_responses),
+        transform=ax.transAxes, color=textcolor)
 
 # Styling.
 
@@ -72,10 +76,10 @@ plt.tick_params(
 for rect, value in zip(ax.patches, values):
     width = rect.get_width()
     percent = value/total_responses*100
-    text = '{} ({: >2.0f})\%'.format(value, percent)
+    text = '{} ({: >2.0f}\%)'.format(value, percent)
     offset = 4 if value > 4 else 3
     ax.text(rect.get_x() + width + offset, rect.get_y() + rect.get_height()/2,
-            text, ha='center', va='center', fontsize=10)
+            text, ha='center', va='center', fontsize=10, color=textcolor)
 
 plt.savefig('how-often-choose-software.pdf', bbox_inches='tight')
 plt.close()

@@ -7,8 +7,11 @@ import matplotlib.ticker as ticker
 from matplotlib import rcParams
 import operator
 
+textcolor = '#222222'
+
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -19,7 +22,7 @@ rcParams['ytick.major.size']    = rcParams['xtick.major.size'] = 3
 rcParams['patch.facecolor']     = "#cccccc"
 rcParams['patch.linewidth']     = 0
 
-plt.figure(figsize=(3, 4.85))
+plt.figure(figsize=(3, 4.8))
 
 # Data.
 
@@ -74,7 +77,7 @@ plt.ylim([ylim_bottom, ylim_top])
 plt.gca().text(1.175, 0.01,
                'Total individual responses: {}\nMultiple selections allowed'.format(total_responses),
                horizontalalignment='right',
-               transform=plt.gca().transAxes)
+               transform=plt.gca().transAxes, color=textcolor)
 
 # Remove the plot frame lines leaving only the left vertical one.
 
@@ -89,12 +92,12 @@ plt.gca().get_xaxis().set_visible(False)
 # Write the value to the right of each bars.
 for rect, value in zip(plt.gca().patches, values):
     percent = value/total_responses*100
-    text = '{} ({: >2.0f})\%'.format(value, percent)
+    text = '{} ({: >2.0f}\%)'.format(value, percent)
     width = rect.get_width()
     offset = 7 if value > 7 else 6
     plt.gca().text(rect.get_x() + width + offset,
                    rect.get_y() + rect.get_height()/2,
-                   text, ha='center', va='center', fontsize=10)
+                   text, ha='center', va='center', fontsize=10, color=textcolor)
 
 plt.savefig('how-find-src.pdf', bbox_inches='tight')
 plt.close()

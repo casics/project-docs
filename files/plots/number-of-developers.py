@@ -6,9 +6,12 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib import rcParams
 
+textcolor = '#222222'
+
 rcParams['figure.figsize']      = (1.75, 1.75)
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -27,7 +30,7 @@ labels = ['Yes', 'No']
 plt.pie(data, startangle=160, labels=labels, autopct='%1.f\%%', colors=['#bbbbbb', '#eeeeee'])
 
 plt.gca().text(0, 1, 'Total responses: 69.', horizontalalignment='left',
-               transform=plt.gca().transAxes, fontsize=10)
+               transform=plt.gca().transAxes, fontsize=10, color=textcolor)
 
 plt.savefig('number-of-developers.pdf', bbox_inches='tight')
 plt.close()

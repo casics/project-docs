@@ -6,8 +6,11 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib import rcParams
 
+textcolor = '#222222'
+
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -118,8 +121,8 @@ plt.legend([h_essential, h_aboveavg, h_avg, h_somewhat, h_rarely],
            fontsize=8.5, ncol=3, loc='upper center',
            frameon=False, bbox_to_anchor=(0.03, -0.05))
 
-plt.yticks(y_pos, labels, fontsize=10)
-plt.xticks(x, fontsize=10)
+plt.yticks(y_pos, labels, fontsize=10, color=textcolor)
+plt.xticks(x, fontsize=10, color=textcolor)
 plt.ylim([ylim_bottom, ylim_top])
 
 # Remove the plot frame lines leaving only the left vertical one.

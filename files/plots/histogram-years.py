@@ -6,9 +6,12 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib import rcParams
 
+textcolor = '#222222'
+
 rcParams['figure.figsize']      = (4.5, 1.5)
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -45,7 +48,7 @@ text   = 'Total responses: {}\nMean: {:.2f}\nStd. dev.: {:.2f}\nMinimum: {}\nMax
     total, mean, stdev, minval, maxval)
 
 plt.gca().text(1.075, 0.5, text, horizontalalignment='right', fontsize=10,
-               transform=plt.gca().transAxes)
+               transform=plt.gca().transAxes, color=textcolor)
 
 # Remove the plot frame lines.
 for spine in ['top', 'bottom', 'left', 'right']:

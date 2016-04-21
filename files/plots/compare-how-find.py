@@ -7,8 +7,11 @@ import matplotlib.ticker as ticker
 from matplotlib import rcParams
 import operator
 
+textcolor = '#222222'
+
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -82,8 +85,8 @@ h_src = ax2.barh(y_pos, src, height=0.8, linewidth=0, align='center', color="#cc
 
 plt.subplots_adjust(wspace=0.25, right=0.75)
 
-plt.yticks(y_pos, labels, fontsize=10)
-plt.yticks(y_pos, labels, fontsize=10)
+plt.yticks(y_pos, labels, fontsize=10, color=textcolor)
+plt.yticks(y_pos, labels, fontsize=10, color=textcolor)
 plt.xticks(x, fontsize=10)
 plt.ylim([ylim_bottom, ylim_top])
 
@@ -105,27 +108,29 @@ for rect, value in zip(h_ready.patches, ready):
     if value > 0:
         ax1.text(rect.get_x() + width + offset,
                  rect.get_y() + rect.get_height()/2.2,
-                 text, ha='center', va='center', fontsize=10)
+                 text, ha='center', va='center', fontsize=10, color=textcolor)
 
 for rect, value in zip(h_src.patches, src):
-    percent = value/total_responses*100
+    percent = value/total_src_responses*100
     text = '{: >2.0f}\%'.format(value)
     width = rect.get_width()
     offset = 12 if value > 5 else 10
     if value > 0:
         ax2.text(rect.get_x() + width + offset,
                  rect.get_y() + rect.get_height()/2.2,
-                 text, ha='center', va='center', fontsize=10)
+                 text, ha='center', va='center', fontsize=10, color=textcolor)
 
 # Put some text above the plots
 plt.gca().text(1.05, 1.01,
                'Ready-to-run software',
                horizontalalignment='right',
-               transform=ax1.transAxes)
+               transform=ax1.transAxes,
+               color=textcolor)
 plt.gca().text(.83, 1.01,
                'Source code',
                horizontalalignment='right',
-               transform=ax2.transAxes)
+               transform=ax2.transAxes,
+               color=textcolor)
 
 
 plt.savefig('compare-how-find.pdf', bbox_inches='tight')

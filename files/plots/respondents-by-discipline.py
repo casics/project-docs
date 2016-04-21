@@ -6,17 +6,20 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
+textcolor = '#222222'
+
 plt.rcParams.update({
     'text.usetex': True,
     'text.latex.preamble': [
         r"\usepackage{fourier}",
         r"\usepackage[T1]{fontenc}",
-    ]
+    ],
+    'text.color' : textcolor
 })
 
-font = {'family' : 'serif',
-        'serif'  : 'Utopia',
-        'size'   : 10
+font = {'family'     : 'serif',
+        'serif'      : 'Utopia',
+        'size'       : 10,
 }
 matplotlib.rc('text', usetex=True)
 matplotlib.rc('font', **font)
@@ -79,7 +82,7 @@ ax.spines['left'].set_color('#888888')
 ax.text(1.1, 0.07,
         'Total individual responses: {}.\nMultiple selections allowed.'.format(total_responses),
         horizontalalignment='right',
-        transform=ax.transAxes)
+        transform=ax.transAxes, color=textcolor)
 
 ax.get_xaxis().set_visible(False)
 ax.get_yaxis().tick_left()
@@ -95,8 +98,8 @@ for rect, value in zip(ax.patches, data):
     x_pos = (rect.get_x() + width + 4 if value else 3.5)
     y_pos = rect.get_y() + rect.get_height()/2
     percent = value/total_responses*100
-    text = '{} ({: >2.0f})\%'.format(value, percent)
-    ax.text(x_pos, y_pos, text, ha='center', va='center', fontsize=10)
+    text = '{} ({: >2.0f}\%)'.format(value, percent)
+    ax.text(x_pos, y_pos, text, ha='center', va='center', fontsize=10, color=textcolor)
 
 plt.savefig('respondents-by-discipline.pdf', bbox_inches='tight')
 plt.close()

@@ -6,9 +6,12 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib import rcParams
 
+textcolor = '#222222'
+
 rcParams['figure.figsize']      = (8, 1.5)
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -34,7 +37,7 @@ plt.bar(x, y, width=2.75, align='center')
 plt.gca().text(0.05, 0.95,
                'Total individual responses: 69.',
                horizontalalignment='left',
-               transform=plt.gca().transAxes)
+               transform=plt.gca().transAxes, color=textcolor)
 
 # Remove the plot frame lines.
 for spine in ['top', 'bottom', 'left', 'right']:
@@ -55,7 +58,8 @@ for rect, label in zip(plt.gca().patches, y):
     if label > 0:
         height = rect.get_height()
         plt.gca().text(rect.get_x() + rect.get_width()/2, height + 0.5, label,
-                       ha='center', va='bottom', fontsize=10, fontweight='normal')
+                       ha='center', va='bottom', fontsize=10,
+                       fontweight='normal', color=textcolor)
 
 plt.savefig('bar-graph-time-spent-with-software.pdf', bbox_inches='tight')
 plt.close()

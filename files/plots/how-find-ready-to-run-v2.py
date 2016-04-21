@@ -6,8 +6,11 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib import rcParams
 
+textcolor = '#222222'
+
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -22,6 +25,8 @@ plt.figure(figsize=(4.5, 5.5))
 
 # Data.  Not everyone answered the question.
 total_responses = 69
+total_swdevs    = 56
+total_notswdevs = 13
 
 # Here are the values of "Other" that people provided:
 #   search macports or similar package repositories
@@ -83,8 +88,8 @@ ylim_top = len(data)-0.5
 h_swdevs = plt.barh(y_pos + 0.22, swdevs, height=0.44, linewidth=0, align='center', color="#999999")
 h_notswdevs = plt.barh(y_pos - 0.22, notswdevs, height=0.44, linewidth=0, align='center', color="#dddddd")
 
-plt.yticks(y_pos, labels, fontsize=10)
-plt.xticks(x, fontsize=10)
+plt.yticks(y_pos, labels, fontsize=10, color=textcolor)
+plt.xticks(x, fontsize=10, color=textcolor)
 plt.ylim([ylim_bottom, ylim_top])
 
 plt.legend([h_swdevs, h_notswdevs],
@@ -109,22 +114,22 @@ plt.gca().get_xaxis().set_visible(False)
 
 # Write the value to the right of each bars.
 for rect, value in zip(h_swdevs.patches, swdevs):
-    percent = value/total_responses*100
+    percent = value/total_swdevs*100
     text = '{} ({: >2.0f})\%'.format(value, percent)
     width = rect.get_width()
     offset = 7 if value > 5 else 6
     plt.gca().text(rect.get_x() + width + offset,
                    rect.get_y() + rect.get_height()/2.2,
-                   text, ha='center', va='center', fontsize=10)
+                   text, ha='center', va='center', fontsize=10, color=textcolor)
 
 for rect, value in zip(h_notswdevs.patches, notswdevs):
-    percent = value/total_responses*100
-    text = '{} ({: >2.0f})\%'.format(value, percent)
+    percent = value/total_notswdevs*100
+    text = '{} ({: >2.0f}\%)'.format(value, percent)
     width = rect.get_width()
     offset = 7 if value > 5 else 6
     plt.gca().text(rect.get_x() + width + offset,
                    rect.get_y() + rect.get_height()/2.2,
-                   text, ha='center', va='center', fontsize=10)
+                   text, ha='center', va='center', fontsize=10, color=textcolor)
 
 plt.savefig('how-find-ready-to-run-v2.pdf', bbox_inches='tight')
 plt.close()

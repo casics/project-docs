@@ -6,8 +6,11 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib import rcParams
 
+textcolor = '#222222'
+
 rcParams['text.usetex']         = True
 rcParams['text.latex.preamble'] = [r"\usepackage{fourier}", r"\usepackage[T1]{fontenc}"]
+rcParams['text.color']          = textcolor
 rcParams['font.family']         = 'serif'
 rcParams['font.serif']          = ['Utopia']
 rcParams['font.weight']         = 'normal'
@@ -36,7 +39,7 @@ labels = labels[::-1]
 data = data[::-1]
 y_pos = np.arange(len(data))
 plt.barh(y_pos, data, linewidth=0, align='center', color="#cccccc")
-plt.yticks(y_pos, labels, fontsize=10)
+plt.yticks(y_pos, labels, fontsize=10, color=textcolor)
 
 # Remove the plot frame lines leaving only the left vertical one.
 for spine in ['top', 'bottom', 'right']:
@@ -50,11 +53,11 @@ plt.gca().get_xaxis().set_visible(False)
 # Write the value to the right of each bars.
 for rect, value in zip(plt.gca().patches, data):
     percent = value/total_responses*100
-    text = '{} ({: >2.0f})\%'.format(value, percent)
+    text = '{} ({: >2.0f}\%)'.format(value, percent)
     width = rect.get_width()
     plt.gca().text(rect.get_x() + width + 8 if value > 1 else 7,
                    rect.get_y() + rect.get_height()/2,
-                   text, ha='center', va='center', fontsize=10)
+                   text, ha='center', va='center', fontsize=10, color=textcolor)
 
 plt.savefig('project-sizes.pdf', bbox_inches='tight')
 plt.close()
