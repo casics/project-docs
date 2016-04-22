@@ -115,7 +115,7 @@ plt.gca().get_xaxis().set_visible(False)
 # Write the value to the right of each bars.
 for rect, value in zip(h_swdevs.patches, swdevs):
     percent = value/total_swdevs*100
-    text = '{} ({: >2.0f})\%'.format(value, percent)
+    text = '{} ({: >2.0f}\%)'.format(value, percent)
     width = rect.get_width()
     offset = 7 if value > 5 else 6
     plt.gca().text(rect.get_x() + width + offset,
