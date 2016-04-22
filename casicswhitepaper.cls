@@ -185,17 +185,18 @@
 % To see actual examples of using this, grep for "vref" in *.tex in the
 % JSBML User Guide directory.
 
+
 \labelformat{chapter}{Chapter~#1}
 \labelformat{table}{Table~#1}
 \labelformat{figure}{Figure~#1}
 
 \newcommand{\sectionlabel}{Section}
-\newcommand{\setlabel}[1]{\renewcommand{\sectionlabel}{#1}}
-\newcommand{\normallabels}{\setlabel{Section}}
+\newcommand{\normallabels}{\renewcommand{\sectionlabel}{Section}}
 
 \labelformat{section}{\sectionlabel~#1}
 \labelformat{subsection}{\sectionlabel~#1}
 \labelformat{subsubsection}{\sectionlabel~#1}
+\labelformat{paragraph}{\sectionlabel~#1}
 
 \newcommand{\@commonRefNoStar}[1]{\xspace\Vref*{#1}\xspace}
 \newcommand{\@commonRefStar}[1]{\ref{#1}\xspace}
@@ -208,13 +209,6 @@
 
 \renewcommand{\sec}[1]{\normallabels\@commonRefNoStar{#1}}
 \WithSuffix\newcommand\sec*[1]{\normallabels\@commonRefStar{#1}}
-
-\newcommand{\appendixlabels}{%
-  \labelformat{section}{##1}%
-  \labelformat{subsection}{##1}}
-
-\newcommand{\apdx}[1]{\appendixlabels\@commonRefNoStar{#1}}
-\WithSuffix\renewcommand\sec*[1]{\appendixlabels\@commonRefStar{#1}}
 
 
 % Note-making commands.
