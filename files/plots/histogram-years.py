@@ -33,7 +33,7 @@ plt.xlim(0, 50)
 plt.ylim(0, 10)
 
 # Histogram.
-plt.hist(data, bins=np.linspace(0, 45, 10), facecolor="#cccccc")
+plt.hist(data, bins=np.linspace(0, 45, 10), width=4.9, facecolor="#cccccc")
 
 # Rugplot.
 plt.gca().plot(data, [0.25]*len(data), '|', color='#cc0000')
