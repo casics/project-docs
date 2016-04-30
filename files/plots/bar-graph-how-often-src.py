@@ -39,11 +39,15 @@ raw_data = {
 x = [0, 5, 10, 15, 20]
 
 # Sort the data by value, largest value first.
+# Revision 2016-04-29 <mhucka@caltech.edu>: decided not to sort this one
+# because readers found it more natural in the order given.
 
-data = sorted(raw_data.items(), key=lambda x: x[1], reverse=True)
+# data = sorted(raw_data.items(), key=lambda x: x[1], reverse=True)
+# labels = [k for k, v in data]
+# values = [v for k, v in data]
 
-labels = [k for k, v in data]
-values = [v for k, v in data]
+labels = [k for k, v in raw_data.items()]
+values = [v for k, v in raw_data.items()]
 
 # Plot.
 # Barh() puts items in the reverse order of how we put them in the
@@ -55,7 +59,7 @@ plt.barh(y_pos, values, linewidth=0, align='center', color="#cccccc")
 plt.yticks(y_pos, labels, color=textcolor)
 plt.xticks(x, fontsize=10, color=textcolor)
 
-plt.gca().text(1.25, 0.08,
+plt.gca().text(1.5, 0.88,
                'Total responses: {}'.format(total_responses),
                horizontalalignment='right',
                transform=plt.gca().transAxes, color=textcolor)
