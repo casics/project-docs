@@ -30,18 +30,27 @@ total_responses = 55
 
 # Choices were not mutually exclusive.
 
+# There were 4 other write-in answers:
+# - "What libraries are used by other software that I like"
+# - "Netlib"
+# - "Look at the web page for that software!"
+# - "O'Reilly books"
+#
+# For analysis purposes, I think Netlib should be considered in the same
+# category as ascl.net and others, so I added 1 to the count below.
+
 raw_data = {
     "Ask colleagues for suggestions"                                                                                     : 29,
-    "Ask or search mailing lists or discussion\ngroups within to your organization"                                       : 7,
+    "Ask or search mailing lists or discussion\ngroups within to your organization"                                      : 7,
     "Ask or search public mailing lists or discussion groups"                                                            : 17,
-    "Look in the scientific literature to\nfind what authors use in similar contexts"                                     : 25,
-    "Ask or search social media (e.g.,\nTwitter, Facebook, LinkedIn, etc.)"                                               : 5,
-    "Ask or search social help sites\n(e.g., StackOverflow, Quora, etc.)"                                                 : 20,
+    "Look in the scientific literature to\nfind what authors use in similar contexts"                                    : 25,
+    "Ask or search social media (e.g.,\nTwitter, Facebook, LinkedIn, etc.)"                                              : 5,
+    "Ask or search social help sites\n(e.g., StackOverflow, Quora, etc.)"                                                : 20,
     "Search the web using specialized code search engines\n(e.g., OpenHUB, Google Code, Krugle, Snipplr, Smipple, etc.)" : 10,
-    "Search the web using general-purpose search\nsystems (e.g., Google, Yahoo, Bing, DuckDuckGo)"                        : 50,
-    "Search in public software project repositories\n(SourceForge, GitHub, BitBucket, etc.)"                              : 25,
-    "Search in specialized software indexes/catalogs\n(e.g., ASCL.net, SBML Software Guide, BioPortal, etc.)"             : 12,
-    "Search in my organization's code\ncollection or repository (if any)"                                                 : 12,
+    "Search the web using general-purpose search\nsystems (e.g., Google, Yahoo, Bing, DuckDuckGo)"                       : 50,
+    "Search in public software project repositories\n(SourceForge, GitHub, BitBucket, etc.)"                             : 25,
+    "Search in specialized software indexes/catalogs\n(e.g., ASCL.net, SBML Software Guide, BioPortal, etc.)"            : 13,
+    "Search in my organization's code\ncollection or repository (if any)"                                                : 12,
     "Other" : 4,
 }
 
