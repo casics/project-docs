@@ -36,7 +36,7 @@ plt.ylim(0, 10)
 plt.hist(data, bins=np.linspace(0, 45, 10), width=4.9, facecolor="#cccccc")
 
 # Rugplot.
-plt.gca().plot(data, [0.25]*len(data), '|', color='#cc0000')
+# plt.gca().plot(data, [0.25]*len(data), '|', color='#cc0000')
 
 # Info
 total  = len(data)
@@ -47,7 +47,10 @@ stdev  = np.std(data)
 text   = 'Total responses: {}\nMean: {:.2f}\nStd. dev.: {:.2f}\nMinimum: {}\nMaximum: {}'.format(
     total, mean, stdev, minval, maxval)
 
-plt.gca().text(1.075, 0.5, text, horizontalalignment='right', fontsize=10,
+plt.gca().text(1.13, 0.475, text, horizontalalignment='right', fontsize=10,
+               transform=plt.gca().transAxes, color=textcolor)
+plt.ylabel('Number of people')
+plt.gca().text(1.13, -0.125, 'Years', horizontalalignment='right', fontsize=10,
                transform=plt.gca().transAxes, color=textcolor)
 
 # Remove the plot frame lines.
