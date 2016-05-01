@@ -40,7 +40,7 @@ Our survey was designed to shed light on current practices and experiences in se
 
 \subsection{Instrument development}
 
-We developed the survey instrument iteratively.  We began with an initial version in which we posed many questions related to searching for software.  Following the practices of other similar surveys in computing~\cite[e.g.,][]{varnellsarjeant2015comparing}, we iterated on the design of the instrument, paying attention to the following points:
+We developed the survey instrument iteratively.  We began with an initial version in which we posed many questions related to searching for software.  Following the practices of other surveys in computing~\cite[e.g.,][]{varnellsarjeant2015comparing, kitchenham_2008}, we designed the instrument iteratively and payed attention to the following points:
 
 \begin{itemize}
 
@@ -211,16 +211,18 @@ Another question asked of those who indicated they were involved in software dev
   \label{responsibilities}
 \end{figure}
 
-We also asked, ``What is the typical team size of projects you are involved with?''  The form of the answers was again a set of multiple choice check boxes with an ``Other'' choice that offered a free-form text field.  Answers were provided by all \totalDevelopers respondents who answered ``Yes'' to the question of whether they were involved in software development, and none of the participants selected ``Other''.  \fig{project-sizes} provides a summary of the results.
+We also asked, ``What is the typical team size of projects you are involved with?''  The form of the answers was again a set of multiple choice check boxes with an ``Other'' choice that offered a free-form text field.  Answers were provided by all \totalDevelopers respondents who answered ``Yes'' to the question of whether they were involved in software development (\fig{years}), and none of the participants selected ``Other''.  A total of 43 respondents (77\%) selected ``Small (1--5 people)'', 12 respondents (21\%) chose ``Medium (6--25 people)'', and 1 respondent selected ``Large (more than 25 people)''.
 
-\begin{figure}[htb]
-  \vspace*{-1ex}
-  \centering
-  \includegraphics{files/plots/project-sizes.pdf}
-  \vspace*{-3ex}
-  \caption{Project sizes reported by the \totalDevelopers respondents who indicated they were involved in software development.}
-  \label{project-sizes}
-\end{figure}
+% \fig{project-sizes} provides a summary of the results.
+
+% \begin{figure}[htb]
+%   \vspace*{-1ex}
+%   \centering
+%   \includegraphics{files/plots/project-sizes.pdf}
+%   \vspace*{-3ex}
+%   \caption{Project sizes reported by the \totalDevelopers respondents who indicated they were involved in software development.}
+%   \label{project-sizes}
+% \end{figure}
 
 In the final demographic question, we asked ``Which programming and/or scripting language(s) have you had the most experience with?''  This question provided 22 predefined choices along with a free-text ``Other'' option.  Choices were nonexclusive, and the elaboration under the question explicitly requested ``Please select up to 3 languages which you have used the most.''   The top five responses were: Python (selected by 59\% of participants), C (50\%), Java (34\%), shell scripting (32\%), and C++ (27\%).
 
@@ -244,9 +246,7 @@ We first consider the search for software for a particular task rather than for 
 \subsubsection{Approaches}
 \label{approaches-ready-to-use}
 
-To assess how people located or discovered ready-to-run software, we asked ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''  The question provided multiple nonexclusive answer choices together with a free-text ``Other'' option.  The predefined answer options were developed based on our own experiences as well as similar questions posed in other surveys~\cite{sim_2011, bajrachary_2009, linstead_2009} and the results of our pilot run.  Respondents were free to choose more than one answer.  \fig{how-find-ready-to-run} summarizes the results.  We separated the responses based on how individuals answered the yes/no question about being involved in software development (\ref{demographics}).  The graph is sorted by sum of responses across developers and nondevelopers for each answer category.
-
-\begin{figure}[htb]
+\begin{figure}[b]
   \vspace*{-1ex}
   \centering
   \includegraphics{files/plots/how-find-ready-to-run-v4.pdf}
@@ -255,7 +255,9 @@ To assess how people located or discovered ready-to-run software, we asked ``Whe
   \label{how-find-ready-to-run}
 \end{figure}
 
-For both software developers and nondevelopers, the top three choices were (a) using general search engines, (b) asking colleagues and (c) looking in the literature.  However, developers differed from nondevelopers in their frequency of selection of these choices: the top choice for developers (93\%) was search engines, whereas for nondevelopers, it was personal recommendations (92\%).  An even larger difference is evident in the use of social help sites such as Stack Overflow, with very few nondevelopers (15\%) indicating they used this approach.  A similar difference is exhibited with respect to searching public software project repositories such as SourceForge and GitHub, with nondevelopers far less likely to indicate they use that approach.  While it is perhaps not surprising that developers would be more familiar with these resources and thus recognizing them as viable options for finding software, still, the results represent a difference in approaches used by developers versus nondevelopers.
+To assess how people located or discovered ready-to-run software, we asked ``When you need to find ready-to-run software for a particular task, how do you go about finding software?''  The question provided multiple nonexclusive answer choices together with a free-text ``Other'' option.  The predefined answer options were developed based on our own experiences as well as similar questions posed in other surveys~\cite{sim_2011, bajrachary_2009, linstead_2009} and the results of our pilot run.  Respondents were free to choose more than one answer.  \fig{how-find-ready-to-run} summarizes the results.  We separated the responses based on how individuals answered the yes/no question about being involved in software development (\ref{demographics}).  The graph is sorted by sum of responses across developers and nondevelopers for each answer category.
+
+For both software developers and nondevelopers, the top three choices were (a) using general search engines, (b) asking colleagues and (c) looking in the literature.  However, developers differed from nondevelopers in their frequency of selection of these choices: the top choice for developers (93\%) was search engines, whereas for nondevelopers, it was personal recommendations (92\%).  An even larger difference is evident in the use of social help sites such as Stack Overflow, with very few nondevelopers (15\%) indicating they used this approach.  A similar difference is exhibited with respect to searching public software project repositories such as SourceForge and GitHub, with nondevelopers far less likely to indicate they use that approach.  While it is perhaps not surprising that developers would be more familiar with these resources and thus recognizing them as viable options for finding software, the results nevertheless represent a difference in approaches used by developers versus nondevelopers.
 
 % According to Lucian Smith: "Similarly, both subgroups rarely selected domain-specific catalogs such as ASCL.net. This last result is surprising. It may reflect ignorance ofthe existence of topical indexes, or it may reflect a belief that such resources are too narrowly focused in scope for their needs."  Another possibility is that they believe that a Google search will already utilize results from those more-specialized sites.  Certainly, I personally would never search stackoverflow directly, since when it has the appropriate response, it floats to the top of my Google results.  (Conversely, I suppose, I never find out about anything that doesn't bubble to the top of Google on its own.)  That's my own relatively unfounded assumption, at any rate.
 
@@ -292,7 +294,7 @@ Quality and support aspects of the software are also secondary considerations as
 
 A more surprising result is that other people's opinions of the software (22\%) and its similarity to other software (12\%) did not rank higher.  It is possible that users resort to searching for software only when they lack other means of making selections, such as no word-of-mouth recommendations. In those cases, the approval rating of the software or its apparent familiarity may be largely ignored in favor of other criteria.  Future surveys or interviews could investigate these points more deeply.
 
-Another surprising result is that, even though the question explicitly concerned ready-to-use software, the availability of the source code (45\%) and its licensing (39\%) were still rated as relatively important considerations. This may be the effect of a survey bias----a large fraction of responders identified themselves as developers. Such users are perhaps more likely to be capable and willing to alter the software to meet their specific requirements; thus, paying attention to source code and its licensing would be important for them.
+Another surprising result is that, even though the question explicitly concerned ready-to-use software, the availability of the source code (45\%) and its licensing (39\%) were still relatively important considerations. This may be the effect of a survey bias---a large fraction of responders identified themselves as developers. Such users are perhaps more likely to be capable and willing to alter the software to meet their specific requirements; thus, paying attention to source code and its licensing would be important for them.
 
 It is interesting to compare these results with those of software engineering studies on desirable traits for successful open-source software projects~\cite[e.g.,][]{subramaniam2009determinants, lee2009measuring, crowston2003defining, crowston2006information, sen2012open, lee2009measuring}.  Intuitively, we expect the criteria should align: the features that people say they use to discriminate between choices when looking for software are presumably the same that differentiate successful software efforts from unsuccessful ones.  And in fact, it does turn out that code quality, documentation quality, price, and licensing terms are recognized indicators of success~\cite{subramaniam2009determinants, lee2009measuring, crowston2003defining, crowston2006information}; however, as mentioned above, our survey participants seem relatively unconcerned with developers' reputations or other people's opinions of software, which does not align with studies about traits of successful software projects.
 
@@ -360,7 +362,6 @@ As described in \sec{demographics}, the survey included the question ``Are you i
 Out of \totalDevelopers participants who answered ``Yes'' to whether they were involved in software development (\ref{demographics}), a total of \totalSearchers (98\% of that subset) indicated they searched for source code at least some of the time.  \fig{how-often-search-for-src} summarizes the responses received to the question ``How often do you search online for software source code?''  To help understand people's motivations for searching for software, we also asked another question: ``What are some reasons why you look for source code (when you do look)?''  Similar to other questions in the survey, it included multiple nonexclusive choices and a free-text ``Other'' field as the answer options.  \fig{why-search-for-src} summarizes the responses.
 
 \begin{figure}[bht]
-  \vspace*{-2ex}
   \centering
   \hspace*{15pt}\includegraphics{files/plots/bar-graph-how-often-src.pdf}
   \vspace*{-3ex}
@@ -369,7 +370,6 @@ Out of \totalDevelopers participants who answered ``Yes'' to whether they were i
 \end{figure}
 
 \begin{figure}[hb]
-  \vspace*{-3ex}
   \centering
   \includegraphics{files/plots/bar-graph-why-search-for-src.pdf}
   \vspace*{-2ex}
