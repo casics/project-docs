@@ -119,7 +119,7 @@ We analyzed the results obtained by December 31, 2015.  We estimate the number o
 
 \end{enumerate}
 
-Unfortunately, we cannot be certain of the actual number of recipients.  While we can determine the number of addresses we contacted, some of the addresses on mailing lists may be obsolete or unreachable, or the recipients' electronic mail systems may have filtered out the mail messages.  Thus, we can only estimate the response rate.  We revisit this topic in \sec{conclusion}.
+Unfortunately, we cannot be certain of the actual number of recipients.  While we can determine the number of addresses we contacted, some of the addresses on mailing lists may be obsolete or unreachable, or the recipients' electronic mail systems may have filtered out the mail messages.  Thus, we can only estimate the response rate.  We revisit this topic in \ref{conclusion}.
 
 
 \subsection{Analysis}
@@ -353,13 +353,13 @@ Interestingly, the reputation of the organization producing the software can res
 
 \subsection{Source code}
 
-As described in \sec{demographics}, the survey included the question ``Are you involved in software development?''  Responses to that yes/no question controlled the presentation of additional questions relevant to developers.  In that additional group of questions, one question was ``How often do you search online for software source code?'' with six answer choices that included ``Never''.  If respondents chose any option \emph{other} than ``Never'', they were shown further questions specific to searching for source code.  In this section, we discuss the results of that part of the survey.
+As described in \ref{demographics}, the survey included the question ``Are you involved in software development?''  Responses to that yes/no question controlled the presentation of additional questions relevant to developers.  In that additional group of questions, one question was ``How often do you search online for software source code?'' with six answer choices that included ``Never''.  If respondents chose any option \emph{other} than ``Never'', they were shown further questions specific to searching for source code.  In this section, we discuss the results of that part of the survey.
 
 
 \subsubsection{Motivations}
 \label{motivations-for-src-search}
 
-Out of \totalDevelopers participants who answered ``Yes'' to whether they were involved in software development (\ref{demographics}), a total of \totalSearchers (98\% of that subset) indicated they searched for source code at least some of the time.  \fig{how-often-search-for-src} summarizes the responses received to the question ``How often do you search online for software source code?''  To help understand people's motivations for searching for software, we also asked another question: ``What are some reasons why you look for source code (when you do look)?''  Similar to other questions in the survey, it included multiple nonexclusive choices and a free-text ``Other'' field as the answer options.  \fig{why-search-for-src} summarizes the responses.
+Out of \totalDevelopers participants who answered ``Yes'' to whether they were involved in software development, a total of \totalSearchers (98\% of that subset) indicated they searched for source code at least some of the time.  \fig{how-often-search-for-src} summarizes the responses received to the question ``How often do you search online for software source code?''  To help understand people's motivations for searching for software, we also asked another question: ``What are some reasons why you look for source code (when you do look)?''  Similar to other questions in the survey, it included multiple nonexclusive choices and a free-text ``Other'' field as the answer options.  \fig{why-search-for-src} summarizes the responses.
 
 \begin{figure}[bht]
   \vspace*{-1ex}
@@ -430,7 +430,7 @@ Some more unexpected results reveal themselves.  First, asking colleagues for op
 
 The results also show another surprising result: the use of software catalogs such as ASCL.net and BioPortal was more popular when the task was searching for source code compared to searching for ready-to-run software.  This is puzzling because the indexes do not offer source code search per se; therefore, our intuition was that the indexes would be more useful for finding ready-to-run software---but that is the opposite of what the survey revealed.  The answer must therefore lie in some other aspect of their features or their use in the context of finding source code. This is another area for future research to explore further.
 
-Finally, we note that the use of software indexes was still quite low overall (12\% in the context of finding ready-to-run software, 22\% in the context of source code).  It ranked far lower than, for example, searching the literature, despite that software indexes are arguably much better suited to the task of finding software in a given domain or for a given purpose.  The same possible explanations we noted in \sec{approaches-ready-to-use} may apply here: namely, respondents may expect searching in Google will subsume searching in the specialized indexes, or participants may believe the indexes are too narrowly focused, or they may simply not be sufficiently aware of their existence.  More generally, this result indicates that the developers of software catalogs continue to face challenges in producing systems that users find sufficiently compelling.
+Finally, we note that the use of software indexes was still quite low overall (12\% in the context of finding ready-to-run software, 22\% in the context of source code).  It ranked far lower than, for example, searching the literature, despite that software indexes are arguably much better suited to the task of finding software in a given domain or for a given purpose.  The same potential explanations we noted in \ref{approaches-ready-to-use} may apply here: namely, respondents may expect searching in Google will subsume searching in the specialized indexes, or participants may believe the indexes are too narrowly focused, or they may simply not be sufficiently aware of their existence.  More generally, this result indicates that the developers of software catalogs continue to face challenges in producing systems that users find sufficiently compelling.
 
 % In other respects, the results in both the ready-to-run and source code cases follow largely the same trends.  The most notable difference is that searching in topical software indexes rises in popularity when searching for source code (compared to searching for ready-to-run software).  This result may reflect an incorrect belief among respondents that these indexes are specialized towards source code.  Follow-up studies could explore this topic further.
 
@@ -617,7 +617,7 @@ Other factors therefore must be responsible for the differences in results betwe
 
 % It is important to keep in mind that the approaches used by developers in these situations will likely be different from those used by end users to find software, both because developers are known to use different strategies~\cite{} and because are likely to be considering different characteristics (e.g., APIs).  Nevertheless, such studies are related to our survey.
 
-Most studies of how users find software have done so in the context of software development and the reuse of software code.  The types of reuse in these situations range from black-box reuse of libraries or other software components (i.e., reusing code ``as-is''), to reuse of code fragments; in addition, in programming contexts, many studies examined the reuse of other kinds of artifacts such as documentation, specifications, architectural patterns, and more.  For the purposes of this review, we discuss general studies about code reuse in this section, and leave those specifically about code search to \sec{code-search-by-developers}.
+Most studies of how users find software have done so in the context of software development and the reuse of software code.  The types of reuse in these situations range from black-box reuse of libraries or other software components (i.e., reusing code ``as-is''), to reuse of code fragments; in addition, in programming contexts, many studies examined the reuse of other kinds of artifacts such as documentation, specifications, architectural patterns, and more.  For the purposes of this review, we discuss general studies about code reuse in this section, and leave those specifically about code search to \ref{code-search-by-developers}.
 
 One of the earliest surveys of software developers in the context of software reuse was published by Frakes and Fox~\cite{frakes1995sixteen}.  In their 1991--1992 survey of 28 U.S. organizations, they received responses to 16 questions from 113 people about questions ranging from programming language and tool preferences to the impact of legal issues.  Several results from this survey are relevant to the topics of our own survey:
 
@@ -647,7 +647,7 @@ One of the earliest surveys of software developers in the context of software re
 
 \end{itemize}
 
-The last result above from \citet{samadi_2004} matches the results of our survey.  For our question about what factors hindered people from finding software (\sec{reasons-for-search-failure}), the most popular reason was finding a match to one's needs, and for our question about what hindered people's ability to reuse source code found (\sec{reuse-failures}), quality of documentation was the most popular reason.
+The last result above from \citet{samadi_2004} matches the results of our survey.  For our question about what factors hindered people from finding software (\ref{reasons-for-search-failure}), the most popular reason was finding a match to one's needs, and for our question about what hindered people's ability to reuse source code found (\ref{reuse-failures}), quality of documentation was the most popular reason.
 
 The study was reprised in 2005 with a wider audience that included members of academia.  The results of 100 responses they received are summarized by \citet{marshall2006software}.  According to Marshall et al., the larger 2005 survey produced essentially similar results to the preliminary 2004 survey.  They noted the following:
 
