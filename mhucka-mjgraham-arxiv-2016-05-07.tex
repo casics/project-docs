@@ -1,0 +1,21 @@
+\documentclass{article}
+\pdfoutput=1
+
+\usepackage[pdftex,rgb,dvipsnames,svgnames,hyperref,table]{xcolor}
+\definecolor{darkblue}{rgb}{0.1,0.4,0.55}
+\definecolor{darkred}{rgb}{0.6,0,0.1}
+
+\usepackage[pdftex,breaklinks=true,colorlinks=true, bookmarks=false,pdfhighlight=/O,urlcolor=darkblue,citecolor=darkred,linkcolor=darkblue]{hyperref}
+
+\hypersetup{
+  pdfinfo={
+    Title={Software search is not a science, even among scientists},
+    Author={Michael Hucka and Matthew J. Graham}
+  }
+}
+\usepackage{pdfpages}
+\usepackage{pax}
+
+\begin{document}
+\includepdf[pages=1-last]{whitepaper.pdf}
+\end{document}
