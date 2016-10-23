@@ -72,11 +72,13 @@ There are two top-level divisions in our interfaces ontology: *UI* and *API*.  M
 
 * `network communications interface`: This is software that is meant to be used via network interfaces of some kind.  The subterms cover specific types of network communications schemes.  
 
-* `network sockets`: Although it is unusual to find software that uses a custom protocol rather than one of the other mechanisms, it does happen, and in those cases, the general term `network sockets` is appropriate.
+* `network sockets`: Although it is unusual to find software that uses a custom socket-based protocol rather than one of the other mechanisms below, it does happen, and in those cases, the general term `network sockets` is appropriate.  If something uses sockets but it is evident that HTTP is involved, then the annotation should be `web services interface` or one of its more specific subterms.
 
 * `message-passing interface` is included underneath `network communications interface` instead of being a higher-level term, because all of the message-passing or message-queuing schemes use network mechanisms and can be used across multiple computers.  Some specific schemes listed here may also offer RPC or RMI mechanisms too (D-Dbus being a example), but they are listed here rather than under `RPC/RMI interface` if they are fundamentally based on message-passing.
 
-* `web-services interface` is under `RPC/RMI interface` because all of the web services are in fact a kind of remote procedure call or remote method invocation.
+* `web services interface` is under `RPC/RMI interface` because all of the web services are in fact a kind of remote procedure call or remote method invocation.
+
+* Further subdivisions under `web-services interface` identify more specific mechanisms.  Usually, it's possible to tell whether something uses `SOAP` or `REST` or `Ajax` simply by searching the code for those strings of characters.  Sometimes it's evident that code uses some kind of HTTP-based interaction (e.g., because searching the code reveals identifiers with the string `http` in them, or something along those lines), but it is difficult to tell whether it's using a `REST` approach or something else.  In those cases, using the term `web services interface` is probably the best option.
 
 An important question is what to do if something uses, say, a network interface as part of its implementation.  For instance, a number of software applications have self-update mechanisms that operate over the network.  Should they be annotated with an API term for `network communications interface`?  In almost all cases, no: these are not "interfaces offered to the user" in the intended sense.  One way to think about it is whether a user looking for the software would think about the interface.  In most cases, someone looking for some software application will probably not think about how the updating scheme is implemented.
 
