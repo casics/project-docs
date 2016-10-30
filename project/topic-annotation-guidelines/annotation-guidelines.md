@@ -48,6 +48,14 @@ This is meant to capture how the software can be used.  Currently, we only disti
 
 It may seem as though it should be possible to infer the kind of software from the interfaces it provides.  For instance, if it offers a GUI, wouldn't it be an application?  Unfortunately, no: a library of GUI widgets would be considered `Library or component software` and not an application.  Conversely, the presence of an API does not preclude something being `Standalone software`.  An example is a MATLAB toolbox: typically, MATLAB toolboxes typically offer interfaces so that users can intearct with them, but the user executes the software by running the environment (MATLAB).
 
+Some specific case examples:
+
+* `rafrombrc/bm.gallery` is a media gallery built on top of Django.  In this particular case, the software is executed by running Django itself: it is not a standalone program.  Therefore, it is properly a `Library or component software`.
+
+* `nextinterfaces/countries-app` is an app for viewing countries of the world on tablets.  This is `User software` and not `Embedded software` because when it runs on a tablet, it does not run on the bare hardware.  (Tablets are more akin to portable computers than embedded hardware systems, and generally, the only thing that qualifies as embedded software in the case of tablets is something like replacement firmware.)
+
+* `jws85/Vintage` is a set of keymaps for the Sublime Text editor to emulate `vi`.  Should it be tagged with `hardware user interface`?  This almost seems like a yes, except that this software largely does not itself interact with the hardware: it's a set of configuration commands for a program that does.  (Admittedly a thin distinction.  Possibly worth revisiting.)
+
 
 The "interfaces" annotation
 ---------------------------
@@ -69,6 +77,8 @@ There are two top-level divisions in our interfaces ontology: *UI* and *API*.  M
 * `pen tablet interface`: This is a separate subterm under `touch user interface` meant for devices such as Wacom graphics tablets, which require the use of a pen interface and do *not* have a graphical display.  (It is true that many pen systems exist for iPads and Android tablets, but that is not their sole or even primary mode of interaction, whereas for old-style graphics tablets, it is.)
 
 ### *API*
+
+* `hardware`
 
 * `function/class library interface`: This is for libraries of functions (such as the standard C library), classes (such as Java class libraries), and things such as MATLAB toolboxes.  It implies that users of the software must link their code against it, or otherwise import the library.
 
@@ -94,7 +104,13 @@ Something to watch out for is how the topic annotations interact with the annota
 
 * If the software is actually *about* something described by the interfaces ontology above, an appropriate LCSH term should be added.  For example, a library of GUI widgets should be annotated with the LCSH topics term for GUIs, which is `sh93002168` ("Graphical user interfaces") or possibly `sh2008009921` ("Web-based user interfaces") if that is more appropriate.  Similarly, if the software is a library for (say) Ajax programming, it should receive the appropriate topics term, even if it also has `interfaces` annotations for those things.
 
-* If the software is about something specifically for a particular language such as Java or Python, the appropriate LCSH term should be added:
+* If the software is about something specifically for a particular language such as Java or Python, the appropriate LCSH term should be added.  Since we're currently only looking at Python and Java based software, there are only two relevant terms:
 
-    * sh96008834: `Python (Computer program language)`
-    * sh95008574: `Java (Computer program language)`
+    * `sh96008834`: "Python (Computer program language)"
+    * `sh95008574`: "Java (Computer program language)"
+
+* Software for Android or iOS can usually be used on both phones and tablets, and thus *normally* should receive annotations of `sh2007006251` ("Smartphones") and `sh2010009240` ("Tablet computers").  *Exception*: sometimes the software is specific to a particular model of device, or is clearly stated to be for a phone only.  In that case, we should probably annotate it only with `sh2007006251`.
+
+* Certain terms are **not** appropriate because they are not what we think they are.  Here is a running list of terms to avoid:
+
+    * sh88007957: `Cache Memory`: This *seems* like it would be appropriate for things like software cache systems (e.g., Redis, memcached), but this particular term is about *hardware* memory cache storage.  (The immediate hierarchy of this term goes like this: sh98003200 `Computer systems` → sh85029505 `Computer input-output equipment` → sh85029541 `Computer storage devices` → sh88007957 `Cache memory`.) It is probably inappropriate to use this for software caches.
