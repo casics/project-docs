@@ -11,6 +11,7 @@ The purpose of these annotations is to identify what the software offers to user
 <div style="font-style: italic; margin: auto 2em 1em 2em; color: darkgreen">
 <b>[name]</b> is <b>[kind of software]</b> providing <b>[functionality]</b> applicable to <b>[topics]</b>. It provides <b>[interfaces]</b>, supports <b>[data formats]</b>, and runs on <b>[OS]</b>. Its licensing terms reference <b>[licenses]</b>.
 </div>
+<br>
 
 The meanings are as follows:
 
