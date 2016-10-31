@@ -54,6 +54,8 @@ It may seem as though it should be possible to infer the kind of software from t
 
 * `nextinterfaces/countries-app` is an app for viewing countries of the world on tablets.  This is `User software` and not `Embedded software` because when it runs on a tablet, it does not run on the bare hardware.  (Tablets are more akin to portable computers than embedded hardware systems, and generally, the only thing that qualifies as embedded software in the case of tablets is something like replacement firmware.)
 
+* `beercanlah/ardumashtun` is software to be loaded onto an Arduino board, to control a beer brewing aparatus.  It is `Embedded software`.
+
 * `jws85/Vintage` is a set of keymaps for the Sublime Text editor to emulate `vi`.  Should it be tagged with `hardware user interface`?  This almost seems like a yes, except that this software largely does not itself interact with the hardware: it's a set of configuration commands for a program that does.  (Admittedly a thin distinction.  Possibly worth revisiting.)
 
 
@@ -102,6 +104,8 @@ An important question is what to do if something uses, say, a network interface 
 * `fprefect/videopoker` is an example of something that its setup data from a file, and not from a command-line or GUI interface (although it is started from a command line).  This is just barely a reasonable case for annotating with `batch interface`.
 
 * `albfernandez/GDS-PMD-Security-Rules` is another example of `batch interface`, because the behavior controlling instructions are written in files.
+
+* `beercanlah/ardumashtun` is software to be loaded onto an Arduino board, to control a beer brewing aparatus.  It certainly has `hardware user interface` and `hardware device interface` because when it runs, it runs on the Arduino.  A more difficult question is whether the testing code in that repository warrants an annotation of `command-line interface`.  It probably does.
 
 
 The "topics" annotation
