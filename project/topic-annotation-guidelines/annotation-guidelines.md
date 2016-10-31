@@ -8,11 +8,7 @@ General outlook to keep in mind
 
 The purpose of these annotations is to identify what the software offers to users: the features it possesses, the topics it deals with, the way that it's meant to be used, and so on.  The following is a template description that shows how different annotation aspects fit into the overall picture:
 
-<quote>
-<div style="font-style: italic; margin: auto 2em; color: darkgreen">
-<b>[name]</b> is <b>[kind of software]</b> providing <b>[functionality]</b> applicable to <b>[topics]</b>. It provides <b>[interfaces]</b>, supports <b>[data formats]</b>, and runs on <b>[OS]</b>. Its licensing terms reference <b>[licenses]</b>.
-</div>
-</quote>
+> **[name]** is **[kind of software]** providing **[functionality]** applicable to **[topics]**. It provides **[interfaces]**, supports **[data formats]**, and runs on **[OS]**. Its licensing terms reference **[licenses]**.
 
 The meanings are as follows:
 
