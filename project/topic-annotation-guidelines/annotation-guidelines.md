@@ -48,7 +48,7 @@ This is meant to capture how the software can be used.  Currently, we only disti
 
 It may seem as though it should be possible to infer the kind of software from the interfaces it provides.  For instance, if it offers a GUI, wouldn't it be an application?  Unfortunately, no: a library of GUI widgets would be considered `Library or component software` and not an application.  Conversely, the presence of an API does not preclude something being `Standalone software`.  An example is a MATLAB toolbox: typically, MATLAB toolboxes typically offer interfaces so that users can intearct with them, but the user executes the software by running the environment (MATLAB).
 
-Some specific case examples:
+### Some specific case examples
 
 * `rafrombrc/bm.gallery` is a media gallery built on top of Django.  In this particular case, the software is executed by running Django itself: it is not a standalone program.  Therefore, it is properly a `Library or component software`.
 
@@ -60,7 +60,9 @@ Some specific case examples:
 The "interfaces" annotation
 ---------------------------
 
-This is meant to capture the interfaces offered by the software to users, both human users as well as other software.  When adding or reading this annotation, the point of view to keep in mind is that it is *not* the interfaces that the software may use to implement its functionality, but rather, *what it provides to users*.  Some software is meant to be used directly by users (in which case, it have a UI), and some software is meant to be programmed to (in which case, it will have an API of some kind).  Note that these are not mutually exclusive: some software offers both a UI and an API.  Also note that the build system interface should in most cases not be considered in these annotations (or else, everything with a makefile would have a `batch interface` annotation!).  Some examples below will hopefully help clarify things.
+This is meant to capture the interfaces offered by the software to users, both human users as well as other software.  By "the software", we mean the finished "product" that the source code represents.  If the eventual "product" is an application (after being compiled), then what does the application provide to users, either directly via user interaction or indirectly through the software's operation?  If it's a programming library, then what does the library provide to programmers?
+
+Note that these are not mutually exclusive: some software offers both a UI and an API.  Some software is meant to be used directly by users (in which case, it have a UI), and some software is meant to be programmed to (in which case, it will have an API of some kind), and some software projects have multiple pieces, with elements of each.  Also note that the build system interface should in most cases *not* be considered in these annotations (or else, everything with a makefile would have a `batch interface` annotation!).  Some examples below will hopefully help clarify things.
 
 There are two top-level divisions in our interfaces ontology: *UI* and *API*.  Most of the terms hopefully are self-explanatory, but here are explanations for some terms that may be less obvious.
 
@@ -93,6 +95,13 @@ There are two top-level divisions in our interfaces ontology: *UI* and *API*.  M
 * Further subdivisions under `web-services interface` identify more specific mechanisms.  Usually, it's possible to tell whether something uses `SOAP` or `REST` or `Ajax` simply by searching the code for those strings of characters.  Sometimes it's evident that code uses some kind of HTTP-based interaction (e.g., because searching the code reveals identifiers with the string `http` in them, or something along those lines), but it is difficult to tell whether it's using a `REST` approach or something else.  In those cases, using the term `web services interface` is probably the best option.
 
 An important question is what to do if something uses, say, a network interface as part of its implementation.  For instance, a number of software applications have self-update mechanisms that operate over the network.  Should they be annotated with an API term for `network communications interface`?  In almost all cases, no: these are not "interfaces offered to the user" in the intended sense.  One way to think about it is whether a user looking for the software would think about the interface.  In most cases, someone looking for some software application will probably not think about how the updating scheme is implemented.
+
+
+### Some specific examples
+
+* `fprefect/videopoker` is an example of something that its setup data from a file, and not from a command-line or GUI interface (although it is started from a command line).  This is just barely a reasonable case for annotating with `batch interface`.
+
+* `albfernandez/GDS-PMD-Security-Rules` is another example of `batch interface`, because the behavior controlling instructions are written in files.
 
 
 The "topics" annotation
