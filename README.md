@@ -1,4 +1,4 @@
-CASICS graphics
+CASICS data
 ===============
 
 <img align="right" src=".graphics/casics-logo-small.png">
