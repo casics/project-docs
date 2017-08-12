@@ -19,7 +19,7 @@ In order to help reproduce our work, we store some notable data sets in this rep
 ⁇ Getting help and support
 --------------------------
 
-If you find an issue, please submit it in [the GitHub issue tracker](https://github.com/casics/overview/issues) for this repository.
+If you find an issue, please submit it in [the GitHub issue tracker](https://github.com/casics/data/issues) for this repository.
 
 ❤️ Acknowledgments
 ------------------
