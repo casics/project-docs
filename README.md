@@ -21,6 +21,13 @@ In order to help reproduce our work, we store some notable data sets in this rep
 
 If you find an issue, please submit it in [the GitHub issue tracker](https://github.com/casics/data/issues) for this repository.
 
+♬ Contributing &mdash; info for developers
+------------------------------------------
+
+A lot remains to be done on CASICS in many areas.  We would be happy to receive your help and participation if you are interested.  Please feel free to contact the developers either via GitHub or the mailing list [casics-team@googlegroups.com](casics-team@googlegroups.com).
+
+Everyone is asked to read and respect the [code of conduct](CONDUCT.md) when participating in this project.
+
 ❤️ Acknowledgments
 ------------------
 
