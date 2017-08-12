@@ -16,6 +16,9 @@ This is the repository for CASICS project documentation &ndash; posters, papers,
 
 This is the repository where we put documentation about CASICS.  It includes posters presented at conferences, papers, and project documentation.  The individual subdirectories in here are hopefully named clearly enough that they give a sense for their contents.
 
+Notes about this repository are maintained in the associated [wiki](https://github.com/casics/docs/wiki).
+
+
 ⁇ Getting help and support
 --------------------------
 
