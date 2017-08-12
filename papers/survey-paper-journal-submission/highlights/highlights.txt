@@ -1,0 +1,4 @@
+Highlights
+* Scientists and engineers do not use specialized methods or resources to find software.
+* Developers are more likely than non-developers to search in social help sites.
+* Numerous characteristics are important when users search for software.

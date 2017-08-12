@@ -1,0 +1,174 @@
+{
+
+ "kind": "urlshortener#url",
+ "id": "https://goo.gl/W0jDMJ",
+ "longUrl": "https://docs.google.com/forms/d/1CWK6mEaK5jTA0gasnDD3KeTDR1W8S1UGwCa9wke1jhA/viewform",
+ "status": "OK",
+ "created": "2015-08-10T05:38:02.197+00:00",
+ "analytics": {
+  "allTime": {
+   "shortUrlClicks": "172",
+   "longUrlClicks": "172",
+   "referrers": [
+    {
+     "count": "126",
+     "id": "unknown"
+    },
+    {
+     "count": "28",
+     "id": "www.facebook.com"
+    },
+    {
+     "count": "7",
+     "id": "m.facebook.com"
+    },
+    {
+     "count": "2",
+     "id": "groups.google.com"
+    },
+    {
+     "count": "2",
+     "id": "l.facebook.com"
+    },
+    {
+     "count": "2",
+     "id": "mail.ivoa.net"
+    },
+    {
+     "count": "1",
+     "id": "mail.google.com"
+    },
+    {
+     "count": "1",
+     "id": "mail.nih.gov"
+    },
+    {
+     "count": "1",
+     "id": "outlook.manchester.ac.uk"
+    },
+    {
+     "count": "1",
+     "id": "roundcube.metagrid.co.uk"
+    }
+   ],
+   "countries": [
+    {
+     "count": "66",
+     "id": "US"
+    },
+    {
+     "count": "19",
+     "id": "CL"
+    },
+    {
+     "count": "19",
+     "id": "GB"
+    },
+    {
+     "count": "14",
+     "id": "FR"
+    },
+    {
+     "count": "7",
+     "id": "IN"
+    },
+    {
+     "count": "4",
+     "id": "CA"
+    },
+    {
+     "count": "4",
+     "id": "DE"
+    },
+    {
+     "count": "4",
+     "id": "ES"
+    },
+    {
+     "count": "4",
+     "id": "IT"
+    },
+    {
+     "count": "3",
+     "id": "CO"
+    }
+   ],
+   "browsers": [
+    {
+     "count": "65",
+     "id": "Chrome"
+    },
+    {
+     "count": "64",
+     "id": "Firefox"
+    },
+    {
+     "count": "25",
+     "id": "Safari"
+    },
+    {
+     "count": "12",
+     "id": "MSIE"
+    },
+    {
+     "count": "2",
+     "id": "CriOS"
+    },
+    {
+     "count": "2",
+     "id": "OS;FBSV"
+    },
+    {
+     "count": "1",
+     "id": "Mobile"
+    },
+    {
+     "count": "1",
+     "id": "Mobile Safari"
+    }
+   ],
+   "platforms": [
+    {
+     "count": "64",
+     "id": "Macintosh"
+    },
+    {
+     "count": "48",
+     "id": "Windows"
+    },
+    {
+     "count": "44",
+     "id": "X11"
+    },
+    {
+     "count": "11",
+     "id": "Android"
+    },
+    {
+     "count": "4",
+     "id": "iPhone"
+    },
+    {
+     "count": "1",
+     "id": "iPad"
+    }
+   ]
+  },
+  "month": {
+   "shortUrlClicks": "0",
+   "longUrlClicks": "0"
+  },
+  "week": {
+   "shortUrlClicks": "0",
+   "longUrlClicks": "0"
+  },
+  "day": {
+   "shortUrlClicks": "0",
+   "longUrlClicks": "0"
+  },
+  "twoHours": {
+   "shortUrlClicks": "0",
+   "longUrlClicks": "0"
+  }
+ }
+}
