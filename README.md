@@ -1,12 +1,12 @@
-CASICS docs
-===========
+CASICS project docs
+===================
 
 <img align="right" src=".graphics/casics-logo-small.png">
 
 Repository of CASICS project documentation &ndash; posters, papers, docs about the software, etc.
 
 *Authors*:      [Michael Hucka](http://github.com/mhucka) and [Matthew J. Graham](https://github.com/doccosmos)<br>
-*Repository*:   [https://github.com/casics/docs](https://github.com/casics/docs)<br>
+*Repository*:   [https://github.com/casics/project-docs](https://github.com/casics/project-docs)<br>
 *License*:      Unless otherwise noted, this content is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
 
 ☀ Introduction
@@ -14,13 +14,13 @@ Repository of CASICS project documentation &ndash; posters, papers, docs about t
 
 This is the repository where we put documentation about CASICS.  It includes posters presented at conferences, papers, and project documentation.  The individual subdirectories in here are hopefully named clearly enough that they give a sense for their contents.
 
-Notes about this repository are maintained in the associated [wiki](https://github.com/casics/docs/wiki).
+Notes about this repository are maintained in the associated [wiki](https://github.com/casics/project-docs/wiki).
 
 
 ⁇ Getting help and support
 --------------------------
 
-If you find an issue, please submit it in [the GitHub issue tracker](https://github.com/casics/docs/issues) for this repository.
+If you find an issue, please submit it in [the GitHub issue tracker](https://github.com/casics/project-docs/issues) for this repository.
 
 ♬ Contributing &mdash; info for developers
 ------------------------------------------
