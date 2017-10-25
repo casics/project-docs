@@ -1,7 +1,7 @@
 CASICS project docs
 ===================
 
-<img align="right" src="graphics/casics-logo/casics-logo-small.png">
+<img width="100px" align="right" src="graphics/casics-logo/casics-logo-small.svg">
 
 Repository of CASICS project documentation &ndash; posters, papers, docs about the software, etc.
 
